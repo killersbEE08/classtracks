@@ -388,4 +388,29 @@
       }
     }
   });
+
+  /* ---------- Dynamic favicon: change when the tab loses focus ---------- */
+  (function faviconSwap() {
+    const link = document.querySelector('link[rel="icon"]');
+    if (!link) return;
+
+    const activeHref = link.getAttribute('href');           // e.g. favicon.svg or ../favicon.svg
+    const awayHref = activeHref.replace('favicon.svg', 'favicon-away.svg');
+    const activeTitle = document.title;
+    const awayTitle = '👋 Come back to ClassTrack';
+
+    // Preload the away icon so the swap is instant.
+    const pre = new Image();
+    pre.src = awayHref;
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        link.setAttribute('href', awayHref);
+        document.title = awayTitle;
+      } else {
+        link.setAttribute('href', activeHref);
+        document.title = activeTitle;
+      }
+    });
+  })();
 })();
