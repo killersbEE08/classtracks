@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('has-js');</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — ClassTrack</title>
+  <meta name="description" content="Get help with ClassTrack. Send us a message and our team will get back to you." />
+  <meta name="theme-color" content="#6C5CE7" />
+  <link rel="canonical" href="https://classtrack.app/support/" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:site_name" content="ClassTrack" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Support — ClassTrack" />
+  <meta property="og:description" content="Get help with ClassTrack. Send us a message and our team replies within a day." />
+  <meta property="og:url" content="https://classtrack.app/support/" />
+  <meta name="twitter:card" content="summary" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ContactPage","name":"ClassTrack Support","url":"https://classtrack.app/support/","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://classtrack.app/"},{"@type":"ListItem","position":2,"name":"Support","item":"https://classtrack.app/support/"}]}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400..700,0..1,0&display=block" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="../" class="brand" aria-label="ClassTrack home">
+        <span class="brand__logo">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+            <path d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5v-9Z" stroke="white" stroke-width="1.6" stroke-linejoin="round"/>
+            <path d="m8.5 12 2.4 2.4L16 9.5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="brand__name">ClassTrack</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="../#features">Features</a>
+        <a href="../#pricing">Pricing</a>
+        <a href="../#faq">FAQ</a>
+        <a href="../support/" aria-current="page">Support</a>
+      </nav>
+      <div class="nav__cta">
+        <a href="../#get" class="btn btn--primary magnetic" data-magnetic>Get the app</a>
+      </div>
+      <button class="nav__burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HEADER -->
+    <section class="page-hero">
+      <div class="page-hero__bg" aria-hidden="true">
+        <span class="blob blob--1"></span>
+        <span class="blob blob--3"></span>
+      </div>
+      <div class="container">
+        <span class="pill"><span class="ms">support_agent</span> We're here to help</span>
+        <h1>How can we <span class="grad">help you?</span></h1>
+        <p>Have a question, hit a bug, or need a hand with billing? Send us a message and we'll get back to you — usually within 24 hours.</p>
+      </div>
+    </section>
+
+    <!-- SUPPORT -->
+    <section class="support">
+      <div class="container support__grid">
+        <!-- FORM -->
+        <div class="support__card reveal">
+          <h2 style="font-size:22px;color:var(--ink);margin-bottom:6px;">Send us a message</h2>
+          <p style="color:var(--text-soft);margin-bottom:22px;">Fill in the form and our team will reply to your email.</p>
+
+          <!--
+            ▸ Web3Forms setup: get a FREE access key at https://web3forms.com
+              (enter the email where you want to receive messages), then paste
+              it below in place of YOUR_WEB3FORMS_ACCESS_KEY. That's it.
+          -->
+          <form id="supportForm" class="form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+            <input type="hidden" name="subject" value="New ClassTrack support message" />
+            <input type="hidden" name="from_name" value="ClassTrack Website" />
+            <!-- Honeypot: bots fill this, humans don't -->
+            <input type="checkbox" name="botcheck" class="form__hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+            <div class="form__row">
+              <div class="field">
+                <label for="name">Your name</label>
+                <input id="name" name="name" type="text" placeholder="Piyush Sharma" required />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" required />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="category">What's this about?</label>
+              <select id="category" name="category" required>
+                <option value="General question">General question</option>
+                <option value="Bug report">Bug report</option>
+                <option value="Billing & subscriptions">Billing &amp; subscriptions</option>
+                <option value="Feature request">Feature request</option>
+                <option value="Account & data">Account &amp; data</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell us what's going on…" required></textarea>
+            </div>
+
+            <div class="form__status" id="formStatus" role="status" aria-live="polite"></div>
+
+            <button type="submit" class="btn btn--primary btn--lg btn--block" id="formSubmit">
+              <span class="ms">send</span> Send message
+            </button>
+            <p class="form__note">We'll only use your email to reply. No spam, ever.</p>
+          </form>
+        </div>
+
+        <!-- ASIDE -->
+        <aside class="support__aside">
+          <div class="info-card reveal">
+            <h3><span class="ms ms--fill">mail</span> Email us</h3>
+            <p>Prefer email? Reach us directly at<br/><a href="mailto:support@classtrack.app">support@classtrack.app</a></p>
+          </div>
+          <div class="info-card reveal" data-delay="0.06">
+            <h3><span class="ms ms--fill">schedule</span> Response time</h3>
+            <p>We reply to every message, usually within one business day.</p>
+          </div>
+          <div class="info-card reveal" data-delay="0.12">
+            <h3><span class="ms ms--fill">help</span> Quick answers</h3>
+            <p>Many questions are answered on our <a href="../#faq">FAQ</a> and in the app's Settings → Help.</p>
+          </div>
+          <div class="info-card reveal" data-delay="0.18">
+            <h3><span class="ms ms--fill">shield</span> Privacy</h3>
+            <p>See how we handle your data in our <a href="../privacy/">Privacy Policy</a> and <a href="../terms/">Terms</a>.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="../" class="brand">
+          <span class="brand__logo">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+              <path d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5v-9Z" stroke="white" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="m8.5 12 2.4 2.4L16 9.5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="brand__name">ClassTrack</span>
+        </a>
+        <p>Your entire student life, on track.</p>
+      </div>
+      <nav class="footer__col" aria-label="Product">
+        <h4>Product</h4>
+        <a href="../#features">Features</a>
+        <a href="../#bunk">Bunk calculator</a>
+        <a href="../#ai">AI assistant</a>
+        <a href="../#pricing">Pricing</a>
+      </nav>
+      <nav class="footer__col" aria-label="Company">
+        <h4>Company</h4>
+        <a href="../#hero">About</a>
+        <a href="../privacy/">Privacy</a>
+        <a href="../terms/">Terms</a>
+        <a href="../support/">Support</a>
+      </nav>
+      <nav class="footer__col" aria-label="Get the app">
+        <h4>Get the app</h4>
+        <a href="../#get">App Store</a>
+        <a href="../#get">Google Play</a>
+      </nav>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year"></span> ClassTrack. Made for students.</span>
+      <span class="footer__made">Crafted with <span class="ms ms--fill">favorite</span> for students</span>
+    </div>
+  </footer>
+
+  <script src="../script.js" defer></script>
+</body>
+</html>
