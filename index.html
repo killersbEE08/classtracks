@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('has-js');</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClassTrack — Attendance, timetable & an AI study buddy for students</title>
+  <meta name="description" content="ClassTrack keeps your whole student life on track: smart attendance with a bunk calculator, timetable, exam countdowns, GPA, focus timer, habits and an AI study assistant powered by Gemini." />
+  <meta name="theme-color" content="#6C5CE7" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="author" content="ClassTrack" />
+  <meta name="keywords" content="attendance tracker, bunk calculator, student timetable app, GPA calculator, exam countdown, AI study assistant, college attendance app, class schedule" />
+  <link rel="canonical" href="https://classtrack.app/" />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="ClassTrack" />
+  <meta property="og:title" content="ClassTrack — Attendance, timetable & an AI study buddy for students" />
+  <meta property="og:description" content="Smart attendance with a bunk calculator, timetable, exam countdowns, GPA and an AI study assistant that builds your schedule from a photo. Free on iOS & Android." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://classtrack.app/" />
+  <meta property="og:image" content="https://classtrack.app/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ClassTrack — Stay on track, every class." />
+  <meta name="twitter:description" content="Attendance, bunk calculator, timetable, exams, GPA & an AI study assistant — free on iOS & Android." />
+  <meta name="twitter:image" content="https://classtrack.app/og-image.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Material Symbols Rounded — the same icon family the ClassTrack app uses -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400..700,0..1,0&display=block" rel="stylesheet" />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- ===================== Structured data (SEO / AEO / GEO / LLM) ===================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "ClassTrack",
+    "operatingSystem": "Android, iOS",
+    "applicationCategory": "EducationApplication",
+    "description": "ClassTrack is an all-in-one student app: smart attendance with a bunk calculator, a timetable, exam countdowns, GPA tracking, focus timer, habits, tasks, expenses and an AI study assistant that builds your schedule from a photo.",
+    "url": "https://classtrack.app/",
+    "image": "https://classtrack.app/og-image.png",
+    "featureList": [
+      "Attendance tracking with bunk calculator",
+      "Smart timetable (day, week, month)",
+      "Exam countdowns",
+      "GPA and grades tracking",
+      "Focus timer and habit streaks",
+      "Tasks and deadlines",
+      "Expense tracking",
+      "AI study assistant (photo timetable import)"
+    ],
+    "offers": [
+      { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "Pro Monthly", "price": "2.00", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "Pro Yearly", "price": "14.99", "priceCurrency": "USD" }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "bestRating": "5",
+      "ratingCount": "12000"
+    },
+    "publisher": { "@type": "Organization", "name": "ClassTrack" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ClassTrack",
+    "url": "https://classtrack.app/",
+    "logo": "https://classtrack.app/og-image.png",
+    "email": "support@classtrack.app",
+    "sameAs": []
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "ClassTrack",
+    "url": "https://classtrack.app/"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is ClassTrack really free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. All the core tools — attendance, bunk calculator, timetable, exams, GPA, focus, habits and tasks — are free forever. Pro unlocks unlimited AI and a few power features from $2/month or $14.99/year." }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the bunk calculator work?",
+        "acceptedAnswer": { "@type": "Answer", "text": "You set an attendance target (for example 75%). ClassTrack tracks your present and absent classes and tells you exactly how many classes you can skip while staying above target, or how many you need to attend to recover." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can the AI really read my timetable from a photo?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Snap a picture or type your timetable in plain words, and the Gemini-powered assistant proposes a full schedule you can review and add to your calendar in one tap. Free accounts include 20 AI messages per month; Pro is unlimited." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does my data sync across devices?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Your account is backed up securely to the cloud, so your subjects, attendance and grades follow you across your phones." }
+      },
+      {
+        "@type": "Question",
+        "name": "Which platforms are supported?",
+        "acceptedAnswer": { "@type": "Answer", "text": "ClassTrack is available on Android and iOS, with a home-screen widget for your day at a glance." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a href="#top" class="skip-link">Skip to content</a>
+  <!-- Scroll progress -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Ambient cursor glow -->
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#top" class="brand" aria-label="ClassTrack home">
+        <span class="brand__logo">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+            <path d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5v-9Z" stroke="white" stroke-width="1.6" stroke-linejoin="round"/>
+            <path d="m8.5 12 2.4 2.4L16 9.5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="brand__name">ClassTrack</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#bunk">Bunk calculator</a>
+        <a href="#ai">AI assistant</a>
+        <a href="#pricing">Pricing</a>
+        <a href="support/">Support</a>
+      </nav>
+
+      <div class="nav__cta">
+        <a href="#get" class="btn btn--ghost">Sign in</a>
+        <a href="#get" class="btn btn--primary magnetic" data-magnetic>Get the app</a>
+      </div>
+
+      <button class="nav__burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <span class="blob blob--1"></span>
+        <span class="blob blob--2"></span>
+        <span class="blob blob--3"></span>
+        <div class="grid-overlay"></div>
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <span class="eyebrow" data-hero="1">
+            <span class="dot"></span> Built for students who want to stay ahead
+          </span>
+
+          <h1 class="hero__title">
+            <span class="line" data-hero="2">Stay on track —</span>
+            <span class="line" data-hero="3"><span class="grad">every class,</span></span>
+            <span class="line" data-hero="4">every deadline.</span>
+          </h1>
+
+          <p class="hero__sub" data-hero="5">
+            ClassTrack is your all-in-one student companion: smart attendance with a
+            <strong>bunk calculator</strong>, a beautiful timetable, exam countdowns,
+            GPA tracking and an <strong>AI study assistant</strong> that builds your
+            schedule from a photo.
+          </p>
+
+          <div class="hero__actions" data-hero="6">
+            <a href="#get" class="btn btn--primary btn--lg magnetic" data-magnetic>
+              <span class="ms">download</span>
+              Download free
+            </a>
+            <a href="#features" class="btn btn--soft btn--lg">
+              Explore features
+              <span class="ms">arrow_forward</span>
+            </a>
+          </div>
+
+          <div class="hero__meta" data-hero="7">
+            <span><span class="ms ms--fill">check_circle</span> Free forever plan</span>
+            <span><span class="ms ms--fill">credit_card_off</span> No credit card</span>
+            <span><span class="ms ms--fill">devices</span> iOS &amp; Android</span>
+          </div>
+
+          <div class="hero__trust" data-hero="8">
+            <div class="stars" aria-label="Rated 4.9 out of 5">
+              <span class="ms ms--fill">star</span>
+              <span class="ms ms--fill">star</span>
+              <span class="ms ms--fill">star</span>
+              <span class="ms ms--fill">star</span>
+              <span class="ms ms--fill">star</span>
+            </div>
+            <span><strong>4.9</strong> · loved by <strong class="count" data-count="12000" data-suffix="+">0</strong> students</span>
+          </div>
+        </div>
+
+        <!-- PHONE MOCKUP -->
+        <div class="hero__device" data-hero="8">
+          <div class="phone" id="heroPhone" data-tilt>
+            <div class="phone__notch"></div>
+            <div class="phone__screen app">
+              <div class="app__statusbar">
+                <span>9:41</span>
+                <span class="app__statusicons">
+                  <span class="ms">signal_cellular_alt</span>
+                  <span class="ms">wifi</span>
+                  <span class="ms">battery_full</span>
+                </span>
+              </div>
+
+              <div class="app__header">
+                <div class="avatar">P</div>
+                <div class="app__hello">
+                  <strong>Hey, Piyush 👋</strong>
+                  <small>Let's check your day</small>
+                </div>
+                <button class="app__icnbtn app__ai" aria-hidden="true">
+                  <span class="ms ms--fill">auto_awesome</span>
+                </button>
+              </div>
+
+              <h3 class="app__h">Stay <span>on track</span><br/>today.</h3>
+
+              <div class="app__stats">
+                <div class="statcard statcard--lav">
+                  <span class="statcard__ic"><span class="ms" style="color:#6C5CE7">calendar_today</span></span>
+                  <b>4</b><small>Classes</small>
+                </div>
+                <div class="statcard statcard--peach">
+                  <span class="statcard__ic"><span class="ms" style="color:#22C55E">pie_chart</span></span>
+                  <b>92%</b><small>Attendance</small>
+                </div>
+                <div class="statcard statcard--lav">
+                  <span class="statcard__ic"><span class="ms" style="color:#EF4444">event_note</span></span>
+                  <b>3</b><small>days · exam</small>
+                </div>
+                <div class="statcard statcard--peach">
+                  <span class="statcard__ic"><span class="ms" style="color:#F59E0B">school</span></span>
+                  <b>8.6</b><small>GPA</small>
+                </div>
+              </div>
+
+              <div class="app__section">Today's classes</div>
+              <div class="classcard">
+                <span class="classcard__ic" style="--c:#0EA5E9"><span class="ms">database</span></span>
+                <div class="classcard__body">
+                  <strong>Database Systems</strong>
+                  <small>9:00 – 10:00 · Room 204</small>
+                </div>
+                <div class="classcard__acts">
+                  <button class="mini mini--ok" aria-hidden="true"><span class="ms">check</span></button>
+                  <button class="mini mini--no" aria-hidden="true"><span class="ms">close</span></button>
+                </div>
+              </div>
+
+              <div class="app__nav">
+                <span class="ms ms--fill on">home</span>
+                <span class="ms">calendar_month</span>
+                <span class="ms fab">add</span>
+                <span class="ms">task_alt</span>
+                <span class="ms">bar_chart</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating chips -->
+          <div class="chip chip--skip" data-float="1">
+            <span class="ms">celebration</span> You can skip <b>2</b> classes
+          </div>
+          <div class="chip chip--ai" data-float="2">
+            <span class="ms chip__spark">auto_awesome</span> AI built your timetable
+          </div>
+          <div class="chip chip--gpa" data-float="3">
+            <span class="ms">trending_up</span> GPA <b>+0.4</b> this term
+          </div>
+        </div>
+      </div>
+
+      <a href="#marquee" class="scroll-hint" aria-hidden="true">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ===================== AI TIMETABLE IMPORT ===================== -->
+    <section class="section import" id="import">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="pill pill--ai"><span class="ms">auto_awesome</span> The magic feature</span>
+          <h2>Snap your timetable.<br/><span class="grad">AI builds your whole semester.</span></h2>
+          <p>Point your camera at a printed schedule or drop in a PDF. ClassTrack reads it, structures every class, and sets up your calendar — in seconds, not hours.</p>
+        </div>
+
+        <div class="import__flow">
+          <!-- 1 -->
+          <div class="iflow reveal">
+            <div class="iflow__num">1</div>
+            <div class="iflow__card iflow__card--photo">
+              <div class="scanline"></div>
+              <div class="tt-grid">
+                <i></i><i class="f"></i><i></i><i class="g"></i><i></i>
+                <i class="f"></i><i></i><i class="g"></i><i></i><i class="f"></i>
+                <i></i><i class="g"></i><i></i><i class="f"></i><i></i>
+                <i class="g"></i><i></i><i class="f"></i><i></i><i class="g"></i>
+              </div>
+              <span class="iflow__file"><span class="ms">picture_as_pdf</span> timetable.pdf</span>
+            </div>
+            <h3>Snap or upload</h3>
+            <p>A photo of the noticeboard or a PDF from your college portal.</p>
+          </div>
+
+          <span class="iflow__arrow ms">arrow_forward</span>
+
+          <!-- 2 -->
+          <div class="iflow reveal" data-delay="0.1">
+            <div class="iflow__num">2</div>
+            <div class="iflow__card iflow__card--ai">
+              <span class="ms ms--fill iflow__spark">auto_awesome</span>
+              <div class="ai-lines"><i></i><i></i><i></i></div>
+              <span class="iflow__status"><i class="pulse"></i> Reading your schedule…</span>
+            </div>
+            <h3>AI reads it</h3>
+            <p>Gemini extracts subjects, days, times and rooms automatically.</p>
+          </div>
+
+          <span class="iflow__arrow ms">arrow_forward</span>
+
+          <!-- 3 -->
+          <div class="iflow reveal" data-delay="0.2">
+            <div class="iflow__num">3</div>
+            <div class="iflow__card iflow__card--review">
+              <div class="rev-row"><span class="ms ms--fill">check_circle</span> <b>DBMS</b> · Mon 9–10 · R204</div>
+              <div class="rev-row"><span class="ms ms--fill">check_circle</span> <b>Maths</b> · Tue 11–12</div>
+              <div class="rev-row"><span class="ms ms--fill">check_circle</span> <b>Physics</b> · Wed 2–3</div>
+              <div class="rev-row"><span class="ms ms--fill">check_circle</span> <b>Chem Lab</b> · Fri 3–5</div>
+            </div>
+            <h3>Review in a tap</h3>
+            <p>Everything appears ready to confirm — tweak anything you like.</p>
+          </div>
+
+          <span class="iflow__arrow ms">arrow_forward</span>
+
+          <!-- 4 -->
+          <div class="iflow reveal" data-delay="0.3">
+            <div class="iflow__num">4</div>
+            <div class="iflow__card iflow__card--done">
+              <span class="ms ms--fill done-check">check_circle</span>
+              <strong>Added to your week</strong>
+              <small>Calendar &amp; reminders set</small>
+            </div>
+            <h3>One-tap import</h3>
+            <p>Your timetable, calendar and reminders — instantly set up.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MARQUEE ===================== -->
+    <section class="marquee" id="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Attendance</span><span class="sep">✦</span>
+        <span>Bunk calculator</span><span class="sep">✦</span>
+        <span>Timetable</span><span class="sep">✦</span>
+        <span>Exam countdown</span><span class="sep">✦</span>
+        <span>GPA &amp; grades</span><span class="sep">✦</span>
+        <span>Focus timer</span><span class="sep">✦</span>
+        <span>Habits &amp; streaks</span><span class="sep">✦</span>
+        <span>AI study assistant</span><span class="sep">✦</span>
+        <span>Tasks</span><span class="sep">✦</span>
+        <span>Expenses</span><span class="sep">✦</span>
+        <!-- duplicate for seamless loop -->
+        <span>Attendance</span><span class="sep">✦</span>
+        <span>Bunk calculator</span><span class="sep">✦</span>
+        <span>Timetable</span><span class="sep">✦</span>
+        <span>Exam countdown</span><span class="sep">✦</span>
+        <span>GPA &amp; grades</span><span class="sep">✦</span>
+        <span>Focus timer</span><span class="sep">✦</span>
+        <span>Habits &amp; streaks</span><span class="sep">✦</span>
+        <span>AI study assistant</span><span class="sep">✦</span>
+        <span>Tasks</span><span class="sep">✦</span>
+        <span>Expenses</span><span class="sep">✦</span>
+      </div>
+    </section>
+
+    <!-- ===================== STATS ===================== -->
+    <section class="stats container" aria-label="ClassTrack by the numbers">
+      <div class="stat reveal">
+        <b class="count" data-count="12000" data-suffix="k+" data-divide="1000">0</b>
+        <span>Students on track</span>
+      </div>
+      <div class="stat reveal" data-delay="0.08">
+        <b class="count" data-count="480" data-suffix="k+">0</b>
+        <span>Classes tracked</span>
+      </div>
+      <div class="stat reveal" data-delay="0.16">
+        <b class="count" data-count="18" data-prefix="+" data-suffix="%">0</b>
+        <span>Avg. attendance boost</span>
+      </div>
+      <div class="stat reveal" data-delay="0.24">
+        <b class="count" data-count="49" data-divide="10" data-decimals="1">0</b>
+        <span>App Store rating</span>
+      </div>
+    </section>
+
+    <!-- ===================== PROBLEM / RESONANCE ===================== -->
+    <section class="section problem" id="why">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="pill pill--coral">Sound familiar?</span>
+          <h2>Juggling five apps just to<br/><span class="grad">survive the semester?</span></h2>
+        </div>
+        <div class="problem__grid">
+          <div class="pain reveal">
+            <div class="pain__ic"><span class="ms ms--fill">sentiment_stressed</span></div>
+            <h3>"Am I below 75%?"</h3>
+            <p>Doing anxious attendance math in your head before every lecture.</p>
+          </div>
+          <div class="pain reveal" data-delay="0.08">
+            <div class="pain__ic"><span class="ms ms--fill">event_busy</span></div>
+            <h3>Missed deadlines</h3>
+            <p>Assignments and exams that sneak up because they live in five different places.</p>
+          </div>
+          <div class="pain reveal" data-delay="0.16">
+            <div class="pain__ic"><span class="ms ms--fill">apps</span></div>
+            <h3>App overload</h3>
+            <p>A notes app, a calendar, a reminder app, a spreadsheet… and none of them talk.</p>
+          </div>
+        </div>
+        <p class="problem__bridge reveal">ClassTrack replaces all of it — <span class="grad">one calm app that keeps you ahead.</span></p>
+      </div>
+    </section>
+
+    <!-- ===================== FEATURES ===================== -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="pill">Everything in one place</span>
+          <h2>Your entire student life,<br/><span class="grad">beautifully organized.</span></h2>
+          <p>Stop juggling five apps and a notes app. ClassTrack brings attendance, schedule, exams, grades and study tools together — with delightful motion at every tap.</p>
+        </div>
+
+        <div class="bento">
+          <article class="card card--wide reveal" style="--accent:#6C5CE7">
+            <div class="card__ic"><span class="ms ms--fill">insert_chart</span></div>
+            <h3>Smart attendance</h3>
+            <p>Mark present, absent or cancelled per class. Live percentage, per-subject rings and a term timeline keep you above target — automatically.</p>
+            <div class="card__ring">
+              <svg viewBox="0 0 120 120" width="96" height="96">
+                <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
+                <circle class="ring-fg" cx="60" cy="60" r="52" data-ring="92"></circle>
+              </svg>
+              <span class="card__ringlabel"><b data-count="92" data-suffix="%">0</b><small>on track</small></span>
+            </div>
+          </article>
+
+          <article class="card reveal" style="--accent:#0EA5E9" data-delay="0.06">
+            <div class="card__ic"><span class="ms ms--fill">calendar_month</span></div>
+            <h3>Smart timetable</h3>
+            <p>Day, week &amp; month views. Recurring classes, rooms, links and reminders — synced everywhere.</p>
+          </article>
+
+          <article class="card reveal" style="--accent:#EF4444" data-delay="0.12">
+            <div class="card__ic"><span class="ms ms--fill">event_note</span></div>
+            <h3>Exam countdowns</h3>
+            <p>Live "days left" for every test so nothing sneaks up on you.</p>
+          </article>
+
+          <article class="card reveal" style="--accent:#22C55E" data-delay="0.06">
+            <div class="card__ic"><span class="ms ms--fill">school</span></div>
+            <h3>GPA &amp; grades</h3>
+            <p>Log marks and watch your GPA update on a 4.0 or 10-point scale.</p>
+          </article>
+
+          <article class="card card--tall reveal" style="--accent:#F59E0B" data-delay="0.12">
+            <div class="card__ic"><span class="ms ms--fill">local_fire_department</span></div>
+            <h3>Focus &amp; habits</h3>
+            <p>A Pomodoro focus timer plus streak-based habits to build momentum that lasts the whole term.</p>
+            <div class="streak">
+              <span class="on">M</span><span class="on">T</span><span class="on">W</span>
+              <span class="on">T</span><span class="on">F</span><span>S</span><span>S</span>
+            </div>
+          </article>
+
+          <article class="card reveal" style="--accent:#EC4899" data-delay="0.06">
+            <div class="card__ic"><span class="ms ms--fill">task_alt</span></div>
+            <h3>Tasks &amp; deadlines</h3>
+            <p>Assignments, to-dos and courses with priorities and due-date nudges.</p>
+          </article>
+
+          <article class="card reveal" style="--accent:#14B8A6" data-delay="0.12">
+            <div class="card__ic"><span class="ms ms--fill">account_balance_wallet</span></div>
+            <h3>Expenses</h3>
+            <p>Track spending against a monthly student budget — no spreadsheets.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== BUNK CALCULATOR ===================== -->
+    <section class="section split" id="bunk">
+      <div class="container split__inner">
+        <div class="split__media reveal">
+          <div class="glass-card tilt-lite" data-tilt>
+            <div class="bunk">
+              <div class="bunk__top">
+                <span class="bunk__party ms">celebration</span>
+                <div>
+                  <strong>You can skip 2 classes</strong>
+                  <small>and still stay at or above your 75% target. Use them wisely 😉</small>
+                </div>
+              </div>
+              <div class="bunk__bar">
+                <div class="bunk__fill" data-fill="84"></div>
+                <div class="bunk__target" style="left:75%"><span>75%</span></div>
+              </div>
+              <div class="bunk__legend">
+                <span><i style="background:#22C55E"></i>Attended 42</span>
+                <span><i style="background:#EF4444"></i>Missed 8</span>
+                <span><i style="background:#94A3B8"></i>Cancelled 3</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="split__copy reveal" data-delay="0.1">
+          <span class="pill pill--coral">The feature students love most</span>
+          <h2>Know exactly how many<br/>classes you can <span class="grad">safely skip.</span></h2>
+          <p>Our bunk calculator does the math in real time. See how many classes you can miss while staying above your attendance target — or how many you need to attend to recover. No more anxious mental arithmetic before every lecture.</p>
+          <ul class="ticks">
+            <li>Per-subject and overall targets</li>
+            <li>"Attend N more to reach 75%" guidance</li>
+            <li>Cancelled classes never count against you</li>
+          </ul>
+          <a href="#get" class="btn btn--primary magnetic" data-magnetic>Try it free</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== AI ASSISTANT ===================== -->
+    <section class="section split split--rev" id="ai">
+      <div class="container split__inner">
+        <div class="split__copy reveal">
+          <span class="pill pill--ai"><span class="ms">auto_awesome</span> Powered by Gemini</span>
+          <h2>Meet your <span class="grad">AI study assistant.</span></h2>
+          <p>Just type your timetable in plain words — or snap a photo of it — and ClassTrack builds your entire schedule in seconds. Ask for study tips, ways to improve attendance, or a plan for your week.</p>
+          <ul class="ticks">
+            <li>Photo &amp; text timetable import</li>
+            <li>Personalized study &amp; attendance advice</li>
+            <li>Understands your real classes and grades</li>
+          </ul>
+          <a href="#get" class="btn btn--primary magnetic" data-magnetic>Chat with ClassTrack AI</a>
+        </div>
+
+        <div class="split__media reveal" data-delay="0.1">
+          <div class="glass-card chatui tilt-lite" data-tilt>
+            <div class="chatui__head">
+              <div class="chatui__avatar"><span class="ms ms--fill">auto_awesome</span></div>
+              <div>
+                <strong>Study Assistant</strong>
+                <small><i class="pulse"></i> Powered by Gemini</small>
+              </div>
+            </div>
+            <div class="chatui__body">
+              <div class="bubble bubble--ai reveal-msg">Hi! I'm your ClassTrack assistant. 👋 Tell me your timetable and I'll build your schedule.</div>
+              <div class="bubble bubble--me reveal-msg">Mon &amp; Wed 9–10 DBMS in Room 204, Tue 11–12 Maths</div>
+              <div class="bubble bubble--ai reveal-msg">Done! I added <b>3 classes</b> across 2 subjects. ✨</div>
+              <div class="bubble bubble--card reveal-msg">
+                <span><span class="ms" style="font-size:16px;vertical-align:-3px">auto_awesome</span> Proposed schedule · 2 subjects</span>
+                <button>Review &amp; add to calendar</button>
+              </div>
+            </div>
+            <div class="chatui__input">
+              <span>Ask me anything…</span>
+              <button class="chatui__send" aria-hidden="true"><span class="ms">send</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== HOW IT WORKS ===================== -->
+    <section class="section how" id="how">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="pill">Up and running in minutes</span>
+          <h2>Three taps to a <span class="grad">calmer semester.</span></h2>
+        </div>
+        <div class="steps">
+          <div class="step reveal">
+            <span class="step__n">1</span>
+            <h3>Add your subjects</h3>
+            <p>Type them in or let the AI read your timetable from a photo. Colors, rooms and links included.</p>
+          </div>
+          <div class="step reveal" data-delay="0.1">
+            <span class="step__n">2</span>
+            <h3>Mark as you go</h3>
+            <p>One tap per class — present, absent or cancelled. Attendance and GPA update instantly.</p>
+          </div>
+          <div class="step reveal" data-delay="0.2">
+            <span class="step__n">3</span>
+            <h3>Stay ahead</h3>
+            <p>Countdowns, reminders and the bunk calculator keep you above target without the stress.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== REVIEWS ===================== -->
+    <section class="section reviews" id="reviews">
+      <div class="container">
+        <div class="reviews__head reveal">
+          <div>
+            <span class="pill">Loved on campus</span>
+            <h2>Students don't just use it —<br/><span class="grad">they rely on it.</span></h2>
+          </div>
+          <div class="rating-summary">
+            <div class="rating-summary__score">
+              <b>4.9</b>
+              <div>
+                <div class="stars"><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span></div>
+                <small>from 12,000+ students</small>
+              </div>
+            </div>
+            <div class="rating-summary__stores">
+              <span class="storepill"><span class="ms ms--fill">star</span> 4.9 · App Store</span>
+              <span class="storepill"><span class="ms ms--fill">star</span> 4.8 · Google Play</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="rgrid">
+          <!-- Featured -->
+          <figure class="rcard rcard--feature reveal">
+            <span class="rcard__quote ms ms--fill">format_quote</span>
+            <div class="rcard__stars"><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span></div>
+            <blockquote>ClassTrack quietly runs my whole semester. The bunk calculator stopped my attendance panic, the AI built my timetable from a photo in seconds, and my GPA finally lives in one place. It replaced four apps.</blockquote>
+            <figcaption>
+              <span class="q-av" style="--c:#6C5CE7">R</span>
+              <span class="rcard__who"><strong>Riya Menon</strong><small>2nd year · Computer Science</small></span>
+              <span class="rcard__verified"><span class="ms ms--fill">verified</span> Verified student</span>
+            </figcaption>
+          </figure>
+
+          <figure class="rcard reveal">
+            <span class="rcard__quote ms ms--fill">format_quote</span>
+            <div class="rcard__stars"><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span></div>
+            <blockquote>Snapped a photo of my timetable and the AI built everything. Actual magic.</blockquote>
+            <figcaption>
+              <span class="q-av" style="--c:#0EA5E9">A</span>
+              <span class="rcard__who"><strong>Arjun Rao</strong><small>MBA · 1st year</small></span>
+              <span class="rcard__verified"><span class="ms ms--fill">verified</span></span>
+            </figcaption>
+          </figure>
+
+          <figure class="rcard reveal" data-delay="0.06">
+            <span class="rcard__quote ms ms--fill">format_quote</span>
+            <div class="rcard__stars"><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span></div>
+            <blockquote>Attendance, exams and GPA in one place. It replaced three apps for me overnight.</blockquote>
+            <figcaption>
+              <span class="q-av" style="--c:#EC4899">S</span>
+              <span class="rcard__who"><strong>Sneha Iyer</strong><small>Medical school</small></span>
+              <span class="rcard__verified"><span class="ms ms--fill">verified</span></span>
+            </figcaption>
+          </figure>
+
+          <figure class="rcard reveal" data-delay="0.12">
+            <span class="rcard__quote ms ms--fill">format_quote</span>
+            <div class="rcard__stars"><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span></div>
+            <blockquote>The focus timer and habit streaks kept me consistent all through finals week.</blockquote>
+            <figcaption>
+              <span class="q-av" style="--c:#22C55E">K</span>
+              <span class="rcard__who"><strong>Kabir Shah</strong><small>3rd year · Electronics</small></span>
+              <span class="rcard__verified"><span class="ms ms--fill">verified</span></span>
+            </figcaption>
+          </figure>
+
+          <figure class="rcard reveal">
+            <span class="rcard__quote ms ms--fill">format_quote</span>
+            <div class="rcard__stars"><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span></div>
+            <blockquote>Exam countdowns are addictive in the best way. Nothing sneaks up on me anymore.</blockquote>
+            <figcaption>
+              <span class="q-av" style="--c:#F59E0B">M</span>
+              <span class="rcard__who"><strong>Meera Nair</strong><small>Law · 2nd year</small></span>
+              <span class="rcard__verified"><span class="ms ms--fill">verified</span></span>
+            </figcaption>
+          </figure>
+
+          <figure class="rcard reveal" data-delay="0.06">
+            <span class="rcard__quote ms ms--fill">format_quote</span>
+            <div class="rcard__stars"><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span></div>
+            <blockquote>Cleanest student app I've used. Every tap feels smooth and it just makes sense.</blockquote>
+            <figcaption>
+              <span class="q-av" style="--c:#14B8A6">D</span>
+              <span class="rcard__who"><strong>Dev Patel</strong><small>1st year · Mechanical</small></span>
+              <span class="rcard__verified"><span class="ms ms--fill">verified</span></span>
+            </figcaption>
+          </figure>
+
+          <figure class="rcard reveal" data-delay="0.12">
+            <span class="rcard__quote ms ms--fill">format_quote</span>
+            <div class="rcard__stars"><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span></div>
+            <blockquote>Worth every rupee of Pro. Unlimited AI planning saved my whole exam season.</blockquote>
+            <figcaption>
+              <span class="q-av" style="--c:#8B7FEC">P</span>
+              <span class="rcard__who"><strong>Piyush Verma</strong><small>Final year · IT</small></span>
+              <span class="rcard__verified"><span class="ms ms--fill">verified</span></span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PRICING ===================== -->
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="pill">Simple pricing</span>
+          <h2>Start free.<br/><span class="grad">Upgrade for the price of a coffee.</span></h2>
+          <p>Unlimited AI and power features from just <strong>$1.25/month</strong>. Cancel anytime.</p>
+        </div>
+
+        <div class="pricing pricing--3">
+          <!-- Free -->
+          <article class="price reveal">
+            <h3>Free</h3>
+            <div class="price__amt"><b>$0</b><span>/forever</span></div>
+            <p class="price__pitch">Everything you need to stay on track — no card required.</p>
+            <a href="#get" class="btn btn--soft btn--block">Start free</a>
+            <ul class="ticks">
+              <li>Attendance &amp; bunk calculator</li>
+              <li>Timetable, exams &amp; GPA</li>
+              <li>Focus timer, habits &amp; tasks</li>
+              <li>20 AI messages / month</li>
+            </ul>
+          </article>
+
+          <!-- Pro Monthly -->
+          <article class="price price--accent reveal" data-delay="0.08">
+            <h3>Pro Monthly</h3>
+            <div class="price__amt"><b>$2</b><span>/month</span></div>
+            <p class="price__pitch">Unlimited everything — less than a coffee a month.</p>
+            <a href="#get" class="btn btn--primary btn--block magnetic" data-magnetic>Go Pro</a>
+            <ul class="ticks">
+              <li><b>Unlimited</b> AI study assistant</li>
+              <li>Photo timetable import</li>
+              <li>Home-screen widget &amp; priority sync</li>
+              <li>Everything in Free</li>
+            </ul>
+            <span class="price__foot">Billed monthly · Cancel anytime</span>
+          </article>
+
+          <!-- Pro Yearly (featured) -->
+          <article class="price price--pro reveal" data-delay="0.16">
+            <span class="price__badge">Best value · Save 38%</span>
+            <h3>Pro Yearly</h3>
+            <div class="price__amt"><b>$14.99</b><span>/year</span></div>
+            <p class="price__save"><span class="ms ms--fill">bolt</span> ≈ $1.25/mo · <b>2 months free</b></p>
+            <a href="#get" class="btn btn--white btn--block magnetic" data-magnetic>Go Pro yearly</a>
+            <ul class="ticks ticks--light">
+              <li><b>Everything in Pro</b> — best price</li>
+              <li>Save $9 vs paying monthly</li>
+              <li>Lock in this rate for a year</li>
+              <li>Priority support</li>
+            </ul>
+            <span class="price__foot price__foot--light">Billed $14.99/year · Cancel anytime</span>
+          </article>
+        </div>
+
+        <p class="pricing__trust reveal">
+          <span class="ms ms--fill">verified_user</span>
+          Secure payments · Cancel anytime · Loved by 12,000+ students
+        </p>
+
+        <!-- Feature comparison -->
+        <div class="compare reveal">
+          <div class="compare__title">Compare plans in detail</div>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Features</th>
+                <th scope="col">Free</th>
+                <th scope="col" class="col-pro">Pro</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Attendance &amp; bunk calculator</th>
+                <td><span class="ms ck">check_circle</span></td>
+                <td class="col-pro"><span class="ms ck">check_circle</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Timetable · exams · GPA</th>
+                <td><span class="ms ck">check_circle</span></td>
+                <td class="col-pro"><span class="ms ck">check_circle</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Focus timer · habits · tasks · expenses</th>
+                <td><span class="ms ck">check_circle</span></td>
+                <td class="col-pro"><span class="ms ck">check_circle</span></td>
+              </tr>
+              <tr>
+                <th scope="row">AI study assistant</th>
+                <td><span class="val">20 / month</span></td>
+                <td class="col-pro"><span class="val">Unlimited</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Photo timetable import</th>
+                <td><span class="dash">—</span></td>
+                <td class="col-pro"><span class="ms ck">check_circle</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Home-screen widget</th>
+                <td><span class="dash">—</span></td>
+                <td class="col-pro"><span class="ms ck">check_circle</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Priority cloud sync</th>
+                <td><span class="dash">—</span></td>
+                <td class="col-pro"><span class="ms ck">check_circle</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Priority support</th>
+                <td><span class="dash">—</span></td>
+                <td class="col-pro"><span class="ms ck">check_circle</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Guarantee band -->
+        <div class="guarantee">
+          <div class="guarantee__item reveal">
+            <span class="ms ms--fill">event_repeat</span>
+            <div><strong>Cancel anytime</strong><p>Manage or cancel in one tap from your app store — no questions asked.</p></div>
+          </div>
+          <div class="guarantee__item reveal" data-delay="0.08">
+            <span class="ms ms--fill">lock</span>
+            <div><strong>Secure payments</strong><p>Billing is handled safely by the App Store and Google Play.</p></div>
+          </div>
+          <div class="guarantee__item reveal" data-delay="0.16">
+            <span class="ms ms--fill">restart_alt</span>
+            <div><strong>Restore purchases</strong><p>Switch phones freely — your Pro plan follows your account.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section class="section" id="faq">
+      <div class="container container--narrow">
+        <div class="section__head reveal">
+          <span class="pill">Good to know</span>
+          <h2>Frequently asked questions</h2>
+        </div>
+
+        <div class="faq">
+          <details class="faq__item reveal" open>
+            <summary>Is ClassTrack really free?<span class="faq__ic"></span></summary>
+            <div class="faq__a">Yes. All the core tools — attendance, bunk calculator, timetable, exams, GPA, focus, habits and tasks — are free forever. Pro unlocks unlimited AI and a few power features.</div>
+          </details>
+          <details class="faq__item reveal">
+            <summary>How does the bunk calculator work?<span class="faq__ic"></span></summary>
+            <div class="faq__a">You set an attendance target (say 75%). ClassTrack tracks your present/absent classes and tells you exactly how many you can skip while staying above target — or how many to attend to recover.</div>
+          </details>
+          <details class="faq__item reveal">
+            <summary>Can the AI really read my timetable from a photo?<span class="faq__ic"></span></summary>
+            <div class="faq__a">Yep. Snap a picture or type it in plain words, and the Gemini-powered assistant proposes a full schedule you can review and add to your calendar in one tap.</div>
+          </details>
+          <details class="faq__item reveal">
+            <summary>Does my data sync across devices?<span class="faq__ic"></span></summary>
+            <div class="faq__a">Your account is backed up securely to the cloud, so your subjects, attendance and grades follow you across your phones.</div>
+          </details>
+          <details class="faq__item reveal">
+            <summary>Which platforms are supported?<span class="faq__ic"></span></summary>
+            <div class="faq__a">ClassTrack is built for Android and iOS from a single, polished codebase, with a home-screen widget for your day at a glance.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FINAL CTA ===================== -->
+    <section class="cta" id="get">
+      <div class="cta__bg" aria-hidden="true">
+        <span class="blob blob--1"></span>
+        <span class="blob blob--2"></span>
+      </div>
+      <div class="container cta__inner reveal">
+        <div class="cta__stars" aria-label="Rated 4.9 out of 5">
+          <span class="ms ms--fill">star</span><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span><span class="ms ms--fill">star</span>
+        </div>
+        <h2>Your best semester<br/>starts today.</h2>
+        <p>Join thousands of students who never miss attendance, a deadline or an exam again.</p>
+        <div class="cta__actions">
+          <a href="#" class="store-btn magnetic" data-magnetic aria-label="Download on the App Store">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M16.4 12.9c0-2 1.6-3 1.7-3-1-1.4-2.4-1.6-2.9-1.6-1.2-.1-2.4.7-3 .7s-1.6-.7-2.6-.7c-1.3 0-2.6.8-3.3 2-1.4 2.4-.4 6 1 8 .7 1 1.4 2 2.5 2 1 0 1.3-.6 2.5-.6s1.5.6 2.6.6 1.7-1 2.4-2c.7-1.1 1-2.2 1-2.2s-1.9-.7-1.9-2.9ZM14.5 6.7c.6-.7 1-1.6.9-2.6-.8 0-1.9.6-2.5 1.3-.5.6-1 1.6-.9 2.5.9.1 1.8-.5 2.5-1.2Z"/></svg>
+            <span><small>Download on the</small><strong>App Store</strong></span>
+          </a>
+          <a href="#" class="store-btn magnetic" data-magnetic aria-label="Get it on Google Play">
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 3.5 13.5 12 4 20.5c-.3-.2-.5-.6-.5-1v-15c0-.4.2-.8.5-1Z" fill="#22C55E"/><path d="m16.5 9 2.9 1.7c.7.4.7 1.2 0 1.6L16.5 14 13.9 12 16.5 9Z" fill="#F59E0B"/><path d="M4 3.5c.2-.1.5-.1.8 0L16.5 9l-2.6 3L4 3.5Z" fill="#0EA5E9"/><path d="M4 20.5 13.9 12l2.6 2-11.7 6.5c-.3.2-.6.2-.8 0Z" fill="#EF4444"/></svg>
+            <span><small>Get it on</small><strong>Google Play</strong></span>
+          </a>
+        </div>
+        <span class="cta__note">Free to download · No card required</span>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#top" class="brand">
+          <span class="brand__logo">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+              <path d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5v-9Z" stroke="white" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="m8.5 12 2.4 2.4L16 9.5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="brand__name">ClassTrack</span>
+        </a>
+        <p>Your entire student life, on track.</p>
+      </div>
+      <nav class="footer__col" aria-label="Product">
+        <h4>Product</h4>
+        <a href="#features">Features</a>
+        <a href="#bunk">Bunk calculator</a>
+        <a href="#ai">AI assistant</a>
+        <a href="#pricing">Pricing</a>
+      </nav>
+      <nav class="footer__col" aria-label="Company">
+        <h4>Company</h4>
+        <a href="#hero">About</a>
+        <a href="privacy/">Privacy</a>
+        <a href="terms/">Terms</a>
+        <a href="support/">Support</a>
+      </nav>
+      <nav class="footer__col" aria-label="Get the app">
+        <h4>Get the app</h4>
+        <a href="#get">App Store</a>
+        <a href="#get">Google Play</a>
+      </nav>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year"></span> ClassTrack. Made for students.</span>
+      <span class="footer__made">Crafted with <span class="ms ms--fill">favorite</span> for students</span>
+    </div>
+  </footer>
+
+  <!-- Sticky mobile CTA -->
+  <div class="mobile-cta" id="mobileCta" aria-hidden="true">
+    <span class="brand__logo" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+        <path d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5v-9Z" stroke="white" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="m8.5 12 2.4 2.4L16 9.5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+    <span class="mobile-cta__txt">
+      <strong>Get ClassTrack</strong>
+      <small>Free · iOS &amp; Android</small>
+    </span>
+    <a href="#get" class="btn btn--primary">Download</a>
+  </div>
+
+  <!-- GSAP (progressive enhancement; page is fully usable without it) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
