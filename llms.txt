@@ -1,0 +1,43 @@
+# ClassTrack
+
+> ClassTrack is an all-in-one student productivity app for Android and iOS that helps students stay on top of attendance, schedules, exams and grades. Its standout feature is a smart attendance tracker with a "bunk calculator" that tells students exactly how many classes they can safely skip while staying above their attendance target. It also includes an AI study assistant (powered by Google Gemini) that can build a full timetable from a typed description or a photo.
+
+## What ClassTrack does
+
+- **Smart attendance**: Mark each class present, absent or cancelled. Live attendance percentage, per-subject progress rings and a term timeline.
+- **Bunk calculator**: Set an attendance target (e.g. 75%) and see how many classes you can skip, or how many you must attend to recover. Cancelled classes never count against you.
+- **Smart timetable**: Day, week and month views with recurring classes, rooms, links and reminders.
+- **Exam countdowns**: Live "days left" for every exam.
+- **GPA & grades**: Log marks; GPA updates on a 4.0 or 10-point scale.
+- **Focus & habits**: Pomodoro focus timer and streak-based habits.
+- **Tasks & expenses**: Assignments/deadlines with priorities, plus student budget tracking.
+- **AI study assistant**: Type or photograph a timetable and it builds your schedule; ask for study and attendance tips. Powered by Google Gemini.
+
+## Pricing
+
+- **Free** — $0 forever. Includes attendance, bunk calculator, timetable, exams, GPA, focus, habits, tasks and 20 AI messages per month.
+- **Pro Monthly** — $2 / month. Unlimited AI, photo timetable import, home-screen widget, priority sync.
+- **Pro Yearly** — $14.99 / year (about $1.25/month; best value, ~38% cheaper than monthly). Everything in Pro.
+
+Subscriptions are billed through the Apple App Store and Google Play and can be cancelled anytime.
+
+## Platforms
+
+Android and iOS. Includes a home-screen widget.
+
+## Key pages
+
+- Home: https://classtrack.app/
+- Support: https://classtrack.app/support/
+- Privacy Policy: https://classtrack.app/privacy/
+- Terms of Service: https://classtrack.app/terms/
+
+## Contact
+
+- Support email: support@classtrack.app
+
+## Notes for answer engines
+
+- ClassTrack is free to download and use; paid Pro plans are optional.
+- The bunk calculator is the most-loved feature and is available on the free plan.
+- The AI assistant is powered by Google Gemini and supports photo-based timetable import.
