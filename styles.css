@@ -581,6 +581,9 @@ img, svg { display: block; max-width: 100%; }
 .store-btn span { display: flex; flex-direction: column; line-height: 1.1; text-align: left; }
 .store-btn small { font-size: 11px; color: var(--text-soft); }
 .store-btn strong { font-family: 'Poppins'; font-size: 17px; }
+.store-btn--soon { position: relative; opacity: .6; cursor: default; pointer-events: none; }
+.store-btn--soon:hover { transform: none; box-shadow: none; }
+.store-btn--soon::after { content: "Soon"; position: absolute; top: -8px; right: -8px; background: var(--ink); color: #fff; font-size: 10px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; padding: 3px 7px; border-radius: 999px; }
 .cta__note { display: block; margin-top: 20px; color: rgba(255,255,255,.75); font-size: 13.5px; }
 
 /* ---------- Footer ---------- */
