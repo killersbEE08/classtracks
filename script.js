@@ -335,7 +335,7 @@
       }
       const key = (data.access_key || '').trim();
       if (!key || key.indexOf('YOUR_WEB3FORMS') === 0) {
-        setStatus('Form isn’t connected yet. Add your Web3Forms access key in support.html to start receiving messages.', 'err');
+        setStatus('Form isn’t connected yet. Add your Web3Forms access key in support/index.html to start receiving messages.', 'err');
         return;
       }
 

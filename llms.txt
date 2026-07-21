@@ -34,7 +34,7 @@ Android and iOS. Includes a home-screen widget.
 
 ## Contact
 
-- Support email: support@classtrack.app
+- Support email: support@classtracks.app
 
 ## Notes for answer engines
 
