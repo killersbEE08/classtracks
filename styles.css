@@ -1135,3 +1135,11 @@ section[id] { scroll-margin-top: 88px; }
 .chipf--bl { left: 10px; bottom: 60px; }
 .chipf--br { right: 8px; bottom: 66px; }
 @media (max-width: 520px) { .chipf { display: none; } }
+
+
+
+/* ---- Real app-screenshot illustrations (guides) ---- */
+.appshot { margin: 12px 0 32px; text-align: center; }
+.appshot img { width: 100%; max-width: 520px; margin: 0 auto; border-radius: 22px; box-shadow: 0 24px 60px rgba(27,28,52,.16); border: 1px solid var(--border); display: block; }
+.appshot--wide img { max-width: 880px; border-radius: 18px; }
+.appshot figcaption { margin-top: 13px; font-size: 13px; color: var(--text-soft); }
