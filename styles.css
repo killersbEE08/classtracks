@@ -932,12 +932,12 @@ section[id] { scroll-margin-top: 88px; }
 .tldr h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .09em; color: var(--purple); margin: 0 0 8px; }
 .tldr p { margin: 0; font-size: 16.5px; color: var(--ink-soft); }
 
-/* Table of contents */
-.toc { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 18px 22px; margin: 0 0 28px; box-shadow: var(--shadow-sm); }
-.toc strong { display: block; font-family: 'Poppins'; font-size: 13px; text-transform: uppercase; letter-spacing: .07em; color: var(--text-soft); margin-bottom: 10px; }
-.toc ol { margin: 0; padding-left: 1.2em; columns: 2; column-gap: 26px; }
-.toc li { margin: 5px 0; }
-.toc a { border: 0; }
+/* Table of contents (guide pages) */
+.guide-toc { position: static; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 18px 22px; margin: 0 0 28px; box-shadow: var(--shadow-sm); }
+.guide-toc strong { display: block; font-family: 'Poppins'; font-size: 13px; text-transform: uppercase; letter-spacing: .07em; color: var(--text-soft); margin-bottom: 10px; }
+.guide-toc ol { margin: 0; padding-left: 1.2em; columns: 2; column-gap: 26px; }
+.guide-toc li { margin: 5px 0; }
+.guide-toc a { border: 0; }
 
 /* Callout / definition boxes */
 .callout { display: flex; gap: 14px; background: var(--lavender-soft); border: 1px solid var(--border); border-radius: 16px; padding: 16px 18px; margin: 22px 0; }
@@ -1034,7 +1034,7 @@ section[id] { scroll-margin-top: 88px; }
 .article-cta .btn--primary { background: #fff; color: var(--purple); }
 .article-cta .btn--primary:hover { background: #F3F1FC; }
 
-@media (max-width: 640px) { .toc ol { columns: 1; } }
+@media (max-width: 640px) { .guide-toc ol { columns: 1; } }
 
 
 /* ---- App-style polish for guides ---- */
