@@ -700,6 +700,19 @@ img, svg { display: block; max-width: 100%; }
   .chip--skip { left: -10px; }
   .chip--ai { right: -10px; }
   .cta { margin-inline: 14px; }
+
+  /* --- Mobile header + horizontal-overflow fix --- */
+  .container { padding: 0 16px; }
+  .nav__inner { gap: 12px; }
+  .nav__cta { margin-left: auto; }
+  .nav__cta .btn--primary { padding: 9px 15px; font-size: 14px; }
+  .brand__name { font-size: 17px; }
+  .nav__burger { width: 34px; }
+
+  /* Grade/comparison table fits the screen without sideways scrolling */
+  .table-wrap .compare { min-width: 0; font-size: 14px; }
+  .table-wrap .compare th,
+  .table-wrap .compare td { padding: 11px 12px; }
 }
 
 /* ======================= REDUCED MOTION ======================= */
@@ -988,11 +1001,24 @@ section[id] { scroll-margin-top: 88px; }
 /* GPA rows */
 .gpa-rows { display: flex; flex-direction: column; gap: 10px; margin-bottom: 6px; }
 .gpa-row { display: grid; grid-template-columns: 1fr 120px 92px 42px; gap: 10px; align-items: center; }
-.gpa-row input, .gpa-row select { padding: 10px 12px; border: 1.5px solid var(--border); border-radius: 10px; font: inherit; font-size: 14.5px; background: #fff; }
+.gpa-row input, .gpa-row select { min-width: 0; padding: 10px 12px; border: 1.5px solid var(--border); border-radius: 10px; font: inherit; font-size: 14.5px; background: #fff; }
 .gpa-row input:focus, .gpa-row select:focus { outline: none; border-color: var(--purple); }
 .gpa-row .gpa-del { border: 0; background: #FEE2E2; color: #DC2626; border-radius: 10px; height: 42px; cursor: pointer; font-size: 18px; line-height: 1; }
 .gpa-row .gpa-del:hover { background: #FECACA; }
-@media (max-width: 520px) { .gpa-row { grid-template-columns: 1fr 84px 66px 38px; } }
+@media (max-width: 560px) {
+  .gpa-row {
+    grid-template-columns: 1fr 84px 44px;
+    grid-template-areas: "name name name" "grade credits del";
+    gap: 8px;
+  }
+  .gpa-row .gpa-name { grid-area: name; }
+  .gpa-row .gpa-grade { grid-area: grade; }
+  .gpa-row .gpa-credits { grid-area: credits; }
+  .gpa-row .gpa-del { grid-area: del; height: 40px; }
+  .gpa-rows { gap: 14px; }
+  .gpa-row { padding-bottom: 12px; border-bottom: 1px dashed var(--border); }
+  .gpa-row:last-child { border-bottom: 0; }
+}
 
 /* Checklist tool */
 .checklist { list-style: none; margin: 0; padding: 0; }
