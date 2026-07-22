@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('has-js');</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GPA Calculator — Calculate Your GPA (4.0 &amp; 10-Point) Free</title>
+  <meta name="description" content="Free GPA calculator. Add your courses, grades and credit hours to calculate your GPA on a 4.0 or 10-point (CGPA) scale instantly. Includes the GPA formula explained." />
+  <meta name="theme-color" content="#6C5CE7" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="author" content="ClassTrack" />
+  <meta name="keywords" content="GPA calculator, CGPA calculator, how to calculate GPA, grade point average calculator, 4.0 scale GPA, college GPA calculator, weighted GPA" />
+  <link rel="canonical" href="https://classtrack.app/blog/gpa-calculator/" />
+
+  <meta property="og:site_name" content="ClassTrack" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="GPA Calculator — Calculate Your GPA Free" />
+  <meta property="og:description" content="Add your courses, grades and credits to calculate your GPA on a 4.0 or 10-point scale instantly." />
+  <meta property="og:url" content="https://classtrack.app/blog/gpa-calculator/" />
+  <meta property="og:image" content="https://classtrack.app/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="GPA Calculator — ClassTrack" />
+  <meta name="twitter:description" content="Calculate your GPA on a 4.0 or 10-point scale instantly." />
+  <meta name="twitter:image" content="https://classtrack.app/og-image.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400..700,0..1,0&display=block" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+  <link rel="icon" type="image/png" href="../../logo.png" />
+  <link rel="apple-touch-icon" href="../../logo.png" />
+  <link rel="stylesheet" href="../../styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "GPA Calculator — Calculate Your GPA (4.0 and 10-Point) Free",
+    "description": "A free interactive GPA calculator plus a clear explanation of how grade point average is calculated on 4.0 and 10-point scales.",
+    "author": { "@type": "Organization", "name": "ClassTrack" },
+    "publisher": { "@type": "Organization", "name": "ClassTrack", "logo": { "@type": "ImageObject", "url": "https://classtrack.app/logo.png" } },
+    "datePublished": "2026-07-22",
+    "dateModified": "2026-07-22",
+    "mainEntityOfPage": "https://classtrack.app/blog/gpa-calculator/",
+    "image": "https://classtrack.app/og-image.png"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://classtrack.app/" },
+      { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://classtrack.app/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "GPA Calculator", "item": "https://classtrack.app/blog/gpa-calculator/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "ClassTrack GPA Calculator",
+    "applicationCategory": "EducationApplication",
+    "operatingSystem": "Any (web browser)",
+    "url": "https://classtrack.app/blog/gpa-calculator/",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How is GPA calculated?", "acceptedAnswer": { "@type": "Answer", "text": "GPA is the sum of (grade points x credit hours) for every course, divided by the total credit hours. Courses with more credits weigh more heavily in your GPA." } },
+      { "@type": "Question", "name": "What is the difference between GPA and CGPA?", "acceptedAnswer": { "@type": "Answer", "text": "GPA usually refers to a single term or semester, while CGPA (cumulative GPA) is the average across all completed terms. The calculation method is the same; CGPA simply covers more courses." } },
+      { "@type": "Question", "name": "What is a good GPA?", "acceptedAnswer": { "@type": "Answer", "text": "On a 4.0 scale, 3.5 and above is generally considered strong and 3.0 is solid. On a 10-point scale, 7.5 and above is good. Standards vary by institution and program." } },
+      { "@type": "Question", "name": "How do I convert percentage to GPA?", "acceptedAnswer": { "@type": "Answer", "text": "A common approximation on the 10-point scale is CGPA = percentage / 9.5. For the 4.0 scale, conversion depends on your school's grade bands, so check its official chart." } }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="../../" class="brand" aria-label="ClassTrack home">
+        <span class="brand__logo">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+            <rect x="4" y="6" width="16" height="14" rx="2.6" fill="#fff"/><path d="M4 9a2.6 2.6 0 0 1 2.6-2.6h10.8A2.6 2.6 0 0 1 20 9v1.8H4Z" fill="#312C9D"/><rect x="8.3" y="3.4" width="1.9" height="4.8" rx="0.95" fill="#F5A623"/><rect x="13.8" y="3.4" width="1.9" height="4.8" rx="0.95" fill="#F5A623"/>
+            <path d="M8 13.4l2.7 2.7L16.4 10.2" stroke="#F5A623" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="brand__name">ClassTrack</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="../../#features">Features</a>
+        <a href="../../#bunk">Bunk calculator</a>
+        <a href="../../#pricing">Pricing</a>
+        <a href="../" aria-current="page">Guides</a>
+        <a href="../../support/">Support</a>
+      </nav>
+      <div class="nav__cta">
+        <a href="../../#get" class="btn btn--primary magnetic" data-magnetic>Get the app</a>
+      </div>
+      <button class="nav__burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="article">
+      <div class="container article__inner">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="../../">Home</a><span class="sep">/</span><a href="../">Guides</a><span class="sep">/</span><span>GPA Calculator</span>
+        </nav>
+        <span class="pill"><span class="ms">calculate</span> Free interactive tool</span>
+        <h1>GPA Calculator</h1>
+        <div class="article__meta">
+          <span><span class="ms">schedule</span> 5 min read</span>
+          <span><span class="ms">update</span> Updated July 2026</span>
+          <span><span class="ms">verified</span> By ClassTrack</span>
+        </div>
+
+        <div class="article__body">
+          <div class="tldr">
+            <h2>Quick answer</h2>
+            <p><strong>GPA = Σ(grade points × credits) ÷ Σ(credits)</strong>. Multiply each course's grade point by its credit hours, add them up, and divide by total credits. Use the calculator below for a 4.0 or 10-point (CGPA) result in seconds.</p>
+          </div>
+
+          <div class="toc" aria-label="Table of contents">
+            <strong>On this page</strong>
+            <ol>
+              <li><a href="#calc">GPA calculator</a></li>
+              <li><a href="#formula">The GPA formula</a></li>
+              <li><a href="#scales">Grade scales</a></li>
+              <li><a href="#gpa-cgpa">GPA vs CGPA</a></li>
+              <li><a href="#good">What is a good GPA?</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ol>
+          </div>
+
+          <h2 id="calc">Calculate your GPA</h2>
+          <p>Pick your grading scale, then add each course with its grade and credit hours. Your GPA updates automatically.</p>
+
+          <div class="tool" id="gpaCalc">
+            <div class="tool__head">
+              <span class="tool__badge"><span class="ms">calculate</span></span>
+              <div>
+                <h3>GPA / CGPA calculator</h3>
+                <p>Add courses, grades and credits — results update live.</p>
+              </div>
+            </div>
+            <div class="tool__field" style="max-width:260px;margin-bottom:16px;">
+              <label for="gpaScale">Grading scale</label>
+              <select id="gpaScale">
+                <option value="4">4.0 scale (US)</option>
+                <option value="10">10-point scale (CGPA)</option>
+              </select>
+            </div>
+            <div class="gpa-rows" id="gpaRows"></div>
+            <div class="tool__actions">
+              <button type="button" class="btn btn--soft" id="gpaAdd"><span class="ms">add</span> Add course</button>
+            </div>
+            <div class="tool__result" id="gpaResult" role="status" aria-live="polite">
+              <span class="big">—</span>
+              <span class="sub">Add your courses, grades and credits to see your GPA.</span>
+            </div>
+          </div>
+
+          <h2 id="formula">The GPA formula</h2>
+          <p>GPA (Grade Point Average) is a <strong>credit-weighted average</strong> of your grades. Each grade maps to a number of grade points; each course is worth a number of credit hours.</p>
+          <div class="callout">
+            <span class="ms">functions</span>
+            <p><strong>GPA = Σ (grade points × credit hours) ÷ Σ (credit hours)</strong></p>
+          </div>
+          <p>Because it is weighted by credits, a high grade in a 4-credit course moves your GPA more than the same grade in a 1-credit course.</p>
+
+          <h2 id="scales">Common grade scales</h2>
+          <div class="table-wrap">
+            <table class="compare">
+              <thead><tr><th>Letter grade</th><th>4.0 scale</th><th>10-point</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">A / A+ / O</th><td>4.0</td><td>10</td></tr>
+                <tr><th scope="row">A−</th><td>3.7</td><td>9</td></tr>
+                <tr><th scope="row">B+</th><td>3.3</td><td>8</td></tr>
+                <tr><th scope="row">B</th><td>3.0</td><td>7</td></tr>
+                <tr><th scope="row">C</th><td>2.0</td><td>5</td></tr>
+                <tr><th scope="row">F</th><td>0.0</td><td>0</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Grade-point mappings vary between institutions — the chart above shows typical values. Always confirm your school's official scale.</p>
+
+          <h2 id="gpa-cgpa">GPA vs CGPA</h2>
+          <p><strong>GPA</strong> usually describes one semester. <strong>CGPA</strong> (Cumulative Grade Point Average) is the running average across every semester you have completed. The formula is identical — CGPA simply includes all your courses to date.</p>
+          <div class="callout callout--tip">
+            <span class="ms">lightbulb</span>
+            <p>To convert a percentage to CGPA on the 10-point scale, a widely used approximation is <strong>CGPA = percentage ÷ 9.5</strong>.</p>
+          </div>
+
+          <h2 id="good">What counts as a good GPA?</h2>
+          <ul>
+            <li><strong>4.0 scale:</strong> 3.5+ is strong, 3.0 is solid, below 2.0 is usually a warning zone.</li>
+            <li><strong>10-point scale:</strong> 8.5+ is excellent, 7.5+ is good.</li>
+            <li>Context matters — scholarships, honours and some employers set their own thresholds.</li>
+          </ul>
+
+          <div class="keytakeaways">
+            <h2>Key takeaways</h2>
+            <ul>
+              <li>GPA is a credit-weighted average, not a simple mean of grades.</li>
+              <li>Bigger courses (more credits) affect your GPA more.</li>
+              <li>CGPA is the cumulative version of GPA across all terms.</li>
+              <li>Check your institution's official grade-point chart for exact values.</li>
+            </ul>
+          </div>
+
+          <div class="article-cta reveal">
+            <h2>Keep your GPA live all semester</h2>
+            <p>Log marks in ClassTrack and your GPA updates automatically on a 4.0 or 10-point scale — no spreadsheets required.</p>
+            <a href="../../#get" class="btn btn--primary btn--lg magnetic" data-magnetic>Get ClassTrack free</a>
+          </div>
+
+          <section id="faq">
+            <h2>Frequently asked questions</h2>
+            <div class="faq">
+              <details class="faq__item reveal" open>
+                <summary>How is GPA calculated?<span class="faq__ic"></span></summary>
+                <div class="faq__a">GPA is the sum of (grade points × credit hours) for every course, divided by the total credit hours. Courses with more credits weigh more heavily.</div>
+              </details>
+              <details class="faq__item reveal">
+                <summary>What is the difference between GPA and CGPA?<span class="faq__ic"></span></summary>
+                <div class="faq__a">GPA usually refers to a single term, while CGPA (cumulative GPA) is the average across all completed terms. The calculation method is the same.</div>
+              </details>
+              <details class="faq__item reveal">
+                <summary>What is a good GPA?<span class="faq__ic"></span></summary>
+                <div class="faq__a">On a 4.0 scale, 3.5+ is strong and 3.0 is solid. On a 10-point scale, 7.5+ is good. Standards vary by institution and program.</div>
+              </details>
+              <details class="faq__item reveal">
+                <summary>How do I convert percentage to GPA?<span class="faq__ic"></span></summary>
+                <div class="faq__a">A common approximation on the 10-point scale is CGPA = percentage ÷ 9.5. For the 4.0 scale, conversion depends on your school's grade bands, so check its official chart.</div>
+              </details>
+            </div>
+          </section>
+
+          <div class="related">
+            <h2>Related guides</h2>
+            <div class="related__grid">
+              <a href="../attendance-calculator/"><span class="ms">fact_check</span> Attendance Calculator</a>
+              <a href="../bunk-calculator/"><span class="ms">celebration</span> Bunk Calculator</a>
+              <a href="../study-planner/"><span class="ms">timer</span> Study Planner</a>
+              <a href="../best-student-planner-app/"><span class="ms">smartphone</span> Best Student Planner App</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="../../" class="brand">
+          <span class="brand__logo">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+              <rect x="4" y="6" width="16" height="14" rx="2.6" fill="#fff"/><path d="M4 9a2.6 2.6 0 0 1 2.6-2.6h10.8A2.6 2.6 0 0 1 20 9v1.8H4Z" fill="#312C9D"/><rect x="8.3" y="3.4" width="1.9" height="4.8" rx="0.95" fill="#F5A623"/><rect x="13.8" y="3.4" width="1.9" height="4.8" rx="0.95" fill="#F5A623"/>
+              <path d="M8 13.4l2.7 2.7L16.4 10.2" stroke="#F5A623" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="brand__name">ClassTrack</span>
+        </a>
+        <p>Your entire student life, on track.</p>
+      </div>
+      <nav class="footer__col" aria-label="Guides">
+        <h4>Guides</h4>
+        <a href="../attendance-calculator/">Attendance calculator</a>
+        <a href="../bunk-calculator/">Bunk calculator</a>
+        <a href="../gpa-calculator/">GPA calculator</a>
+        <a href="../">All guides</a>
+      </nav>
+      <nav class="footer__col" aria-label="Company">
+        <h4>Company</h4>
+        <a href="../../#hero">About</a>
+        <a href="../../privacy/">Privacy</a>
+        <a href="../../terms/">Terms</a>
+        <a href="../../support/">Support</a>
+      </nav>
+      <nav class="footer__col" aria-label="Get the app">
+        <h4>Get the app</h4>
+        <a href="../../#get">App Store</a>
+        <a href="../../#get">Google Play</a>
+      </nav>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year"></span> ClassTrack. Made for students.</span>
+      <span class="footer__made">Crafted with <span class="ms ms--fill">favorite</span> for students</span>
+    </div>
+  </footer>
+
+  <script src="../../script.js" defer></script>
+  <script src="../tools.js" defer></script>
+</body>
+</html>

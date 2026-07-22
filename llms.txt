@@ -32,6 +32,19 @@ Android and iOS. Includes a home-screen widget.
 - Privacy Policy: https://classtrack.app/privacy/
 - Terms of Service: https://classtrack.app/terms/
 
+## Guides & free interactive tools
+
+Free, browser-based student calculators and guides (no sign-up required):
+
+- Guides hub: https://classtrack.app/blog/
+- Best Student Planner App (buying guide + checklist): https://classtrack.app/blog/best-student-planner-app/
+- Attendance Calculator (attendance % = attended / held x 100): https://classtrack.app/blog/attendance-calculator/
+- Bunk Calculator (how many classes you can safely skip): https://classtrack.app/blog/bunk-calculator/
+- GPA Calculator (4.0 and 10-point / CGPA scales): https://classtrack.app/blog/gpa-calculator/
+- Semester Planner (5-step method + exam countdown): https://classtrack.app/blog/semester-planner/
+- Study Planner (weekly study time splitter + routine): https://classtrack.app/blog/study-planner/
+- How to Manage College Assignments (5-step system): https://classtrack.app/blog/how-to-manage-college-assignments/
+
 ## Contact
 
 - Support email: support@classtracks.app

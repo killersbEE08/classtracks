@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('has-js');</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Study Planner — Build a Weekly Study Schedule (Free Tool)</title>
+  <meta name="description" content="Create a realistic weekly study plan. Use the free study time splitter to divide your hours across subjects, plus a study routine checklist and proven techniques." />
+  <meta name="theme-color" content="#6C5CE7" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="author" content="ClassTrack" />
+  <meta name="keywords" content="study planner, study schedule, weekly study plan, how to make a study plan, study timetable, study routine, study time management" />
+  <link rel="canonical" href="https://classtrack.app/blog/study-planner/" />
+
+  <meta property="og:site_name" content="ClassTrack" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Study Planner — Build a Weekly Study Schedule" />
+  <meta property="og:description" content="Split your weekly study hours across subjects and build a routine that sticks." />
+  <meta property="og:url" content="https://classtrack.app/blog/study-planner/" />
+  <meta property="og:image" content="https://classtrack.app/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Study Planner — ClassTrack" />
+  <meta name="twitter:description" content="Divide your study hours across subjects and build a routine that sticks." />
+  <meta name="twitter:image" content="https://classtrack.app/og-image.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400..700,0..1,0&display=block" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+  <link rel="icon" type="image/png" href="../../logo.png" />
+  <link rel="apple-touch-icon" href="../../logo.png" />
+  <link rel="stylesheet" href="../../styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Study Planner — Build a Weekly Study Schedule",
+    "description": "A guide to building a realistic weekly study plan, with a free study time splitter and a routine checklist.",
+    "author": { "@type": "Organization", "name": "ClassTrack" },
+    "publisher": { "@type": "Organization", "name": "ClassTrack", "logo": { "@type": "ImageObject", "url": "https://classtrack.app/logo.png" } },
+    "datePublished": "2026-07-22",
+    "dateModified": "2026-07-22",
+    "mainEntityOfPage": "https://classtrack.app/blog/study-planner/",
+    "image": "https://classtrack.app/og-image.png"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://classtrack.app/" },
+      { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://classtrack.app/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Study Planner", "item": "https://classtrack.app/blog/study-planner/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "ClassTrack Study Time Splitter",
+    "applicationCategory": "EducationApplication",
+    "operatingSystem": "Any (web browser)",
+    "url": "https://classtrack.app/blog/study-planner/",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How do I make a study plan?", "acceptedAnswer": { "@type": "Answer", "text": "Decide how many hours you can study each week, list your subjects, then divide the hours across them by priority and difficulty. Break each block into focused 25-minute sessions and protect the time in your calendar." } },
+      { "@type": "Question", "name": "How many hours a day should I study?", "acceptedAnswer": { "@type": "Answer", "text": "For most college students, 2 to 4 focused hours a day is realistic and sustainable. Quality of focus matters more than raw hours — short, distraction-free sessions beat long, scattered ones." } },
+      { "@type": "Question", "name": "What is the Pomodoro technique?", "acceptedAnswer": { "@type": "Answer", "text": "The Pomodoro technique is studying in focused 25-minute blocks separated by 5-minute breaks, with a longer break after four blocks. It keeps concentration high and reduces burnout." } },
+      { "@type": "Question", "name": "How do I split study time between subjects?", "acceptedAnswer": { "@type": "Answer", "text": "Give more time to harder subjects and those with the nearest deadlines or exams. A simple start is to divide hours evenly, then shift time toward weaker subjects. The study time splitter above does the even split for you." } }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="../../" class="brand" aria-label="ClassTrack home">
+        <span class="brand__logo">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+            <rect x="4" y="6" width="16" height="14" rx="2.6" fill="#fff"/><path d="M4 9a2.6 2.6 0 0 1 2.6-2.6h10.8A2.6 2.6 0 0 1 20 9v1.8H4Z" fill="#312C9D"/><rect x="8.3" y="3.4" width="1.9" height="4.8" rx="0.95" fill="#F5A623"/><rect x="13.8" y="3.4" width="1.9" height="4.8" rx="0.95" fill="#F5A623"/>
+            <path d="M8 13.4l2.7 2.7L16.4 10.2" stroke="#F5A623" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="brand__name">ClassTrack</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="../../#features">Features</a>
+        <a href="../../#bunk">Bunk calculator</a>
+        <a href="../../#pricing">Pricing</a>
+        <a href="../" aria-current="page">Guides</a>
+        <a href="../../support/">Support</a>
+      </nav>
+      <div class="nav__cta">
+        <a href="../../#get" class="btn btn--primary magnetic" data-magnetic>Get the app</a>
+      </div>
+      <button class="nav__burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="article">
+      <div class="container article__inner">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="../../">Home</a><span class="sep">/</span><a href="../">Guides</a><span class="sep">/</span><span>Study Planner</span>
+        </nav>
+        <span class="pill"><span class="ms">timer</span> Planning guide + tool</span>
+        <h1>Study Planner</h1>
+        <div class="article__meta">
+          <span><span class="ms">schedule</span> 5 min read</span>
+          <span><span class="ms">update</span> Updated July 2026</span>
+          <span><span class="ms">verified</span> By ClassTrack</span>
+        </div>
+
+        <div class="article__body">
+          <div class="tldr">
+            <h2>Quick answer</h2>
+            <p>Build a study plan in three moves: decide your <strong>weekly study hours</strong>, list your <strong>subjects</strong>, and divide the hours by priority and difficulty. Study in focused <strong>25-minute Pomodoro blocks</strong> and protect the time in your calendar. Use the study time splitter below to start.</p>
+          </div>
+
+          <div class="toc" aria-label="Table of contents">
+            <strong>On this page</strong>
+            <ol>
+              <li><a href="#splitter">Study time splitter</a></li>
+              <li><a href="#build">Build your plan</a></li>
+              <li><a href="#routine">Routine checklist</a></li>
+              <li><a href="#techniques">Proven techniques</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ol>
+          </div>
+
+          <h2 id="splitter">Split your study hours across subjects</h2>
+          <p>Enter your total weekly study hours and your subjects (comma separated). The tool divides your time evenly and suggests Pomodoro blocks per subject.</p>
+
+          <div class="tool" id="studyCalc">
+            <div class="tool__head">
+              <span class="tool__badge"><span class="ms">timer</span></span>
+              <div>
+                <h3>Study time splitter</h3>
+                <p>Even split with Pomodoro suggestions.</p>
+              </div>
+            </div>
+            <div class="tool__grid">
+              <div class="tool__field">
+                <label for="studyHours">Weekly study hours</label>
+                <input type="number" id="studyHours" min="0" step="0.5" value="12" inputmode="decimal" />
+              </div>
+              <div class="tool__field">
+                <label for="studySubjects">Subjects (comma separated)</label>
+                <input type="text" id="studySubjects" value="Maths, Physics, Chemistry, English" />
+              </div>
+            </div>
+            <div class="tool__result" id="studyResult" role="status" aria-live="polite">
+              <span class="big">—</span>
+              <span class="sub">Enter your weekly study hours and subjects.</span>
+              <ul class="split-list" id="studyList"></ul>
+            </div>
+          </div>
+
+          <h2 id="build">How to build a study plan that sticks</h2>
+          <ol>
+            <li><strong>Be honest about available time.</strong> Look at your timetable and commitments, then set a weekly hour budget you can actually keep.</li>
+            <li><strong>Weight by difficulty and deadlines.</strong> Give harder subjects and nearer exams more hours; start from an even split and shift from there.</li>
+            <li><strong>Block it in your calendar.</strong> A plan that is not scheduled is just a wish. Reserve specific slots.</li>
+            <li><strong>Use focused sessions.</strong> 25 minutes on, 5 off keeps concentration high.</li>
+            <li><strong>Review weekly.</strong> Adjust the split as exams approach.</li>
+          </ol>
+
+          <h2 id="routine">Study routine checklist</h2>
+          <p>The habits that separate a plan that works from one that fizzles out:</p>
+
+          <div class="tool">
+            <div class="tool__head">
+              <span class="tool__badge"><span class="ms">checklist</span></span>
+              <div>
+                <h3>Study routine checklist</h3>
+                <p>Tick the habits you have in place.</p>
+              </div>
+            </div>
+            <ul class="checklist" data-progress="#studyRoutine">
+              <li><input type="checkbox" id="r1" /><label for="r1">Fixed study slots in my calendar</label></li>
+              <li><input type="checkbox" id="r2" /><label for="r2">Phone on silent / in another room</label></li>
+              <li><input type="checkbox" id="r3" /><label for="r3">25-minute focus blocks with breaks</label></li>
+              <li><input type="checkbox" id="r4" /><label for="r4">Harder subjects get more time</label></li>
+              <li><input type="checkbox" id="r5" /><label for="r5">Weekly review to adjust the plan</label></li>
+            </ul>
+            <div class="tool__result" id="studyRoutine" role="status" aria-live="polite">
+              <span class="big">0 / 5 done</span>
+              <div class="tool__bar"><i></i></div>
+              <span class="sub">Tick the habits you have in place.</span>
+            </div>
+          </div>
+
+          <h2 id="techniques">Proven study techniques</h2>
+          <ul>
+            <li><strong>Pomodoro:</strong> 25 minutes focused, 5-minute break, longer break every four blocks.</li>
+            <li><strong>Active recall:</strong> test yourself instead of re-reading — it is far more effective.</li>
+            <li><strong>Spaced repetition:</strong> revisit material over increasing intervals to lock it in.</li>
+            <li><strong>Interleaving:</strong> mix related topics in a session rather than one subject for hours.</li>
+          </ul>
+          <div class="callout callout--tip">
+            <span class="ms">lightbulb</span>
+            <p>Pair active recall with spaced repetition for the biggest gains — quiz yourself today, again in two days, then a week later.</p>
+          </div>
+
+          <div class="keytakeaways">
+            <h2>Key takeaways</h2>
+            <ul>
+              <li>Set a realistic weekly hour budget, then split it by priority.</li>
+              <li>Schedule the time — an unscheduled plan rarely happens.</li>
+              <li>Study in focused 25-minute blocks, not marathon sessions.</li>
+              <li>Active recall and spaced repetition beat passive re-reading.</li>
+            </ul>
+          </div>
+
+          <div class="article-cta reveal">
+            <h2>Study smarter with ClassTrack</h2>
+            <p>A built-in focus timer, habit streaks and your full timetable help you turn a study plan into a daily routine.</p>
+            <a href="../../#get" class="btn btn--primary btn--lg magnetic" data-magnetic>Get ClassTrack free</a>
+          </div>
+
+          <section id="faq">
+            <h2>Frequently asked questions</h2>
+            <div class="faq">
+              <details class="faq__item reveal" open>
+                <summary>How do I make a study plan?<span class="faq__ic"></span></summary>
+                <div class="faq__a">Decide how many hours you can study each week, list your subjects, then divide the hours across them by priority and difficulty. Break each block into focused 25-minute sessions and protect the time in your calendar.</div>
+              </details>
+              <details class="faq__item reveal">
+                <summary>How many hours a day should I study?<span class="faq__ic"></span></summary>
+                <div class="faq__a">For most college students, 2 to 4 focused hours a day is realistic and sustainable. Quality of focus matters more than raw hours.</div>
+              </details>
+              <details class="faq__item reveal">
+                <summary>What is the Pomodoro technique?<span class="faq__ic"></span></summary>
+                <div class="faq__a">Studying in focused 25-minute blocks separated by 5-minute breaks, with a longer break after four blocks. It keeps concentration high and reduces burnout.</div>
+              </details>
+              <details class="faq__item reveal">
+                <summary>How do I split study time between subjects?<span class="faq__ic"></span></summary>
+                <div class="faq__a">Give more time to harder subjects and those with the nearest deadlines. Start with an even split, then shift time toward weaker subjects. The study time splitter above does the even split for you.</div>
+              </details>
+            </div>
+          </section>
+
+          <div class="related">
+            <h2>Related guides</h2>
+            <div class="related__grid">
+              <a href="../semester-planner/"><span class="ms">calendar_month</span> Semester Planner</a>
+              <a href="../how-to-manage-college-assignments/"><span class="ms">assignment</span> Manage Assignments</a>
+              <a href="../gpa-calculator/"><span class="ms">calculate</span> GPA Calculator</a>
+              <a href="../best-student-planner-app/"><span class="ms">smartphone</span> Best Student Planner App</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="../../" class="brand">
+          <span class="brand__logo">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+              <rect x="4" y="6" width="16" height="14" rx="2.6" fill="#fff"/><path d="M4 9a2.6 2.6 0 0 1 2.6-2.6h10.8A2.6 2.6 0 0 1 20 9v1.8H4Z" fill="#312C9D"/><rect x="8.3" y="3.4" width="1.9" height="4.8" rx="0.95" fill="#F5A623"/><rect x="13.8" y="3.4" width="1.9" height="4.8" rx="0.95" fill="#F5A623"/>
+              <path d="M8 13.4l2.7 2.7L16.4 10.2" stroke="#F5A623" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="brand__name">ClassTrack</span>
+        </a>
+        <p>Your entire student life, on track.</p>
+      </div>
+      <nav class="footer__col" aria-label="Guides">
+        <h4>Guides</h4>
+        <a href="../attendance-calculator/">Attendance calculator</a>
+        <a href="../bunk-calculator/">Bunk calculator</a>
+        <a href="../gpa-calculator/">GPA calculator</a>
+        <a href="../">All guides</a>
+      </nav>
+      <nav class="footer__col" aria-label="Company">
+        <h4>Company</h4>
+        <a href="../../#hero">About</a>
+        <a href="../../privacy/">Privacy</a>
+        <a href="../../terms/">Terms</a>
+        <a href="../../support/">Support</a>
+      </nav>
+      <nav class="footer__col" aria-label="Get the app">
+        <h4>Get the app</h4>
+        <a href="../../#get">App Store</a>
+        <a href="../../#get">Google Play</a>
+      </nav>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year"></span> ClassTrack. Made for students.</span>
+      <span class="footer__made">Crafted with <span class="ms ms--fill">favorite</span> for students</span>
+    </div>
+  </footer>
+
+  <script src="../../script.js" defer></script>
+  <script src="../tools.js" defer></script>
+</body>
+</html>
