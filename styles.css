@@ -588,7 +588,7 @@ img, svg { display: block; max-width: 100%; }
 
 /* ---------- Footer ---------- */
 .footer { background: var(--ink); color: rgba(255,255,255,.7); padding: 60px 0 30px; }
-.footer__inner { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; padding-bottom: 40px; }
+.footer__inner { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr 1fr; gap: 32px; padding-bottom: 40px; }
 .footer__brand .brand__name { color: #fff; }
 .footer__brand p { margin-top: 14px; font-size: 14.5px; max-width: 260px; }
 .footer__col h4 { color: #fff; font-size: 14px; margin-bottom: 14px; font-family: 'Poppins'; }
@@ -1035,3 +1035,23 @@ section[id] { scroll-margin-top: 88px; }
 .article-cta .btn--primary:hover { background: #F3F1FC; }
 
 @media (max-width: 640px) { .toc ol { columns: 1; } }
+
+
+/* ---- App-style polish for guides ---- */
+.article { position: relative; }
+.article::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 300px; z-index: 0;
+  background: radial-gradient(620px 300px at 82% -60px, rgba(139,127,236,.18), transparent 72%);
+  pointer-events: none;
+}
+.article__inner { position: relative; z-index: 1; }
+
+/* Gradient accent bar on section headings (app look) */
+.article__body h2 { position: relative; padding-left: 16px; }
+.article__body h2::before {
+  content: ""; position: absolute; left: 0; top: .18em; bottom: .18em; width: 5px;
+  border-radius: 99px; background: linear-gradient(var(--purple-light), var(--purple));
+}
+/* No accent bar inside colored / boxed sections */
+.tldr h2, .keytakeaways h2, .article-cta h2 { padding-left: 0; }
+.tldr h2::before, .keytakeaways h2::before, .article-cta h2::before { display: none; }
