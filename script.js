@@ -363,31 +363,64 @@
     });
   }
 
-  /* ---------- GSAP enhancement (optional) ---------- */
-  window.addEventListener('load', () => {
-    if (prefersReduced || !window.gsap) return;
+  /* ---------- GSAP scroll-parallax (desktop + motion-OK only) ----------
+     Lazy-loaded on demand, so touch / mobile / reduced-motion visitors
+     never download (~60KB) or execute it — keeps mobile scrolling smooth. */
+  function initHeroParallax() {
     const gsap = window.gsap;
-    if (window.ScrollTrigger) gsap.registerPlugin(window.ScrollTrigger);
-
-    // Parallax the hero blobs & phone on scroll.
-    if (window.ScrollTrigger) {
-      $$('.hero .blob').forEach((b, i) => {
-        gsap.to(b, {
-          yPercent: (i + 1) * 14,
-          ease: 'none',
-          scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1 },
-        });
+    if (!gsap || !window.ScrollTrigger) return;
+    gsap.registerPlugin(window.ScrollTrigger);
+    $$('.hero .blob').forEach((b, i) => {
+      gsap.to(b, {
+        yPercent: (i + 1) * 14,
+        ease: 'none',
+        scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1 },
       });
-      const phone = $('#heroPhone');
-      if (phone) {
-        gsap.to(phone, {
-          yPercent: -8,
-          ease: 'none',
-          scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1 },
-        });
-      }
+    });
+    const phone = $('#heroPhone');
+    if (phone) {
+      gsap.to(phone, {
+        yPercent: -8,
+        ease: 'none',
+        scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1 },
+      });
     }
-  });
+  }
+
+  function loadScript(src) {
+    return new Promise((resolve, reject) => {
+      const s = document.createElement('script');
+      s.src = src;
+      s.async = true;
+      s.onload = resolve;
+      s.onerror = reject;
+      document.head.appendChild(s);
+    });
+  }
+
+  if (!isTouch && !prefersReduced && document.querySelector('.hero .blob')) {
+    window.addEventListener('load', () => {
+      const base = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/';
+      loadScript(base + 'gsap.min.js')
+        .then(() => loadScript(base + 'ScrollTrigger.min.js'))
+        .then(initHeroParallax)
+        .catch(() => { /* progressive enhancement — safe to ignore */ });
+    });
+  }
+
+  /* ---------- Pause hero blob drift when the hero scrolls off-screen ---------- */
+  const heroSection = document.getElementById('hero');
+  if (heroSection && 'IntersectionObserver' in window && !prefersReduced) {
+    const heroPauseIO = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) =>
+          heroSection.classList.toggle('hero--paused', !e.isIntersecting)
+        );
+      },
+      { threshold: 0 }
+    );
+    heroPauseIO.observe(heroSection);
+  }
 
   /* ---------- Dynamic favicon: change when the tab loses focus ---------- */
   (function faviconSwap() {
