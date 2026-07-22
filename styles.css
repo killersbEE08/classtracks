@@ -1055,3 +1055,83 @@ section[id] { scroll-margin-top: 88px; }
 /* No accent bar inside colored / boxed sections */
 .tldr h2, .keytakeaways h2, .article-cta h2 { padding-left: 0; }
 .tldr h2::before, .keytakeaways h2::before, .article-cta h2::before { display: none; }
+
+
+/* =========================================================
+   APP ILLUSTRATION MOCKUPS (guides) — designed in the app's
+   own visual language: indigo→purple gradient + amber accents
+   ========================================================= */
+.appfig {
+  position: relative; margin: 8px 0 32px; padding: 30px 24px 22px; border-radius: 24px; overflow: hidden;
+  background: linear-gradient(135deg, #efeafd 0%, #f6f3fe 55%, #fdf0e6 100%);
+  border: 1px solid var(--border);
+}
+.appfig::before {
+  content: ""; position: absolute; width: 280px; height: 280px; right: -80px; top: -100px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(139,127,236,.4), transparent 70%); pointer-events: none;
+}
+.appfig::after {
+  content: ""; position: absolute; width: 200px; height: 200px; left: -70px; bottom: -90px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(245,158,11,.22), transparent 70%); pointer-events: none;
+}
+.appfig figcaption { position: relative; z-index: 2; margin-top: 16px; text-align: center; font-size: 13px; color: var(--text-soft); }
+.appcard {
+  position: relative; z-index: 1; max-width: 400px; margin: 0 auto; background: #fff; border-radius: 22px;
+  box-shadow: 0 26px 64px rgba(27,28,52,.18); border: 1px solid rgba(231,227,247,.9); overflow: hidden;
+}
+.appcard__bar { display: flex; align-items: center; gap: 10px; padding: 14px 16px; color: #fff; background: linear-gradient(135deg, var(--purple-light), var(--purple)); }
+.appcard__logo { width: 30px; height: 30px; border-radius: 9px; background: rgba(255,255,255,.18); display: grid; place-items: center; }
+.appcard__logo .ms { color: #fff; font-size: 19px; }
+.appcard__bar strong { font-family: 'Poppins'; font-size: 15px; font-weight: 700; }
+.appcard__bar .dots { margin-left: auto; display: flex; gap: 5px; }
+.appcard__bar .dots i { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,.55); }
+.appcard__body { padding: 18px; }
+.appcard__body .lead-row { display: flex; align-items: center; gap: 16px; margin-bottom: 12px; }
+.appcard__body .grow { flex: 1; }
+
+/* Donut ring (pure CSS conic) */
+.ring2 { width: 92px; height: 92px; border-radius: 50%; display: grid; place-items: center; flex: 0 0 auto; background: conic-gradient(var(--purple) calc(var(--p, 84) * 1%), var(--lavender-tint) 0); }
+.ring2 > span { width: 70px; height: 70px; border-radius: 50%; background: #fff; display: grid; place-items: center; font-family: 'Poppins'; font-weight: 800; font-size: 19px; color: var(--ink); }
+.ring2--amber { background: conic-gradient(var(--amber) calc(var(--p, 70) * 1%), #FDEBD0 0); }
+
+/* Stat tiles */
+.appstats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.appstat { border-radius: 14px; padding: 12px 14px; background: var(--lavender-soft); display: flex; align-items: center; gap: 10px; }
+.appstat .ms { font-size: 20px; color: var(--purple); }
+.appstat b { display: block; font-family: 'Poppins'; font-size: 19px; color: var(--ink); line-height: 1.1; }
+.appstat span { font-size: 11.5px; color: var(--text-soft); }
+.appstat--amber { background: #FEF3E2; } .appstat--amber .ms { color: var(--amber); }
+.appstat--green { background: #E9FBF1; } .appstat--green .ms { color: var(--green); }
+.appstat--sky { background: #E6F5FE; } .appstat--sky .ms { color: var(--sky); }
+
+/* Rows */
+.approw { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 13.5px; color: var(--ink-soft); }
+.approw:last-child { border-bottom: 0; }
+.approw .dot { width: 9px; height: 9px; border-radius: 50%; flex: 0 0 auto; }
+.approw .amt { margin-left: auto; font-family: 'Poppins'; font-weight: 700; color: var(--ink); }
+.approw .grade { margin-left: auto; font-family: 'Poppins'; font-weight: 700; color: var(--purple); background: var(--lavender-soft); border-radius: 8px; padding: 2px 9px; font-size: 12.5px; }
+.approw .due { margin-left: auto; font-size: 11.5px; font-weight: 700; border-radius: 8px; padding: 3px 9px; }
+.due--soon { background: #FEE2E2; color: #DC2626; } .due--ok { background: #E9FBF1; color: #16A34A; }
+.mini { height: 8px; border-radius: 99px; background: var(--lavender-tint); overflow: hidden; flex: 1; }
+.mini > i { display: block; height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--purple-light), var(--purple)); }
+.mini > i.amber { background: linear-gradient(90deg, #FBBF24, var(--amber)); }
+
+/* Progress bar with target marker (bunk) */
+.appbar { position: relative; height: 16px; border-radius: 99px; background: var(--lavender-tint); overflow: hidden; margin: 4px 0 12px; }
+.appbar > i { position: absolute; inset: 0 auto 0 0; border-radius: 99px; background: linear-gradient(90deg, #34D399, #22C55E); }
+.appbar__target { position: absolute; top: -4px; bottom: -4px; width: 3px; background: var(--ink); border-radius: 3px; }
+.appbar__target span { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 10.5px; font-weight: 700; color: var(--ink); }
+.appchecks { display: flex; flex-direction: column; gap: 8px; }
+.appcheck { display: flex; align-items: center; gap: 10px; font-size: 13.5px; color: var(--ink-soft); }
+.appcheck .ms { font-size: 18px; color: var(--green); }
+.appcheck.pending .ms { color: #CBD2E0; }
+
+/* Floating chips */
+.chipf { position: absolute; z-index: 3; background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 9px 13px; box-shadow: 0 14px 32px rgba(27,28,52,.18); font-size: 12.5px; font-weight: 600; color: var(--ink); display: flex; align-items: center; gap: 7px; }
+.chipf .ms { font-size: 16px; }
+.chipf .ms.g { color: var(--green); } .chipf .ms.a { color: var(--amber); } .chipf .ms.p { color: var(--purple); }
+.chipf--tl { left: 8px; top: 24px; }
+.chipf--tr { right: 8px; top: 40px; }
+.chipf--bl { left: 10px; bottom: 60px; }
+.chipf--br { right: 8px; bottom: 66px; }
+@media (max-width: 520px) { .chipf { display: none; } }
