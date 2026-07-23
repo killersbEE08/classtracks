@@ -1,0 +1,17 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.classtracks.app",
+      "sha256_cert_fingerprints": [
+        "47:A6:1D:C0:8F:BB:B3:EF:BE:CF:20:E3:D8:23:E4:67:17:2A:7F:11:46:20:44:46:68:18:6C:36:93:69:8B:71",
+        "4C:69:8A:02:1F:2B:DF:24:07:CF:57:C6:55:7D:65:53:C6:C6:90:0B:C2:D0:88:8E:ED:C6:B1:79:B2:9E:86:CF",
+        "DD:0B:61:04:33:76:3A:CE:46:D3:4E:20:D3:51:73:AF:BD:86:8E:E4:58:25:86:50:D4:8E:02:05:F3:71:7B:E8"
+      ]
+    }
+  }
+]
