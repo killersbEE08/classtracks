@@ -8,9 +8,15 @@
   </url>
   <url>
     <loc>https://classtrack.app/blog/</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://classtrack.app/blog/add-timetable-to-google-calendar/</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://classtrack.app/blog/best-student-planner-app/</loc>
