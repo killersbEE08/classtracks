@@ -26,7 +26,7 @@ serves `support/index.html` at `/support/` automatically.
    Branch: `main`, Folder: `/ (root)` → Save.
 3. Your site goes live at `https://<user>.github.io/<repo>/` in ~1 minute.
 
-### Custom domain (recommended — this site is configured for `classtrack.app`)
+### Custom domain (recommended — this site is configured for `classtracks.app`)
 - In **Settings → Pages → Custom domain**, enter your domain and save
   (this creates a `CNAME` file).
 - Point your DNS to GitHub Pages, then enable **Enforce HTTPS**.
@@ -39,7 +39,7 @@ serves `support/index.html` at `/support/` automatically.
    so the contact form delivers messages.
 2. **Social image** — add `og-image.png` (1200×630) at the root; it's already
    referenced by the Open Graph / Twitter tags.
-3. **Domain** — all canonical/OG/sitemap/llms URLs use `https://classtrack.app`.
+3. **Domain** — all canonical/OG/sitemap/llms URLs use `https://classtracks.app`.
    If your domain differs, find-and-replace it across the files.
 4. **Truthful proof** — replace placeholder ratings (4.9 / 12,000 students) and
    testimonials with real figures before publishing.

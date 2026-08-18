@@ -20,4 +20,4 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-Sitemap: https://classtrack.app/sitemap.xml
+Sitemap: https://classtracks.app/sitemap.xml
