@@ -12,11 +12,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ClassTrack — Attendance, timetable & an AI study buddy for students</title>
-  <meta name="description" content="ClassTrack keeps your whole student life on track: smart attendance with a bunk calculator, timetable, exam countdowns, GPA, focus timer, habits and an AI study assistant powered by Gemini." />
+  <meta name="description" content="ClassTrack keeps your whole student life on track: smart attendance with a bunk calculator, timetable, exam countdowns, GPA, focus timer, habits, plus a feed of student perks and opportunities (scholarships, internships & discounts) and an AI study assistant powered by Gemini." />
   <meta name="theme-color" content="#6C5CE7" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <meta name="author" content="ClassTrack" />
-  <meta name="keywords" content="attendance tracker, bunk calculator, student timetable app, GPA calculator, exam countdown, AI study assistant, college attendance app, class schedule" />
+  <meta name="keywords" content="attendance tracker, bunk calculator, student timetable app, GPA calculator, exam countdown, AI study assistant, college attendance app, class schedule, student perks, student opportunities, student scholarships, internships for students, student discounts, hackathons" />
   <link rel="canonical" href="https://classtracks.app/" />
 
   <!-- Open Graph -->
@@ -56,7 +56,7 @@
     "name": "ClassTrack",
     "operatingSystem": "Android, iOS",
     "applicationCategory": "EducationApplication",
-    "description": "ClassTrack is an all-in-one student app: smart attendance with a bunk calculator, a timetable, exam countdowns, GPA tracking, focus timer, habits, tasks, expenses and an AI study assistant that builds your schedule from a photo.",
+    "description": "ClassTrack is an all-in-one student app: smart attendance with a bunk calculator, a timetable, exam countdowns, GPA tracking, focus timer, habits, tasks, expenses, a curated feed of student perks and opportunities (scholarships, internships, hackathons and discounts), and an AI study assistant that builds your schedule from a photo.",
     "url": "https://classtracks.app/",
     "image": "https://classtracks.app/og-image.png",
     "featureList": [
@@ -67,6 +67,7 @@
       "Focus timer and habit streaks",
       "Tasks and deadlines",
       "Expense tracking",
+      "Student perks and opportunities feed (scholarships, internships, hackathons, competitions, grants and student discounts)",
       "AI study assistant (photo timetable import)"
     ],
     "offers": [
@@ -132,6 +133,11 @@
       },
       {
         "@type": "Question",
+        "name": "What are Perks & Opportunities in ClassTrack?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Perks & Opportunities is a curated feed inside ClassTrack that surfaces student scholarships, internships, hackathons, competitions, grants, free courses and exclusive student discounts, matched to your country and interests. You can bookmark the ones you like and apply in a couple of taps so you never miss a deadline." }
+      },
+      {
+        "@type": "Question",
         "name": "Which platforms are supported?",
         "acceptedAnswer": { "@type": "Answer", "text": "ClassTrack is available on Android and iOS, with a home-screen widget for your day at a glance." }
       }
@@ -168,6 +174,7 @@
         <a href="#features">Features</a>
         <a href="#bunk">Bunk calculator</a>
         <a href="#ai">AI assistant</a>
+        <a href="#opportunities">Perks</a>
         <a href="#pricing">Pricing</a>
         <a href="support/">Support</a>
         <a href="contact/">Contact</a>
@@ -539,6 +546,18 @@
             <h3>Expenses</h3>
             <p>Track spending against a monthly student budget — no spreadsheets.</p>
           </article>
+
+          <article class="card card--wide reveal" style="--accent:#F97316" data-delay="0.06">
+            <div class="card__ic"><span class="ms ms--fill">redeem</span></div>
+            <h3>Perks &amp; opportunities</h3>
+            <p>A curated feed of student perks and opportunities — scholarships, internships, hackathons, competitions, grants and exclusive student discounts — matched to your country and interests. Save the ones you like and apply in a tap.</p>
+            <div class="card__tags">
+              <span class="card__tag">Scholarships</span>
+              <span class="card__tag">Internships</span>
+              <span class="card__tag">Hackathons</span>
+              <span class="card__tag">Student discounts</span>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -621,6 +640,63 @@
               <button class="chatui__send" aria-hidden="true"><span class="ms">send</span></button>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PERKS & OPPORTUNITIES ===================== -->
+    <section class="section split" id="opportunities">
+      <div class="container split__inner">
+        <div class="split__media reveal">
+          <div class="glass-card tilt-lite" data-tilt>
+            <div class="oppfeed">
+              <div class="oppfeed__item">
+                <span class="oppfeed__ic ms ms--fill" style="--c:#6C5CE7">school</span>
+                <div class="oppfeed__body">
+                  <strong>Global Merit Scholarship</strong>
+                  <small>Up to $5,000 · closes in 12 days</small>
+                </div>
+                <span class="oppfeed__tag">Scholarship</span>
+              </div>
+              <div class="oppfeed__item">
+                <span class="oppfeed__ic ms ms--fill" style="--c:#0EA5E9">work_outline</span>
+                <div class="oppfeed__body">
+                  <strong>Summer Software Internship</strong>
+                  <small>Remote · stipend · matched to you</small>
+                </div>
+                <span class="oppfeed__tag">Internship</span>
+              </div>
+              <div class="oppfeed__item">
+                <span class="oppfeed__ic ms ms--fill" style="--c:#F97316">code</span>
+                <div class="oppfeed__body">
+                  <strong>48-Hour Student Hackathon</strong>
+                  <small>Prizes · team up · applications open</small>
+                </div>
+                <span class="oppfeed__tag">Hackathon</span>
+              </div>
+              <div class="oppfeed__item">
+                <span class="oppfeed__ic ms ms--fill" style="--c:#22C55E">redeem</span>
+                <div class="oppfeed__body">
+                  <strong>50% off your favourite study app</strong>
+                  <small>Verified student discount</small>
+                </div>
+                <span class="oppfeed__tag">Perk</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="split__copy reveal" data-delay="0.1">
+          <span class="pill pill--coral">More than a tracker</span>
+          <h2>Unlock student perks &amp;<br/><span class="grad">opportunities made for you.</span></h2>
+          <p>ClassTrack surfaces a curated feed of scholarships, internships, hackathons, competitions, grants and exclusive student discounts — matched to your country and interests. Discover funding, experience and savings you'd otherwise miss, then save and apply in a couple of taps.</p>
+          <ul class="ticks">
+            <li>Scholarships, grants &amp; internships tailored to you</li>
+            <li>Hackathons, competitions &amp; ambassador programs</li>
+            <li>Exclusive student discounts and free courses</li>
+            <li>Bookmark opportunities and never miss a deadline</li>
+          </ul>
+          <a href="#get" class="btn btn--primary magnetic" data-magnetic>Discover opportunities</a>
         </div>
       </div>
     </section>
@@ -972,6 +1048,7 @@
         <a href="#features">Features</a>
         <a href="#bunk">Bunk calculator</a>
         <a href="#ai">AI assistant</a>
+        <a href="#opportunities">Perks</a>
         <a href="#pricing">Pricing</a>
       </nav>
       <nav class="footer__col" aria-label="Guides">

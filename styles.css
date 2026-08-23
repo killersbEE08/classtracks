@@ -407,6 +407,19 @@ img, svg { display: block; max-width: 100%; }
 .streak span { width: 30px; height: 30px; border-radius: 10px; display: grid; place-items: center; font-size: 11px; font-weight: 700; background: var(--lavender-soft); color: var(--text-soft); }
 .streak .on { background: color-mix(in srgb, var(--amber) 18%, white); color: var(--amber); }
 
+/* ---------- Feature card tags (Perks & opportunities) ---------- */
+.card__tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.card__tag { font-size: 12px; font-weight: 600; color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, white); border-radius: 999px; padding: 6px 12px; line-height: 1; white-space: nowrap; }
+
+/* ---------- Opportunities feed (mock) ---------- */
+.oppfeed { display: flex; flex-direction: column; gap: 12px; }
+.oppfeed__item { display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 16px; background: #fff; box-shadow: var(--shadow); }
+.oppfeed__ic { width: 42px; height: 42px; flex: none; border-radius: 12px; display: grid; place-items: center; font-size: 22px; color: var(--c, var(--purple)); background: color-mix(in srgb, var(--c, var(--purple)) 14%, white); }
+.oppfeed__body { flex: 1 1 auto; min-width: 0; }
+.oppfeed__body strong { display: block; font-size: 14px; color: var(--ink); font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.oppfeed__body small { display: block; font-size: 12px; color: var(--text-soft); margin-top: 2px; }
+.oppfeed__tag { flex: none; font-size: 11px; font-weight: 700; color: var(--purple); background: var(--lavender-soft); border-radius: 999px; padding: 5px 10px; line-height: 1; }
+
 /* ---------- Split sections ---------- */
 .split__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
 .split--rev .split__inner { direction: rtl; }
@@ -977,6 +990,8 @@ section[id] { scroll-margin-top: 88px; }
 .callout--tip .ms { color: var(--green); }
 .callout--warn { background: #FEF2F2; border-color: #FECACA; }
 .callout--warn .ms { color: var(--red); }
+.callout--info { background: #EFF6FF; border-color: #BFDBFE; }
+.callout--info .ms { color: #2563EB; }
 
 /* Key takeaways */
 .keytakeaways { background: var(--ink); color: #fff; border-radius: 20px; padding: 26px 28px; margin: 32px 0; }
