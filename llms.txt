@@ -40,6 +40,7 @@ Android and iOS. Includes a home-screen widget.
 ## Key pages
 
 - Home: https://classtracks.app/
+- Perks & Opportunities (scholarships, internships, hackathons, grants & student discounts): https://classtracks.app/opportunities/
 - Support: https://classtracks.app/support/
 - Privacy Policy: https://classtracks.app/privacy/
 - Terms of Service: https://classtracks.app/terms/

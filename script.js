@@ -422,6 +422,42 @@
     heroPauseIO.observe(heroSection);
   }
 
+  /* ---------- Smart app banner (mobile, site-wide via JS) ----------
+     A lightweight, dismissible install banner. It is skipped on the
+     homepage (which already has a sticky mobile CTA), on desktop, and
+     once the visitor has dismissed it. Injected here so every page
+     gets it without editing each HTML file. */
+  (function appBanner() {
+    var DISMISS_KEY = 'ct_appbanner_dismissed';
+    if (document.getElementById('mobileCta')) return;            // skip homepage
+    try { if (localStorage.getItem(DISMISS_KEY) === '1') return; } catch (e) {}
+    if (!window.matchMedia('(max-width: 720px)').matches) return; // mobile only
+
+    // Resolve the logo path relative to the current page.
+    var iconLink =
+      document.querySelector('link[rel="icon"][type="image/png"]') ||
+      document.querySelector('link[rel="apple-touch-icon"]');
+    var logo = iconLink ? iconLink.getAttribute('href') : 'logo.png';
+
+    var bar = document.createElement('div');
+    bar.className = 'appbanner';
+    bar.setAttribute('role', 'complementary');
+    bar.setAttribute('aria-label', 'Get the ClassTrack app');
+    bar.innerHTML =
+      '<button class="appbanner__close" type="button" aria-label="Dismiss">&times;</button>' +
+      '<img class="appbanner__icon" src="' + logo + '" alt="ClassTrack" width="42" height="42" />' +
+      '<div class="appbanner__txt"><strong>ClassTrack</strong>' +
+      '<small><span class="ms ms--fill">star</span> 4.8 · Free on Google Play</small></div>' +
+      '<a class="appbanner__cta" href="https://play.google.com/store/apps/details?id=com.classtracks.app" target="_blank" rel="noopener">GET</a>';
+
+    document.body.insertBefore(bar, document.body.firstChild);
+
+    bar.querySelector('.appbanner__close').addEventListener('click', function () {
+      bar.remove();
+      try { localStorage.setItem(DISMISS_KEY, '1'); } catch (e) {}
+    });
+  })();
+
   /* ---------- Dynamic favicon: change when the tab loses focus ---------- */
   (function faviconSwap() {
     const link = document.querySelector('link[rel="icon"]');
