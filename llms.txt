@@ -59,9 +59,29 @@ Free, browser-based student calculators and guides (no sign-up required):
 - Attendance Calculator (attendance % = attended / held x 100): https://classtracks.app/blog/attendance-calculator/
 - Bunk Calculator (how many classes you can safely skip): https://classtracks.app/blog/bunk-calculator/
 - GPA Calculator (4.0 and 10-point / CGPA scales): https://classtracks.app/blog/gpa-calculator/
+- CGPA to Percentage Calculator (two-way converter; formula Percentage = CGPA × 9.5, with university multipliers): https://classtracks.app/blog/cgpa-to-percentage-calculator/
+- Final Grade Calculator (what score you need on your final exam to hit a target grade): https://classtracks.app/blog/final-grade-calculator/
 - Semester Planner (5-step method + exam countdown): https://classtracks.app/blog/semester-planner/
 - Study Planner (weekly study time splitter + routine): https://classtracks.app/blog/study-planner/
 - How to Manage College Assignments (5-step system): https://classtracks.app/blog/how-to-manage-college-assignments/
+- Exam Countdown Calculator (days until your exam + a countdown study plan): https://classtracks.app/blog/exam-countdown-calculator/
+- Pomodoro Timer (free online 25/5 focus timer for students + how the technique works): https://classtracks.app/blog/pomodoro-timer/
+- Best Apps for College Students 2026 (6 categories + recommendations): https://classtracks.app/blog/best-apps-for-college-students/
+- Best Free Student Apps 2026 (what free should mean + genuinely-free picks): https://classtracks.app/blog/best-free-student-apps/
+- Best Focus & Pomodoro Apps for Students 2026 (features that matter + free timer): https://classtracks.app/blog/best-focus-apps-for-students/
+- ClassTrack vs Notion for students (comparison + when to use each): https://classtracks.app/blog/classtrack-vs-notion/
+- ClassTrack vs Google Calendar for students (comparison + calendar sync): https://classtracks.app/blog/classtrack-vs-google-calendar/
+- Best My Study Life Alternative (what to look for + ClassTrack comparison): https://classtracks.app/blog/my-study-life-alternative/
+- Attendance Below 75% (consequences + step-by-step recovery plan): https://classtracks.app/blog/attendance-below-75/
+- How to Improve Your Attendance Percentage (the math + habits that keep it high): https://classtracks.app/blog/how-to-improve-attendance/
+- How to Prepare for Exams in 7 Days (realistic day-by-day revision plan): https://classtracks.app/blog/how-to-prepare-for-exams/
+- The Pomodoro Technique for Students (how the 25/5 method works + variations): https://classtracks.app/blog/pomodoro-technique/
+- How to Stop Procrastinating in College (why you do it + tactics that work): https://classtracks.app/blog/how-to-stop-procrastinating/
+- How to Beat Study Burnout (signs, recovery and prevention for students): https://classtracks.app/blog/how-to-beat-study-burnout/
+- Best Note-Taking Methods for Students (Cornell, outline, mapping, Feynman + active recall): https://classtracks.app/blog/note-taking-methods/
+- New Semester Setup Checklist (week-one setup + interactive checklist): https://classtracks.app/blog/new-semester-checklist/
+- Freshers Survival Guide (first-year academics, money, social life and opportunities): https://classtracks.app/blog/freshers-survival-guide/
+- Finals Week Survival Guide (prioritise, study smart, sleep and exam-day tactics): https://classtracks.app/blog/finals-week-survival-guide/
 
 ## Contact
 

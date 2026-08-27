@@ -238,4 +238,132 @@
     calc();
   })();
 
+  /* ---------- 7. CGPA <-> Percentage converter ---------- */
+  (function () {
+    var root = $("#cgpaCalc");
+    if (!root) return;
+    var cgpa = $("#cgpaValue", root);
+    var mult = $("#cgpaMult", root);
+    var pct = $("#cgpaPercent", root);
+    var res = $("#cgpaResult", root);
+    var big = res.querySelector(".big");
+    var sub = res.querySelector(".sub");
+
+    function m() { var v = parseFloat(mult && mult.value); return (isNaN(v) || v <= 0) ? 9.5 : v; }
+    function show(c, p) {
+      if (isNaN(c) || isNaN(p)) { big.textContent = "—"; sub.textContent = "Enter your CGPA (or a percentage) and a multiplier."; res.dataset.state = ""; return; }
+      big.textContent = "CGPA " + c.toFixed(2) + " \u2248 " + p.toFixed(2) + "%";
+      sub.textContent = "Using Percentage = CGPA \u00d7 " + m() + ". Change the multiplier to match your university.";
+      res.dataset.state = "good";
+    }
+    function fromCgpa() {
+      var c = parseFloat(cgpa.value);
+      if (isNaN(c)) { show(NaN, NaN); return; }
+      var p = c * m();
+      pct.value = p ? p.toFixed(2) : "";
+      show(c, p);
+    }
+    function fromPct() {
+      var p = parseFloat(pct.value);
+      if (isNaN(p)) { show(NaN, NaN); return; }
+      var c = p / m();
+      cgpa.value = c ? c.toFixed(2) : "";
+      show(c, p);
+    }
+    cgpa.addEventListener("input", fromCgpa);
+    pct.addEventListener("input", fromPct);
+    mult.addEventListener("input", fromCgpa);
+    fromCgpa();
+  })();
+
+  /* ---------- 8. Final grade calculator ---------- */
+  (function () {
+    var root = $("#finalCalc");
+    if (!root) return;
+    var cur = $("#fgCurrent", root);
+    var target = $("#fgTarget", root);
+    var weight = $("#fgWeight", root);
+    var res = $("#fgResult", root);
+    var bar = $("#fgBar", root);
+    var big = res.querySelector(".big");
+    var sub = res.querySelector(".sub");
+
+    function calc() {
+      var c = num(cur), t = num(target), w = num(weight);
+      if (w <= 0 || w > 100) { big.textContent = "\u2014"; sub.textContent = "Enter your current grade, target grade and the final's weight (1\u2013100%)."; res.dataset.state = ""; setBar(bar, 0); return; }
+      var wd = w / 100;
+      var needed = (t - c * (1 - wd)) / wd;
+      setBar(bar, needed);
+      if (needed <= 0) {
+        big.textContent = "You've already secured it";
+        sub.textContent = "Even a 0% on the final keeps you at or above " + t + "%. Anything you score is a bonus.";
+        res.dataset.state = "good";
+      } else if (needed > 100) {
+        big.textContent = "Not reachable at " + w + "% weight";
+        sub.textContent = "You'd need " + needed.toFixed(1) + "% on the final \u2014 above 100%. Aim for your best and ask your professor about extra credit or make-up options.";
+        res.dataset.state = "bad";
+      } else {
+        big.textContent = "Score " + needed.toFixed(1) + "% on the final";
+        sub.textContent = "That's what you need on a final worth " + w + "% to reach " + t + "% overall (you're at " + c + "% now).";
+        res.dataset.state = needed >= 90 ? "bad" : "good";
+      }
+    }
+    [cur, target, weight].forEach(function (e) { e.addEventListener("input", calc); });
+    calc();
+  })();
+
+  /* ---------- 9. Pomodoro focus timer ---------- */
+  (function () {
+    var root = $("#pomodoro");
+    if (!root) return;
+    var disp = $("#pomoTime", root);
+    var bar = $("#pomoBar", root);
+    var modeLbl = $("#pomoMode", root);
+    var countLbl = $("#pomoCount", root);
+    var toggle = $("#pomoToggle", root);
+    var reset = $("#pomoReset", root);
+    var res = $("#pomoResult", root);
+    if (!disp || !toggle) return;
+
+    var mins = {
+      focus: parseFloat(root.getAttribute("data-focus")) || 25,
+      short: parseFloat(root.getAttribute("data-break")) || 5,
+      long: parseFloat(root.getAttribute("data-long")) || 15
+    };
+    var labels = { focus: "Focus session", short: "Short break", long: "Long break" };
+    var mode = "focus", total = mins[mode] * 60, left = total, timer = null, done = 0;
+
+    function fmt(s) { var m = Math.floor(s / 60), r = s % 60; return (m < 10 ? "0" : "") + m + ":" + (r < 10 ? "0" : "") + r; }
+    function render() {
+      disp.textContent = fmt(left);
+      setBar(bar, total ? ((total - left) / total) * 100 : 0);
+      if (modeLbl) modeLbl.textContent = labels[mode];
+      if (res) res.dataset.state = mode === "focus" ? "" : "good";
+    }
+    function setMode(m) { mode = m; total = mins[m] * 60; left = total; render(); }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } toggle.textContent = "Start"; }
+    function tick() {
+      left--;
+      if (left <= 0) {
+        stop();
+        try { if (navigator && navigator.vibrate) navigator.vibrate(200); } catch (e) {}
+        if (mode === "focus") {
+          done++;
+          if (countLbl) countLbl.textContent = done + " focus session" + (done === 1 ? "" : "s") + " done";
+          setMode(done % 4 === 0 ? "long" : "short");
+        } else { setMode("focus"); }
+        return;
+      }
+      render();
+    }
+    toggle.addEventListener("click", function () {
+      if (timer) { stop(); } else { timer = setInterval(tick, 1000); toggle.textContent = "Pause"; }
+    });
+    if (reset) reset.addEventListener("click", function () { stop(); setMode(mode); });
+    $$("[data-pomo]", root).forEach(function (b) {
+      b.addEventListener("click", function () { stop(); setMode(b.getAttribute("data-pomo")); });
+    });
+    render();
+  })();
+
 })();
