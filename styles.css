@@ -1215,3 +1215,23 @@ section[id] { scroll-margin-top: 88px; }
 .appbanner__txt .ms { color: var(--amber); font-size: 13px; vertical-align: -2px; }
 .appbanner__cta { flex: none; background: var(--purple); color: #fff; font-weight: 700; font-size: 13px; padding: 8px 16px; border-radius: 999px; text-decoration: none; white-space: nowrap; }
 @media (min-width: 721px) { .appbanner { display: none !important; } }
+
+/* ===== Blog post figures (real app screenshots) ===== */
+.post-figure { margin: 26px 0; }
+.post-figure img { border-radius: 18px; border: 1px solid var(--lavender-tint); box-shadow: 0 12px 34px rgba(27, 28, 52, 0.10); margin: 0 auto; }
+.post-figure--phone img { max-width: 300px; width: 100%; }
+.post-figure figcaption { margin-top: 12px; text-align: center; font-size: 13.5px; color: var(--text-soft); font-weight: 500; }
+.post-figures { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px; margin: 26px 0; align-items: start; }
+.post-figures .post-figure { margin: 0; }
+
+/* ===== Author / E-E-A-T box ===== */
+.author-box { display: flex; gap: 16px; align-items: flex-start; margin: 34px 0; padding: 20px 22px; border: 1px solid var(--lavender-tint); border-radius: 18px; background: var(--lavender-soft); }
+.author-box__avatar { flex: 0 0 auto; width: 58px; height: 58px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg, var(--purple-light, #8A7CF0), var(--purple)); color: #fff; font-weight: 700; font-size: 21px; font-family: 'Poppins', sans-serif; letter-spacing: 0.5px; }
+img.author-box__avatar { object-fit: cover; }
+.author-box__body { flex: 1; min-width: 0; }
+.author-box__name { font-weight: 700; color: var(--ink); font-size: 16.5px; font-family: 'Poppins', sans-serif; }
+.author-box__role { color: var(--text-soft); font-size: 13px; margin-top: 2px; }
+.author-box__bio { font-size: 14.5px; color: var(--ink-soft); margin: 10px 0 12px; }
+.author-box__links { display: flex; gap: 14px; flex-wrap: wrap; }
+.author-box__links a { font-size: 13px; font-weight: 600; color: var(--purple); border-bottom: 0; display: inline-flex; align-items: center; gap: 5px; }
+.author-box__links a:hover { text-decoration: underline; }

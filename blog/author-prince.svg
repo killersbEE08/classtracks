@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Illustrated anime-style avatar of Prince Kumar">
+  <defs>
+    <linearGradient id="pkbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8A7CF0"/>
+      <stop offset="1" stop-color="#6C5CE7"/>
+    </linearGradient>
+    <linearGradient id="pkhair" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2C2E4D"/>
+      <stop offset="1" stop-color="#1B1C34"/>
+    </linearGradient>
+    <clipPath id="pkclip"><circle cx="100" cy="100" r="100"/></clipPath>
+  </defs>
+  <g clip-path="url(#pkclip)">
+    <rect width="200" height="200" fill="url(#pkbg)"/>
+    <circle cx="100" cy="70" r="150" fill="#ffffff" opacity="0.06"/>
+    <!-- shoulders / shirt -->
+    <path d="M34 200c0-36 30-56 66-56s66 20 66 56z" fill="#3A2E7A"/>
+    <path d="M60 200c4-22 20-34 40-34s36 12 40 34z" fill="#EDEAFB" opacity="0.9"/>
+    <!-- neck -->
+    <path d="M85 150h30v18a15 15 0 0 1-30 0z" fill="#F0C29A"/>
+    <!-- ears -->
+    <circle cx="59" cy="107" r="8" fill="#FBD9BE"/>
+    <circle cx="141" cy="107" r="8" fill="#FBD9BE"/>
+    <!-- face -->
+    <ellipse cx="100" cy="105" rx="43" ry="47" fill="#FBD9BE"/>
+    <!-- back hair -->
+    <path d="M54 104c-8-40 22-64 46-64s54 24 46 64c-3-14-8-22-8-22s-6 10-14 10c-4-24-18-30-24-30s-20 6-24 30c-8 0-14-10-14-10s-5 8-8 22z" fill="url(#pkhair)"/>
+    <!-- front hair fringe -->
+    <path d="M58 100c0-34 20-52 42-52s42 18 42 52c-5-16-13-22-13-22s-3 12-13 12c-7 0-9-10-18-10-7 0-11 8-18 10-7 2-15 4-19-2-1 4-3 6-3 12z" fill="#2C2E4D"/>
+    <path d="M100 48c10 0 20 5 27 15-8-4-17-5-27-5s-19 1-27 5c7-10 17-15 27-15z" fill="#3A3C63"/>
+    <!-- eyebrows -->
+    <path d="M72 90q10-6 20 0" stroke="#1B1C34" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M108 90q10-6 20 0" stroke="#1B1C34" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- eyes (anime) -->
+    <ellipse cx="82" cy="107" rx="9.5" ry="13" fill="#ffffff"/>
+    <ellipse cx="118" cy="107" rx="9.5" ry="13" fill="#ffffff"/>
+    <circle cx="83" cy="109" r="7" fill="#4B3AA0"/>
+    <circle cx="117" cy="109" r="7" fill="#4B3AA0"/>
+    <circle cx="83" cy="110" r="3.4" fill="#1B1C34"/>
+    <circle cx="117" cy="110" r="3.4" fill="#1B1C34"/>
+    <circle cx="85.5" cy="105.5" r="2.4" fill="#ffffff"/>
+    <circle cx="119.5" cy="105.5" r="2.4" fill="#ffffff"/>
+    <!-- nose -->
+    <path d="M100 114l-3 7h6z" fill="#E5AE86"/>
+    <!-- mouth -->
+    <path d="M90 130q10 9 20 0" stroke="#C1685A" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+    <!-- blush -->
+    <ellipse cx="71" cy="122" rx="6.5" ry="3.6" fill="#F7A8A0" opacity="0.55"/>
+    <ellipse cx="129" cy="122" rx="6.5" ry="3.6" fill="#F7A8A0" opacity="0.55"/>
+  </g>
+</svg>
