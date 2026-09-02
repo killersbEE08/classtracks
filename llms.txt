@@ -60,6 +60,7 @@ Free, browser-based student calculators and guides (no sign-up required):
 - Bunk Calculator (how many classes you can safely skip): https://classtracks.app/blog/bunk-calculator/
 - GPA Calculator (4.0 and 10-point / CGPA scales): https://classtracks.app/blog/gpa-calculator/
 - CGPA to Percentage Calculator (two-way converter; formula Percentage = CGPA × 9.5, with university multipliers): https://classtracks.app/blog/cgpa-to-percentage-calculator/
+- SGPA to CGPA Calculator (semester-wise, credit-weighted; CGPA = Σ(SGPA × credits) ÷ Σ(credits), with worked example and SGPA to percentage): https://classtracks.app/blog/sgpa-to-cgpa-calculator/
 - Final Grade Calculator (what score you need on your final exam to hit a target grade): https://classtracks.app/blog/final-grade-calculator/
 - Semester Planner (5-step method + exam countdown): https://classtracks.app/blog/semester-planner/
 - Study Planner (weekly study time splitter + routine): https://classtracks.app/blog/study-planner/
@@ -82,6 +83,8 @@ Free, browser-based student calculators and guides (no sign-up required):
 - New Semester Setup Checklist (week-one setup + interactive checklist): https://classtracks.app/blog/new-semester-checklist/
 - Freshers Survival Guide (first-year academics, money, social life and opportunities): https://classtracks.app/blog/freshers-survival-guide/
 - Finals Week Survival Guide (prioritise, study smart, sleep and exam-day tactics): https://classtracks.app/blog/finals-week-survival-guide/
+- Student Budgeting: How to Manage Money in College (the 50/30/20 rule, a 5-step monthly budget, ways to cut costs and how to track spending): https://classtracks.app/blog/student-budgeting/
+- Active Recall & Spaced Repetition (evidence-based study techniques: retrieval practice, the testing effect, the forgetting curve and a sample review schedule): https://classtracks.app/blog/active-recall-spaced-repetition/
 
 ## Contact
 

@@ -366,4 +366,62 @@
     render();
   })();
 
+  /* ---------- 10. SGPA -> CGPA calculator (semester-wise) ---------- */
+  (function () {
+    var root = $("#sgpaCalc");
+    if (!root) return;
+    var rows = $("#sgpaRows", root);
+    var addBtn = $("#sgpaAdd", root);
+    var mult = $("#sgpaMult", root);
+    var res = $("#sgpaResult", root);
+    var big = res.querySelector(".big");
+    var sub = res.querySelector(".sub");
+    var count = 0;
+
+    function m() { var v = parseFloat(mult && mult.value); return (isNaN(v) || v <= 0) ? 9.5 : v; }
+
+    function addRow(sgpa, credits) {
+      count++;
+      var row = document.createElement("div");
+      row.className = "gpa-row";
+      row.innerHTML =
+        '<input type="text" class="gpa-name" value="Semester ' + count + '" aria-label="Semester name" />' +
+        '<input type="number" class="gpa-grade" min="0" max="10" step="0.01" placeholder="SGPA" value="' + (sgpa != null ? sgpa : "") + '" inputmode="decimal" aria-label="SGPA" />' +
+        '<input type="number" class="gpa-credits" min="0" step="0.5" value="' + (credits != null ? credits : 20) + '" inputmode="decimal" aria-label="Credits" />' +
+        '<button type="button" class="gpa-del" aria-label="Remove semester">&times;</button>';
+      rows.appendChild(row);
+      row.querySelector(".gpa-del").addEventListener("click", function () { row.remove(); calc(); });
+      $$("input", row).forEach(function (el) { el.addEventListener("input", calc); });
+    }
+
+    function calc() {
+      var totalPoints = 0, totalCredits = 0, n = 0;
+      $$(".gpa-row", rows).forEach(function (r) {
+        var s = parseFloat(r.querySelector(".gpa-grade").value);
+        var c = parseFloat(r.querySelector(".gpa-credits").value);
+        if (isNaN(c) || c < 0) c = 0;
+        if (!isNaN(s) && s >= 0) { totalPoints += s * c; totalCredits += c; n++; }
+      });
+      if (n === 0 || totalCredits <= 0) {
+        big.textContent = "\u2014";
+        sub.textContent = "Add your semesters' SGPA and credits to see your CGPA.";
+        res.dataset.state = "";
+        return;
+      }
+      var cgpa = totalPoints / totalCredits;
+      var pct = cgpa * m();
+      big.textContent = "CGPA " + cgpa.toFixed(2);
+      sub.textContent = "\u2248 " + pct.toFixed(2) + "% (CGPA \u00d7 " + m() + ") across " + n + " semester" + (n === 1 ? "" : "s") + ".";
+      res.dataset.state = cgpa >= 7.5 ? "good" : "";
+    }
+
+    addBtn.addEventListener("click", function () { addRow(); calc(); });
+    if (mult) mult.addEventListener("input", calc);
+
+    // Seed with two example semesters
+    addRow(8.2, 20);
+    addRow(8.6, 20);
+    calc();
+  })();
+
 })();
