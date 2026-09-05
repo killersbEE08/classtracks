@@ -5,9 +5,16 @@
     <link>https://classtracks.app/blog/</link>
     <description>Free interactive student guides and calculators from ClassTrack: attendance, bunk, GPA, CGPA, study planning, productivity and more.</description>
     <language>en</language>
-    <lastBuildDate>Wed, 02 Sep 2026 17:05:37 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 05 Sep 2026 12:25:00 +0000</lastBuildDate>
     <atom:link href="https://classtracks.app/feed.xml" rel="self" type="application/rss+xml" />
     <image><url>https://classtracks.app/logo.png</url><title>ClassTrack Student Guides &amp; Calculators</title><link>https://classtracks.app/blog/</link></image>
+    <item>
+      <title>Body Doubling &amp; Study With Me</title>
+      <link>https://classtracks.app/blog/body-doubling-study-with-me/</link>
+      <guid isPermaLink="true">https://classtracks.app/blog/body-doubling-study-with-me/</guid>
+      <pubDate>Sat, 05 Sep 2026 00:00:00 +0000</pubDate>
+      <description>The viral focus trick, explained: why studying next to someone — in person or on a screen — helps you start and stay on task, and how to set it up.</description>
+    </item>
     <item>
       <title>SGPA to CGPA Calculator</title>
       <link>https://classtracks.app/blog/sgpa-to-cgpa-calculator/</link>

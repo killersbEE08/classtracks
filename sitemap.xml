@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://classtracks.app/blog/</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -275,5 +275,11 @@
     <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://classtracks.app/blog/body-doubling-study-with-me/</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
