@@ -86,6 +86,8 @@ Free, browser-based student calculators and guides (no sign-up required):
 - Student Budgeting: How to Manage Money in College (the 50/30/20 rule, a 5-step monthly budget, ways to cut costs and how to track spending): https://classtracks.app/blog/student-budgeting/
 - Active Recall & Spaced Repetition (evidence-based study techniques: retrieval practice, the testing effect, the forgetting curve and a sample review schedule): https://classtracks.app/blog/active-recall-spaced-repetition/
 - Body Doubling & "Study With Me" (the focus trick of working alongside someone in person or on a screen: what it is, why it works, how to set it up, and a focus-session checklist): https://classtracks.app/blog/body-doubling-study-with-me/
+- How to Manage Exam Stress & Anxiety (what causes test anxiety and 7 evidence-based techniques to manage it — box breathing, brain dumps, sleep, reframing nerves and active recall — plus a 5-step pre-exam calm-down routine and an interactive checklist): https://classtracks.app/blog/exam-stress-anxiety/
+- Time Blocking for Students (the calendar method that turns a to-do list into a plan: what time blocking is, why it works for students, a 6-step method, sample block lengths and templates, and an interactive setup checklist): https://classtracks.app/blog/time-blocking-for-students/
 
 ## Contact
 
