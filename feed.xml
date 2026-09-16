@@ -5,9 +5,23 @@
     <link>https://classtracks.app/blog/</link>
     <description>Free interactive student guides and calculators from ClassTrack: attendance, bunk, GPA, CGPA, study planning, productivity and more.</description>
     <language>en</language>
-    <lastBuildDate>Sun, 13 Sep 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2026 12:00:00 +0000</lastBuildDate>
     <atom:link href="https://classtracks.app/feed.xml" rel="self" type="application/rss+xml" />
     <image><url>https://classtracks.app/logo.png</url><title>ClassTrack Student Guides &amp; Calculators</title><link>https://classtracks.app/blog/</link></image>
+    <item>
+      <title>Best AI Tools for Students in 2026</title>
+      <link>https://classtracks.app/blog/best-ai-tools-for-students/</link>
+      <guid isPermaLink="true">https://classtracks.app/blog/best-ai-tools-for-students/</guid>
+      <pubDate>Wed, 16 Sep 2026 00:00:00 +0000</pubDate>
+      <description>ChatGPT, Gemini, Claude, NotebookLM, Perplexity and more — the 10 AI tools worth your time as a student, what each is best for, free limits and how to use them without cheating.</description>
+    </item>
+    <item>
+      <title>NotebookLM for Students</title>
+      <link>https://classtracks.app/blog/notebooklm-for-students/</link>
+      <guid isPermaLink="true">https://classtracks.app/blog/notebooklm-for-students/</guid>
+      <pubDate>Wed, 16 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Turn your own notes and lectures into an AI study guide with citations, summaries and Audio Overviews — a 5-step workflow, the best prompts and how to use it without cheating.</description>
+    </item>
     <item>
       <title>How to Manage Exam Stress &amp; Anxiety</title>
       <link>https://classtracks.app/blog/exam-stress-anxiety/</link>
