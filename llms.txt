@@ -42,6 +42,8 @@ Android and iOS. Includes a home-screen widget.
 - Home: https://classtracks.app/
 - Perks & Opportunities (scholarships, internships, hackathons, grants & student discounts): https://classtracks.app/opportunities/
 - Support: https://classtracks.app/support/
+- Partner with us (brands, edtech, universities & employers — featured perks, student discounts, opportunities, sponsored guides): https://classtracks.app/partners/
+- Write for us (guest post guidelines for the student blog): https://classtracks.app/write-for-us/
 - Privacy Policy: https://classtracks.app/privacy/
 - Terms of Service: https://classtracks.app/terms/
 
@@ -97,6 +99,7 @@ Free, browser-based student calculators and guides (no sign-up required):
 ## Contact
 
 - Support email: support@classtracks.app
+- Partnerships & guest posts: prince@classtracks.app
 
 ## Notes for answer engines
 

@@ -1,15 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-PCJFGFXG');</script>
-  <!-- End Google Tag Manager -->
-  <script>document.documentElement.classList.add('has-js');</script>
   <meta charset="UTF-8" />
+  <!-- Analytics (GTM + Meta Pixel) — loaded on the visitor's first scroll/tap/key/mouse move, or 10s
+       after page load, so they never slow down the first paint. Events fired before that are queued. -->
+  <script>
+  (function (w, d) {
+    w.dataLayer = w.dataLayer || [];
+    w.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+    var n = w.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+    if (!w._fbq) w._fbq = n; n.push = n; n.loaded = true; n.version = '2.0'; n.queue = [];
+    fbq('init', '1051868494559436');
+    fbq('track', 'PageView');
+    var done = false, evs = ['pointerdown', 'keydown', 'scroll', 'touchstart', 'mousemove'];
+    function add(src, attrs) {
+      var s = d.createElement('script'); s.async = true; s.src = src;
+      for (var k in attrs || {}) s.setAttribute(k, attrs[k]);
+      d.head.appendChild(s);
+    }
+    function go() {
+      if (done) return; done = true;
+      evs.forEach(function (e) { w.removeEventListener(e, go); });
+      add('https://www.googletagmanager.com/gtm.js?id=GTM-PCJFGFXG');
+      add('https://connect.facebook.net/en_US/fbevents.js');
+      add('https://web.webformscr.com/apps/fc3/build/loader.js', { 'sp-form-id': 'ecf8578cbb8c20124f7f55c24d4e71d59e57481e415374310fcdb8421d2091b0' });
+    }
+    evs.forEach(function (e) { w.addEventListener(e, go, { passive: true }); });
+    w.addEventListener('load', function () { setTimeout(go, 10000); });
+  })(window, document);
+  </script>
+  <noscript><img height="1" width="1" style="display:none" alt=""
+  src="https://www.facebook.com/tr?id=1051868494559436&ev=PageView&noscript=1"/></noscript>
+  <script>document.documentElement.classList.add('has-js');</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ClassTrack — Attendance, timetable & an AI study buddy for students</title>
   <meta name="description" content="ClassTrack keeps your whole student life on track: smart attendance with a bunk calculator, timetable, exam countdowns, GPA, focus timer, habits, plus a feed of student perks and opportunities (scholarships, internships & discounts) and an AI study assistant powered by Gemini." />
@@ -39,13 +61,13 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
-  <!-- Material Symbols Rounded — the same icon family the ClassTrack app uses -->
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400..700,0..1,0&display=block" rel="stylesheet" />
+  <link rel="preload" href="fonts/material-symbols-rounded.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@500;600;700;800&amp;display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@500;600;700;800&amp;display=swap" /></noscript>
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="icon" type="image/png" href="logo.png" />
-  <link rel="apple-touch-icon" href="logo.png" />
+  <link rel="icon" type="image/png" href="logo-96.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="alternate" type="application/rss+xml" title="ClassTrack Student Guides &amp; Calculators" href="https://classtracks.app/feed.xml" />
 
@@ -145,25 +167,6 @@
     ]
   }
   </script>
-  <!-- SendPulse Web Form -->
-  <script src="//web.webformscr.com/apps/fc3/build/loader.js" async
-    sp-form-id="ecf8578cbb8c20124f7f55c24d4e71d59e57481e415374310fcdb8421d2091b0"></script>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window,document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1051868494559436');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none" alt=""
-src="https://www.facebook.com/tr?id=1051868494559436&ev=PageView&noscript=1"/></noscript>
-<!-- End Meta Pixel Code -->
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -289,12 +292,12 @@ src="https://www.facebook.com/tr?id=1051868494559436&ev=PageView&noscript=1"/></
                   <strong>Hey, Piyush 👋</strong>
                   <small>Let's check your day</small>
                 </div>
-                <button class="app__icnbtn app__ai" aria-hidden="true">
+                <button class="app__icnbtn app__ai" aria-hidden="true" tabindex="-1">
                   <span class="ms ms--fill">auto_awesome</span>
                 </button>
               </div>
 
-              <h3 class="app__h">Stay <span>on track</span><br/>today.</h3>
+              <p class="app__h">Stay <span>on track</span><br/>today.</p>
 
               <div class="app__stats">
                 <div class="statcard statcard--lav">
@@ -323,8 +326,8 @@ src="https://www.facebook.com/tr?id=1051868494559436&ev=PageView&noscript=1"/></
                   <small>9:00 – 10:00 · Room 204</small>
                 </div>
                 <div class="classcard__acts">
-                  <button class="mini mini--ok" aria-hidden="true"><span class="ms">check</span></button>
-                  <button class="mini mini--no" aria-hidden="true"><span class="ms">close</span></button>
+                  <button class="mini mini--ok" aria-hidden="true" tabindex="-1"><span class="ms">check</span></button>
+                  <button class="mini mini--no" aria-hidden="true" tabindex="-1"><span class="ms">close</span></button>
                 </div>
               </div>
 
@@ -351,7 +354,7 @@ src="https://www.facebook.com/tr?id=1051868494559436&ev=PageView&noscript=1"/></
         </div>
       </div>
 
-      <a href="#marquee" class="scroll-hint" aria-hidden="true">
+      <a href="#marquee" class="scroll-hint" aria-hidden="true" tabindex="-1">
         <span></span>
       </a>
     </section>
@@ -652,12 +655,12 @@ src="https://www.facebook.com/tr?id=1051868494559436&ev=PageView&noscript=1"/></
               <div class="bubble bubble--ai reveal-msg">Done! I added <b>3 classes</b> across 2 subjects. ✨</div>
               <div class="bubble bubble--card reveal-msg">
                 <span><span class="ms" style="font-size:16px;vertical-align:-3px">auto_awesome</span> Proposed schedule · 2 subjects</span>
-                <button>Review &amp; add to calendar</button>
+                <button tabindex="-1" aria-hidden="true">Review &amp; add to calendar</button>
               </div>
             </div>
             <div class="chatui__input">
               <span>Ask me anything…</span>
-              <button class="chatui__send" aria-hidden="true"><span class="ms">send</span></button>
+              <button class="chatui__send" aria-hidden="true" tabindex="-1"><span class="ms">send</span></button>
             </div>
           </div>
         </div>
@@ -766,7 +769,7 @@ src="https://www.facebook.com/tr?id=1051868494559436&ev=PageView&noscript=1"/></
             </div>
             <div class="rating-summary__stores">
               <span class="storepill"><span class="ms ms--fill">star</span> 4.8 · Google Play</span>
-              <span class="storepill storepill--soon"><span class="ms">schedule</span> Coming soon · App Store</span>
+              <button type="button" class="storepill storepill--soon" data-ios-waitlist aria-haspopup="dialog"><span class="ms">schedule</span> Coming soon · App Store — notify me</button>
             </div>
           </div>
         </div>
@@ -1019,7 +1022,7 @@ src="https://www.facebook.com/tr?id=1051868494559436&ev=PageView&noscript=1"/></
           </details>
           <details class="faq__item reveal">
             <summary>Which platforms are supported?<span class="faq__ic"></span></summary>
-            <div class="faq__a">ClassTrack is available now on Android via Google Play, with iOS coming soon. It includes a home-screen widget for your day at a glance.</div>
+            <div class="faq__a">ClassTrack is available now on Android via Google Play, with iOS coming soon (<a href="#get" data-ios-waitlist>join the iOS waitlist</a>). It includes a home-screen widget for your day at a glance.</div>
           </details>
         </div>
       </div>
@@ -1038,10 +1041,10 @@ src="https://www.facebook.com/tr?id=1051868494559436&ev=PageView&noscript=1"/></
         <h2>Your best semester<br/>starts today.</h2>
         <p>Join thousands of students who never miss attendance, a deadline or an exam again.</p>
         <div class="cta__actions">
-          <span class="store-btn store-btn--soon" aria-disabled="true" aria-label="App Store — coming soon">
+          <button type="button" class="store-btn store-btn--soon" data-ios-waitlist aria-haspopup="dialog" aria-label="App Store — coming soon. Join the iOS waitlist">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M16.4 12.9c0-2 1.6-3 1.7-3-1-1.4-2.4-1.6-2.9-1.6-1.2-.1-2.4.7-3 .7s-1.6-.7-2.6-.7c-1.3 0-2.6.8-3.3 2-1.4 2.4-.4 6 1 8 .7 1 1.4 2 2.5 2 1 0 1.3-.6 2.5-.6s1.5.6 2.6.6 1.7-1 2.4-2c.7-1.1 1-2.2 1-2.2s-1.9-.7-1.9-2.9ZM14.5 6.7c.6-.7 1-1.6.9-2.6-.8 0-1.9.6-2.5 1.3-.5.6-1 1.6-.9 2.5.9.1 1.8-.5 2.5-1.2Z"/></svg>
-            <span><small>Coming soon on</small><strong>App Store</strong></span>
-          </span>
+            <span><small>Coming soon · Get notified</small><strong>App Store</strong></span>
+          </button>
           <a href="https://play.google.com/store/apps/details?id=com.classtracks.app" target="_blank" rel="noopener" class="store-btn magnetic" data-magnetic aria-label="Get it on Google Play">
             <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 3.5 13.5 12 4 20.5c-.3-.2-.5-.6-.5-1v-15c0-.4.2-.8.5-1Z" fill="#22C55E"/><path d="m16.5 9 2.9 1.7c.7.4.7 1.2 0 1.6L16.5 14 13.9 12 16.5 9Z" fill="#F59E0B"/><path d="M4 3.5c.2-.1.5-.1.8 0L16.5 9l-2.6 3L4 3.5Z" fill="#0EA5E9"/><path d="M4 20.5 13.9 12l2.6 2-11.7 6.5c-.3.2-.6.2-.8 0Z" fill="#EF4444"/></svg>
             <span><small>Get it on</small><strong>Google Play</strong></span>
@@ -1068,7 +1071,7 @@ src="https://www.facebook.com/tr?id=1051868494559436&ev=PageView&noscript=1"/></
         <p>Your entire student life, on track.</p>
       </div>
       <nav class="footer__col" aria-label="Product">
-        <h4>Product</h4>
+        <h3>Product</h3>
         <a href="#features">Features</a>
         <a href="#bunk">Bunk calculator</a>
         <a href="#ai">AI assistant</a>
@@ -1076,7 +1079,7 @@ src="https://www.facebook.com/tr?id=1051868494559436&ev=PageView&noscript=1"/></
         <a href="#pricing">Pricing</a>
       </nav>
       <nav class="footer__col" aria-label="Guides">
-        <h4>Guides</h4>
+        <h3>Guides</h3>
         <a href="blog/">All guides</a>
         <a href="blog/attendance-calculator/">Attendance calculator</a>
         <a href="blog/bunk-calculator/">Bunk calculator</a>
@@ -1084,16 +1087,18 @@ src="https://www.facebook.com/tr?id=1051868494559436&ev=PageView&noscript=1"/></
         <a href="blog/study-planner/">Study planner</a>
       </nav>
       <nav class="footer__col" aria-label="Company">
-        <h4>Company</h4>
+        <h3>Company</h3>
         <a href="#hero">About</a>
         <a href="privacy/">Privacy</a>
         <a href="terms/">Terms</a>
         <a href="support/">Support</a>
         <a href="contact/">Contact</a>
+        <a href="partners/">Partner with us</a>
+        <a href="write-for-us/">Write for us</a>
       </nav>
       <nav class="footer__col" aria-label="Get the app">
-        <h4>Get the app</h4>
-        <a href="#get">App Store</a>
+        <h3>Get the app</h3>
+        <a href="#get" data-ios-waitlist>App Store (coming soon)</a>
         <a href="https://play.google.com/store/apps/details?id=com.classtracks.app" target="_blank" rel="noopener">Google Play</a>
       </nav>
     </div>
@@ -1104,7 +1109,7 @@ src="https://www.facebook.com/tr?id=1051868494559436&ev=PageView&noscript=1"/></
   </footer>
 
   <!-- Sticky mobile CTA -->
-  <div class="mobile-cta" id="mobileCta" aria-hidden="true">
+  <div class="mobile-cta" id="mobileCta" inert>
     <span class="brand__logo" aria-hidden="true">
       <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
         <rect x="4" y="6" width="16" height="14" rx="2.6" fill="#fff"/><path d="M4 9a2.6 2.6 0 0 1 2.6-2.6h10.8A2.6 2.6 0 0 1 20 9v1.8H4Z" fill="#312C9D"/><rect x="8.3" y="3.4" width="1.9" height="4.8" rx="0.95" fill="#F5A623"/><rect x="13.8" y="3.4" width="1.9" height="4.8" rx="0.95" fill="#F5A623"/>

@@ -61,7 +61,10 @@
       const r = getSection.getBoundingClientRect();
       nearFinalCta = r.top < window.innerHeight && r.bottom > 0;
     }
-    mobileCta.classList.toggle('show', pastHero && !nearFinalCta);
+    const show = pastHero && !nearFinalCta;
+    mobileCta.classList.toggle('show', show);
+    // Hidden bar must not be reachable by keyboard / screen readers.
+    mobileCta.inert = !show;
   };
   onScrollMobileCta();
 
@@ -218,20 +221,13 @@
   const heroEls = $$('[data-hero]').sort(
     (a, b) => (+a.dataset.hero || 0) - (+b.dataset.hero || 0)
   );
-  window.addEventListener('load', kickHero);
-  // Fallback in case load already fired
-  if (document.readyState === 'complete') kickHero();
-  let heroDone = false;
-  function kickHero() {
-    if (heroDone) return;
-    heroDone = true;
-    heroEls.forEach((el, i) => {
-      el.style.transitionDelay = (prefersReduced ? 0 : i * 0.09) + 's';
-      requestAnimationFrame(() => el.classList.add('in'));
-    });
-  }
-  // Safety: reveal hero shortly after DOM ready even if 'load' is slow.
-  setTimeout(kickHero, 400);
+  // Start right away (this script is deferred, so the DOM is ready). Waiting for
+  // window 'load' used to hold the hero text back behind analytics/fonts and
+  // pushed Largest Contentful Paint out by seconds.
+  heroEls.forEach((el, i) => {
+    el.style.transitionDelay = (prefersReduced ? 0 : i * 0.06) + 's';
+  });
+  requestAnimationFrame(() => heroEls.forEach((el) => el.classList.add('in')));
 
   /* ---------- 3D tilt on devices/cards (desktop) ---------- */
   if (!isTouch && !prefersReduced) {
@@ -450,11 +446,140 @@
       '<small><span class="ms ms--fill">star</span> 4.8 · Free on Google Play</small></div>' +
       '<a class="appbanner__cta" href="https://play.google.com/store/apps/details?id=com.classtracks.app" target="_blank" rel="noopener">GET</a>';
 
-    document.body.insertBefore(bar, document.body.firstChild);
+    document.body.appendChild(bar);
+    document.body.classList.add('has-appbanner');
+    requestAnimationFrame(function () { requestAnimationFrame(function () { bar.classList.add('show'); }); });
 
     bar.querySelector('.appbanner__close').addEventListener('click', function () {
       bar.remove();
+      document.body.classList.remove('has-appbanner');
       try { localStorage.setItem(DISMISS_KEY, '1'); } catch (e) {}
+    });
+  })();
+
+  /* ---------- iOS waitlist ("show interest") modal ----------
+     Any element with [data-ios-waitlist] opens a small form. Signups are sent
+     with Web3Forms (same inbox as the contact form). Built on first click, so it
+     costs nothing on page load. */
+  (function iosWaitlist() {
+    var KEY = '9af6f644-51d3-44fe-a5e7-ce1b529c124e'; // Web3Forms public access key
+    var DONE_KEY = 'ct_ios_waitlist';
+    var PLAY = 'https://play.google.com/store/apps/details?id=com.classtracks.app';
+    var dlg = null;
+
+    function track() {
+      try { (window.dataLayer = window.dataLayer || []).push({ event: 'ios_waitlist_signup' }); } catch (e) {}
+      try { if (window.fbq) window.fbq('track', 'Lead', { content_name: 'iOS waitlist' }); } catch (e) {}
+    }
+
+    function build() {
+      dlg = document.createElement('dialog');
+      dlg.className = 'waitlist';
+      dlg.setAttribute('aria-labelledby', 'waitlistTitle');
+      dlg.innerHTML =
+        '<button type="button" class="waitlist__close" aria-label="Close"><span class="ms">close</span></button>' +
+        '<div class="waitlist__ic" aria-hidden="true"><span class="ms ms--fill">phone_iphone</span></div>' +
+        '<div class="waitlist__form-view">' +
+          '<h2 id="waitlistTitle">ClassTrack for iPhone is coming</h2>' +
+          '<p class="waitlist__lead">Join the iOS waitlist and we\u2019ll email you the day it lands on the App Store.</p>' +
+          '<form class="form waitlist__form" novalidate>' +
+            '<input type="checkbox" name="botcheck" class="form__hp" tabindex="-1" autocomplete="off" aria-hidden="true" />' +
+            '<div class="field"><label for="wlEmail">Email</label>' +
+              '<input id="wlEmail" name="email" type="email" placeholder="you@example.com" autocomplete="email" required /></div>' +
+            '<div class="form__row">' +
+              '<div class="field"><label for="wlName">Name <span class="waitlist__opt">(optional)</span></label>' +
+                '<input id="wlName" name="name" type="text" placeholder="Your name" autocomplete="name" /></div>' +
+              '<div class="field"><label for="wlDevice">Device</label>' +
+                '<select id="wlDevice" name="device"><option>iPhone</option><option>iPad</option><option>iPhone &amp; iPad</option></select></div>' +
+            '</div>' +
+            '<div class="form__status" role="status" aria-live="polite"></div>' +
+            '<button type="submit" class="btn btn--primary btn--lg btn--block"><span class="ms">notifications_active</span> Notify me</button>' +
+            '<p class="form__note">One email when we launch on iOS. No spam. <a href="/privacy/">Privacy</a></p>' +
+          '</form>' +
+        '</div>' +
+        '<div class="waitlist__done-view" hidden>' +
+          '<h2>You\u2019re on the list! \uD83C\uDF89</h2>' +
+          '<p class="waitlist__lead">We\u2019ll email you as soon as ClassTrack is live on the App Store. On Android? You can use it today.</p>' +
+          '<div class="waitlist__done-actions">' +
+            '<a class="btn btn--primary" href="' + PLAY + '" target="_blank" rel="noopener"><span class="ms">download</span> Get it on Google Play</a>' +
+            '<button type="button" class="btn btn--soft waitlist__again">Use another email</button>' +
+          '</div>' +
+        '</div>';
+      document.body.appendChild(dlg);
+
+      var form = dlg.querySelector('form');
+      var status = dlg.querySelector('.form__status');
+      var submit = form.querySelector('[type="submit"]');
+      var submitHTML = submit.innerHTML;
+      var setStatus = function (msg, kind) {
+        status.textContent = msg;
+        status.className = 'form__status' + (msg ? ' show ' + kind : '');
+      };
+      var showDone = function (done) {
+        dlg.querySelector('.waitlist__form-view').hidden = done;
+        dlg.querySelector('.waitlist__done-view').hidden = !done;
+      };
+      dlg._showDone = showDone;
+
+      dlg.querySelector('.waitlist__close').addEventListener('click', function () { dlg.close(); });
+      dlg.querySelector('.waitlist__again').addEventListener('click', function () {
+        showDone(false); form.reset(); setStatus('', ''); form.email.focus();
+      });
+      // Click on the dark backdrop closes the dialog.
+      dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (form.botcheck.checked) return; // bot
+        var email = form.email.value.trim();
+        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+          setStatus('Please enter a valid email address.', 'err');
+          form.email.focus();
+          return;
+        }
+        submit.disabled = true; submit.textContent = 'Joining\u2026'; setStatus('', '');
+        fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            access_key: KEY,
+            subject: 'New iOS waitlist signup',
+            from_name: 'ClassTrack iOS waitlist',
+            email: email,
+            name: form.name.value.trim() || '(not given)',
+            device: form.device.value,
+            page: location.pathname,
+            message: 'Wants to be notified when ClassTrack launches on iOS (' + form.device.value + ').'
+          })
+        })
+          .then(function (r) { return r.json(); })
+          .then(function (json) {
+            if (!json.success) throw new Error(json.message || 'failed');
+            try { localStorage.setItem(DONE_KEY, '1'); } catch (err) {}
+            track();
+            showDone(true);
+          })
+          .catch(function () {
+            setStatus('Couldn\u2019t sign you up just now. Please check your connection and try again.', 'err');
+          })
+          .then(function () { submit.disabled = false; submit.innerHTML = submitHTML; });
+      });
+    }
+
+    function open(e) {
+      if (typeof HTMLDialogElement !== 'function') return; // very old browser: follow the link instead
+      e.preventDefault();
+      if (!dlg) build();
+      var done = false;
+      try { done = localStorage.getItem(DONE_KEY) === '1'; } catch (err) {}
+      dlg._showDone(done);
+      dlg.showModal();
+      if (!done) dlg.querySelector('#wlEmail').focus();
+    }
+
+    document.addEventListener('click', function (e) {
+      var t = e.target.closest && e.target.closest('[data-ios-waitlist]');
+      if (t) open(e);
     });
   })();
 

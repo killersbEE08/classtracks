@@ -4,6 +4,28 @@
    Fonts: Poppins (headings), Inter (body)
    ========================================================= */
 
+/* Icon font: self-hosted subset with only the icons the site uses (~20 KB instead of ~3 MB).
+   Rebuild with `python tools/update_icon_font.py` after adding a new icon name. */
+@font-face {
+  font-family: 'Material Symbols Rounded';
+  font-style: normal;
+  font-weight: 500;
+  font-display: block;
+  src: url('fonts/material-symbols-rounded.woff2') format('woff2');
+}
+
+/* Metric-matched local fallbacks, so text doesn't jump when Inter/Poppins finish loading. */
+@font-face {
+  font-family: 'Inter Fallback';
+  src: local('Arial'), local('Helvetica'), local('Roboto');
+  ascent-override: 90.2%; descent-override: 22.5%; line-gap-override: 0%; size-adjust: 107.4%;
+}
+@font-face {
+  font-family: 'Poppins Fallback';
+  src: local('Arial'), local('Helvetica'), local('Roboto');
+  ascent-override: 93.6%; descent-override: 31.2%; line-gap-override: 8.9%; size-adjust: 112.2%;
+}
+
 :root {
   --purple: #6C5CE7;
   --purple-light: #8B7FEC;
@@ -43,7 +65,7 @@
 html { scroll-behavior: smooth; scroll-padding-top: 88px; -webkit-text-size-adjust: 100%; }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', 'Inter Fallback', system-ui, -apple-system, sans-serif;
   color: var(--text);
   background: var(--bg);
   line-height: 1.6;
@@ -51,7 +73,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, .brand__name { font-family: 'Poppins', sans-serif; letter-spacing: -0.02em; }
+h1, h2, h3, h4, .brand__name { font-family: 'Poppins', 'Poppins Fallback', sans-serif; letter-spacing: -0.02em; }
 a { color: inherit; text-decoration: none; }
 img, svg { display: block; max-width: 100%; }
 
@@ -109,6 +131,9 @@ img, svg { display: block; max-width: 100%; }
   transition: opacity .8s var(--ease), transform .8s var(--ease);
 }
 [data-hero].in { opacity: 1; transform: none; }
+/* The headline and intro paragraph are the Largest Contentful Paint element.
+   Keep them visible from the first paint (slide only, no fade) so LCP isn't delayed. */
+.has-js .hero__title [data-hero], .has-js .hero__sub[data-hero] { opacity: 1; }
 
 /* Chat bubble reveal */
 .has-js .reveal-msg { opacity: 0; transform: translateY(14px) scale(.98); transition: opacity .5s var(--ease), transform .5s var(--ease); }
@@ -195,7 +220,7 @@ img, svg { display: block; max-width: 100%; }
 .btn--primary:hover { box-shadow: 0 18px 38px rgba(108, 92, 231, .5); transform: translateY(-2px); }
 .btn--soft { background: var(--surface); color: var(--ink); border: 1px solid var(--border); box-shadow: var(--shadow-sm); }
 .btn--soft:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
-.btn--ghost { background: transparent; color: var(--text-soft); }
+.btn--ghost { background: transparent; color: #3A3858; } /* dark enough for WCAG AA even over the hero blobs */
 .btn--ghost:hover { color: var(--ink); }
 .btn--white { background: #fff; color: var(--purple-dark); }
 .btn--white:hover { transform: translateY(-2px); box-shadow: 0 18px 38px rgba(0,0,0,.18); }
@@ -291,7 +316,7 @@ img, svg { display: block; max-width: 100%; }
 .app__icnbtn { margin-left: auto; width: 34px; height: 34px; border-radius: 12px; border: 0; display: grid; place-items: center; }
 .app__ai { background: linear-gradient(135deg, var(--purple-light), var(--purple)); box-shadow: 0 6px 14px rgba(108,92,231,.4); }
 
-.app__h { font-family: 'Poppins'; font-size: 26px; line-height: 1.05; color: var(--ink); font-weight: 700; margin: 4px 2px 14px; }
+.app__h { font-family: 'Poppins', 'Poppins Fallback', sans-serif; letter-spacing: -0.02em; font-size: 26px; line-height: 1.05; color: var(--ink); font-weight: 700; margin: 4px 2px 14px; }
 .app__h span { color: var(--purple); }
 
 .app__stats { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
@@ -343,8 +368,9 @@ img, svg { display: block; max-width: 100%; }
 
 /* ---------- Scroll hint ---------- */
 .scroll-hint { position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%); width: 26px; height: 42px; border: 2px solid var(--lavender-tint); border-radius: 20px; z-index: 2; }
-.scroll-hint span { position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 4px; height: 8px; border-radius: 4px; background: var(--purple); animation: scrolldot 1.8s infinite; }
-@keyframes scrolldot { 0% { opacity: 0; top: 8px; } 40% { opacity: 1; } 80% { opacity: 0; top: 22px; } 100% { opacity: 0; } }
+.scroll-hint span { position: absolute; top: 8px; left: 50%; margin-left: -2px; width: 4px; height: 8px; border-radius: 4px; background: var(--purple); animation: scrolldot 1.8s infinite; }
+/* transform-only so the browser can animate it off the main thread */
+@keyframes scrolldot { 0% { opacity: 0; transform: translateY(0); } 40% { opacity: 1; } 80% { opacity: 0; transform: translateY(14px); } 100% { opacity: 0; } }
 
 /* ======================= MARQUEE ======================= */
 .marquee { padding: 22px 0; background: var(--ink); overflow: hidden; }
@@ -361,6 +387,9 @@ img, svg { display: block; max-width: 100%; }
 
 /* ======================= SECTIONS ======================= */
 .section { padding: 90px 0; position: relative; }
+/* Home page: let the browser skip layout/paint of sections that are off-screen
+   until the visitor scrolls near them (big win for first load on phones). */
+#top > .section { content-visibility: auto; contain-intrinsic-size: auto 900px; }
 .section__head { text-align: center; max-width: 720px; margin: 0 auto 54px; }
 .section__head h2 { font-size: clamp(28px, 4.4vw, 46px); line-height: 1.1; color: var(--ink); font-weight: 800; margin: 16px 0 14px; }
 .section__head p { color: var(--text-soft); font-size: 17px; }
@@ -612,9 +641,40 @@ img, svg { display: block; max-width: 100%; }
 .store-btn span { display: flex; flex-direction: column; line-height: 1.1; text-align: left; }
 .store-btn small { font-size: 11px; color: var(--text-soft); }
 .store-btn strong { font-family: 'Poppins'; font-size: 17px; }
-.store-btn--soon { position: relative; opacity: .6; cursor: default; pointer-events: none; }
-.store-btn--soon:hover { transform: none; box-shadow: none; }
+.store-btn--soon { position: relative; opacity: .85; cursor: pointer; border: 0; font: inherit; }
+.store-btn--soon:hover { opacity: 1; }
 .store-btn--soon::after { content: "Soon"; position: absolute; top: -8px; right: -8px; background: var(--ink); color: #fff; font-size: 10px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; padding: 3px 7px; border-radius: 999px; }
+button.storepill { font: inherit; font-size: 13px; font-weight: 600; cursor: pointer; transition: border-color .2s, color .2s; }
+button.storepill:hover { border-color: var(--purple-light); color: var(--purple-dark); }
+
+/* ---------- iOS waitlist modal (opened by [data-ios-waitlist]) ---------- */
+.waitlist {
+  width: min(460px, calc(100% - 32px)); margin: auto; padding: 30px 28px 24px;
+  border: 0; border-radius: var(--radius-lg); background: var(--surface); color: var(--text);
+  box-shadow: var(--shadow-lg); overflow: visible; /* keep the browser's position: fixed (centered) */
+  max-height: calc(100dvh - 32px); overflow-y: auto;
+}
+.waitlist::backdrop { background: rgba(27, 28, 52, .55); backdrop-filter: blur(3px); }
+.waitlist[open] { animation: waitlistIn .3s var(--ease); }
+@keyframes waitlistIn { from { opacity: 0; transform: translateY(16px) scale(.98); } }
+.waitlist__close {
+  position: absolute; top: 12px; right: 12px; width: 36px; height: 36px; border-radius: 12px;
+  border: 0; background: var(--lavender-soft); color: var(--ink); cursor: pointer; display: grid; place-items: center;
+}
+.waitlist__close:hover { background: var(--lavender); }
+.waitlist__close .ms { font-size: 20px; }
+.waitlist__ic {
+  width: 54px; height: 54px; border-radius: 17px; display: grid; place-items: center; margin-bottom: 14px;
+  background: linear-gradient(150deg, var(--purple-light), var(--purple)); box-shadow: 0 10px 24px rgba(108,92,231,.35);
+}
+.waitlist__ic .ms { color: #fff; font-size: 30px; }
+.waitlist h2 { font-size: 22px; line-height: 1.2; color: var(--ink); margin-bottom: 8px; padding-right: 30px; }
+.waitlist__lead { color: var(--text-soft); font-size: 15px; margin-bottom: 20px; }
+.waitlist__opt { color: var(--text-soft); font-weight: 500; }
+.waitlist .form__note a { color: var(--purple-dark); font-weight: 600; }
+.waitlist__done-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+@media (max-width: 480px) { .waitlist .form__row { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .waitlist[open] { animation: none; } }
 .cta__note { display: block; margin-top: 20px; color: rgba(255,255,255,.75); font-size: 13.5px; }
 
 /* ---------- Footer ---------- */
@@ -622,7 +682,7 @@ img, svg { display: block; max-width: 100%; }
 .footer__inner { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr 1fr; gap: 32px; padding-bottom: 40px; }
 .footer__brand .brand__name { color: #fff; }
 .footer__brand p { margin-top: 14px; font-size: 14.5px; max-width: 260px; }
-.footer__col h4 { color: #fff; font-size: 14px; margin-bottom: 14px; font-family: 'Poppins'; }
+.footer__col h3, .footer__col h4 { color: #fff; font-size: 14px; margin-bottom: 14px; font-family: 'Poppins', 'Poppins Fallback', sans-serif; }
 .footer__col a { display: block; padding: 6px 0; font-size: 14.5px; color: rgba(255,255,255,.65); transition: color .2s; }
 .footer__col a:hover { color: #fff; }
 .footer__bottom { display: flex; justify-content: space-between; padding-top: 26px; border-top: 1px solid rgba(255,255,255,.1); font-size: 13.5px; }
@@ -955,8 +1015,8 @@ section[id] { scroll-margin-top: 88px; }
    ========================================================= */
 
 /* Breadcrumbs */
-.crumbs { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 13.5px; color: var(--text-soft); margin-bottom: 14px; }
-.crumbs a { color: var(--text-soft); border-bottom: 0; }
+.crumbs { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 13.5px; color: #3F3D5C; margin-bottom: 14px; }
+.crumbs a { color: #3F3D5C; border-bottom: 0; }
 .crumbs a:hover { color: var(--purple); }
 .crumbs .sep { opacity: .5; }
 
@@ -1204,8 +1264,18 @@ section[id] { scroll-margin-top: 88px; }
 /* Inline keycap / code chip (used in guides, e.g. file names, URLs) */
 .kbd { font-family: 'Inter', ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .9em; font-weight: 600; background: var(--lavender-soft, #f2f0ff); color: var(--purple, #6C5CE7); border: 1px solid var(--border, #e6e3f5); border-radius: 6px; padding: 1px 7px; white-space: nowrap; }
 
-/* ---------- Smart app banner (mobile only, scrolls away) ---------- */
-.appbanner { display: flex; align-items: center; gap: 12px; padding: 9px 12px; background: var(--surface); border-bottom: 1px solid var(--border); }
+/* ---------- Smart app banner (mobile only) ----------
+   Fixed to the bottom and slid in with transform, so adding it never pushes
+   the page down (that used to cause a layout shift / CLS on every guide). */
+.appbanner {
+  display: flex; align-items: center; gap: 12px; padding: 9px 12px calc(9px + env(safe-area-inset-bottom, 0px));
+  background: var(--surface); border-top: 1px solid var(--border);
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 950;
+  box-shadow: 0 -8px 24px rgba(27, 28, 52, .08);
+  transform: translateY(110%); transition: transform .35s var(--ease);
+}
+.appbanner.show { transform: none; }
+body.has-appbanner { padding-bottom: 68px; }
 .appbanner__close { flex: none; width: 26px; height: 26px; border: 0; background: transparent; color: var(--text-soft); font-size: 22px; line-height: 1; cursor: pointer; border-radius: 8px; padding: 0; }
 .appbanner__close:hover { background: var(--lavender-soft); }
 .appbanner__icon { flex: none; width: 42px; height: 42px; border-radius: 10px; object-fit: cover; }

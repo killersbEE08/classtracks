@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-PCJFGFXG');</script>
-  <!-- End Google Tag Manager -->
-  <script>document.documentElement.classList.add('has-js');</script>
   <meta charset="UTF-8" />
+  <!-- Analytics (GTM + Meta Pixel) — loaded on the visitor's first scroll/tap/key/mouse move, or 10s
+       after page load, so they never slow down the first paint. Events fired before that are queued. -->
+  <script>
+  (function (w, d) {
+    w.dataLayer = w.dataLayer || [];
+    w.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+    var n = w.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+    if (!w._fbq) w._fbq = n; n.push = n; n.loaded = true; n.version = '2.0'; n.queue = [];
+    fbq('init', '1051868494559436');
+    fbq('track', 'PageView');
+    var done = false, evs = ['pointerdown', 'keydown', 'scroll', 'touchstart', 'mousemove'];
+    function add(src, attrs) {
+      var s = d.createElement('script'); s.async = true; s.src = src;
+      for (var k in attrs || {}) s.setAttribute(k, attrs[k]);
+      d.head.appendChild(s);
+    }
+    function go() {
+      if (done) return; done = true;
+      evs.forEach(function (e) { w.removeEventListener(e, go); });
+      add('https://www.googletagmanager.com/gtm.js?id=GTM-PCJFGFXG');
+      add('https://connect.facebook.net/en_US/fbevents.js');
+    }
+    evs.forEach(function (e) { w.addEventListener(e, go, { passive: true }); });
+    w.addEventListener('load', function () { setTimeout(go, 10000); });
+  })(window, document);
+  </script>
+  <noscript><img height="1" width="1" style="display:none" alt=""
+  src="https://www.facebook.com/tr?id=1051868494559436&ev=PageView&noscript=1"/></noscript>
+  <script>document.documentElement.classList.add('has-js');</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Pomodoro Technique for Students (How to Use It)</title>
   <meta name="description" content="The Pomodoro Technique explained for students: how the 25/5 method works, why it beats marathon study sessions, common mistakes, and variations that fit real study." />
@@ -34,11 +55,12 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400..700,0..1,0&display=block" rel="stylesheet" />
+  <link rel="preload" href="../../fonts/material-symbols-rounded.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@500;600;700;800&amp;display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@500;600;700;800&amp;display=swap" /></noscript>
   <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
-  <link rel="icon" type="image/png" href="../../logo.png" />
-  <link rel="apple-touch-icon" href="../../logo.png" />
+  <link rel="icon" type="image/png" href="../../logo-96.png" />
+  <link rel="apple-touch-icon" href="../../apple-touch-icon.png" />
   <link rel="stylesheet" href="../../styles.css" />
 
   <script type="application/ld+json">
@@ -222,22 +244,6 @@
     ]
   }
   </script>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window,document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1051868494559436');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none" alt=""
-src="https://www.facebook.com/tr?id=1051868494559436&ev=PageView&noscript=1"/></noscript>
-<!-- End Meta Pixel Code -->
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -430,29 +436,31 @@ src="https://www.facebook.com/tr?id=1051868494559436&ev=PageView&noscript=1"/></
         <p>Your entire student life, on track.</p>
       </div>
       <nav class="footer__col" aria-label="Product">
-        <h4>Product</h4>
+        <h3>Product</h3>
         <a href="../../#features">Features</a>
         <a href="../../opportunities/">Perks &amp; opportunities</a>
         <a href="../../#ai">AI assistant</a>
         <a href="../../#pricing">Pricing</a>
       </nav>
       <nav class="footer__col" aria-label="Guides">
-        <h4>Guides</h4>
+        <h3>Guides</h3>
         <a href="../best-productivity-app-for-students/">Best productivity app</a>
         <a href="../bunk-calculator/">Bunk calculator</a>
         <a href="../gpa-calculator/">GPA calculator</a>
         <a href="../">All guides</a>
       </nav>
       <nav class="footer__col" aria-label="Company">
-        <h4>Company</h4>
+        <h3>Company</h3>
         <a href="../../#hero">About</a>
         <a href="../../privacy/">Privacy</a>
         <a href="../../terms/">Terms</a>
         <a href="../../support/">Support</a>
+        <a href="../../partners/">Partner with us</a>
+        <a href="../../write-for-us/">Write for us</a>
       </nav>
       <nav class="footer__col" aria-label="Get the app">
-        <h4>Get the app</h4>
-        <a href="../../#get">App Store</a>
+        <h3>Get the app</h3>
+        <a href="../../#get" data-ios-waitlist>App Store (coming soon)</a>
         <a href="https://play.google.com/store/apps/details?id=com.classtracks.app" target="_blank" rel="noopener">Google Play</a>
       </nav>
     </div>
