@@ -95,6 +95,8 @@ Free, browser-based student calculators and guides (no sign-up required):
 - How to Make a Study Timetable (a step-by-step method to build a weekly study timetable you will actually follow: block fixed commitments, rank subjects, split hours into 25–50 min blocks, add breaks and a buffer, plus sample templates and an AI shortcut that builds a timetable from a photo): https://classtracks.app/blog/how-to-make-a-study-timetable/
 - How to Improve Your CGPA (9 proven ways to raise your grades: understand the credit-weighted CGPA math, prioritise high-credit courses, recover easy marks via attendance and deadlines, use active recall, master the marking scheme, get help early, and track your CGPA each semester): https://classtracks.app/blog/how-to-improve-your-cgpa/
 - How Many Hours Should You Study a Day (a realistic answer by situation — school 1–3 h, college 2–4 h, exam season 4–6 h focused hours — why quality beats quantity, the point of diminishing returns, and how to make study hours count): https://classtracks.app/blog/how-many-hours-should-you-study/
+- How to Prepare for Oral Exams & Vivas (why colleges are bringing back oral exams in the AI era, what examiners test, a 7-day viva prep plan, the answer-reason-example structure, what to say when you go blank, and using AI as a mock examiner): https://classtracks.app/blog/how-to-prepare-for-oral-exams/
+- Brain Rot: How Students Can Fix Their Focus (what brain rot means, 2026 research linking frequent phone checking to weaker attention and lower GPA, 10 practical fixes and a 7-day focus reset plan): https://classtracks.app/blog/brain-rot-how-to-fix-your-focus/
 
 ## Contact
 

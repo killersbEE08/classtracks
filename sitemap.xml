@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://classtracks.app/blog/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -333,6 +333,18 @@
   <url>
     <loc>https://classtracks.app/blog/how-many-hours-should-you-study/</loc>
     <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://classtracks.app/blog/how-to-prepare-for-oral-exams/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://classtracks.app/blog/brain-rot-how-to-fix-your-focus/</loc>
+    <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
