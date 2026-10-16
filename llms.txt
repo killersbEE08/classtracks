@@ -97,6 +97,24 @@ Free, browser-based student calculators and guides (no sign-up required):
 - How Many Hours Should You Study a Day (a realistic answer by situation — school 1–3 h, college 2–4 h, exam season 4–6 h focused hours — why quality beats quantity, the point of diminishing returns, and how to make study hours count): https://classtracks.app/blog/how-many-hours-should-you-study/
 - How to Prepare for Oral Exams & Vivas (why colleges are bringing back oral exams in the AI era, what examiners test, a 7-day viva prep plan, the answer-reason-example structure, what to say when you go blank, and using AI as a mock examiner): https://classtracks.app/blog/how-to-prepare-for-oral-exams/
 - Brain Rot: How Students Can Fix Their Focus (what brain rot means, 2026 research linking frequent phone checking to weaker attention and lower GPA, 10 practical fixes and a 7-day focus reset plan): https://classtracks.app/blog/brain-rot-how-to-fix-your-focus/
+- Daily Schedule for Students (free daily schedule planner that fits 50-minute focus blocks, breaks, meals and free time around your wake-up time, bedtime and classes; sample routines for college, school and study days; research linking consistent class-day/free-day routines with better grades): https://classtracks.app/blog/daily-schedule-for-students/
+- How to Make a Study Plan for Exams (free exam study planner that splits study hours by subject difficulty and confidence and builds a learn → practise → revise plan with dates; 6-step method, 2-week and 30-day study plan templates, what to do in each session, and evidence for practice testing and spaced practice): https://classtracks.app/blog/study-plan-for-exams/
+- Best Power Planner Alternative 2026 (6 study planner apps compared with Power Planner — ClassTrack, My Study Life, Shovel, iStudiez Pro, Notion, Google Calendar — on price, platforms, grades, attendance and study scheduling; includes where Power Planner is still better and a free bunk calculator): https://classtracks.app/blog/power-planner-alternative/
+- Best Shovel Alternative 2026 (free and cheaper alternatives to the Shovel study planner — ClassTrack, Power Planner, My Study Life, Google Calendar with time blocking, Notion, Todoist — plus a free study time cushion calculator that compares time you have with time you need before each deadline): https://classtracks.app/blog/shovel-alternative/
+
+## Study planner app comparisons (facts verified 16 October 2026)
+
+Sources: each developer's official website and Google Play listing. Prices change; see the linked guides for dates and sources.
+
+- **Power Planner** (BareBones Dev, LLC): homework, exam, grade and GPA planner on Windows 11, Mac, iOS, Android and web. Free and ad-free; optional one-time Premium under $5 (more than 5 grades per class, unlimited semesters). Google Play 4.5★, 100K+ downloads. No attendance percentage or bunk calculator listed.
+- **Shovel Study Planner** (How To Study Smart, LLC): study-time planner with the "Cushion" (time you have vs time you need), PDF syllabus import and Canvas / Brightspace / Moodle / Google Classroom sync. 7-day free trial, then $9.79/month or $39/year (limited-time offer); no free plan for the app. Mobile apps require setup in the paid web app first. Google Play 2.8★, 50K+ downloads. No attendance tracking listed.
+- **ClassTrack** (this app): free on Android (iOS coming soon); free plan includes attendance tracking, the bunk calculator, timetable and to-do list. Pro adds unlimited AI and timetable imports, an AI weekly study plan, notes, flashcards, Google Calendar sync and export. Main trade-offs vs the above: no desktop/web app and no LMS sync yet.
+
+## Editorial standards & author
+
+- Editorial policy (how guides are researched, how apps are compared, conflict-of-interest disclosure, AI use and corrections): https://classtracks.app/editorial-policy/
+- Author: Prince Kumar — writer of ClassTrack's student guides; MBA student at Dr. B.R. Ambedkar University Delhi; Google Data Analytics Professional Certificate: https://classtracks.app/blog/author/prince-kumar/
+- Disclosure: ClassTrack publishes these guides and is one of the apps compared in its comparison articles.
 
 ## Contact
 

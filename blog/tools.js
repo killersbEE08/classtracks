@@ -424,4 +424,241 @@
     calc();
   })();
 
+  /* Shared helpers for the planners below */
+  function toMin(v) { // "HH:MM" -> minutes since midnight, or NaN
+    var m = /^(\d{1,2}):(\d{2})/.exec(v || "");
+    return m ? parseInt(m[1], 10) * 60 + parseInt(m[2], 10) : NaN;
+  }
+  function fmtMin(t) { // minutes (may exceed 1440) -> "h:mm am/pm"
+    t = ((Math.round(t) % 1440) + 1440) % 1440;
+    var h = Math.floor(t / 60), mm = t % 60, ap = h < 12 ? "am" : "pm";
+    var h12 = h % 12 === 0 ? 12 : h % 12;
+    return h12 + ":" + (mm < 10 ? "0" : "") + mm + " " + ap;
+  }
+  function addLi(list, label, value) { // safe: uses textContent, never innerHTML
+    var li = document.createElement("li");
+    var s = document.createElement("span"); s.textContent = label;
+    var b = document.createElement("b"); b.textContent = value;
+    li.appendChild(s); li.appendChild(b); list.appendChild(li);
+  }
+
+  /* ---------- 11. Daily schedule maker ---------- */
+  (function () {
+    var root = $("#schedCalc");
+    if (!root) return;
+    var wakeIn = $("#schedWake", root), sleepIn = $("#schedSleep", root);
+    var csIn = $("#schedClassStart", root), ceIn = $("#schedClassEnd", root);
+    var hoursIn = $("#schedStudy", root), noClass = $("#schedNoClass", root);
+    var res = $("#schedResult", root), list = $("#schedList", root);
+    var big = res.querySelector(".big"), sub = res.querySelector(".sub");
+
+    function calc() {
+      list.innerHTML = "";
+      var wake = toMin(wakeIn.value), sleep = toMin(sleepIn.value);
+      var studyLeft = Math.round(clamp(num(hoursIn), 0, 12) * 60);
+      if (isNaN(wake) || isNaN(sleep)) { big.textContent = "\u2014"; sub.textContent = "Enter your wake-up and bedtime."; res.dataset.state = ""; return; }
+      if (sleep <= wake) sleep += 1440; // bedtime after midnight
+      var sleepHrs = (wake + 1440 - sleep) / 60;
+
+      // Fixed anchors of the day
+      var fixed = [{ s: wake, e: wake + 45, label: "Wake up, get ready & breakfast" }];
+      var hasClass = !(noClass && noClass.checked);
+      var cs = toMin(csIn.value), ce = toMin(ceIn.value);
+      if (hasClass) {
+        if (isNaN(cs) || isNaN(ce) || ce <= cs) { big.textContent = "\u2014"; sub.textContent = "Class end time must be after class start time (or tick \u201cNo classes today\u201d)."; res.dataset.state = "bad"; return; }
+        if (cs < wake) cs += 1440, ce += 1440;
+        if (cs < wake + 45 || ce > sleep - 45) { big.textContent = "\u2014"; sub.textContent = "Your classes need to fit between waking up and bedtime \u2014 check the times."; res.dataset.state = "bad"; return; }
+        fixed.push({ s: cs, e: ce, label: "Classes (attend + quick notes review)" });
+        fixed.push({ s: ce, e: Math.min(ce + 45, sleep - 45), label: "Recharge: snack, walk, no screens" });
+      }
+      var dinner = Math.max(19 * 60 + 30, hasClass ? ce + 45 : wake + 45);
+      if (dinner + 45 <= sleep - 45) fixed.push({ s: dinner, e: dinner + 45, label: "Dinner & family / friends time" });
+      fixed.push({ s: sleep - 45, e: sleep, label: "Wind down: plan tomorrow, phone away" });
+      fixed.sort(function (a, b) { return a.s - b.s; });
+
+      // Fill gaps with 50-min study blocks + 10-min breaks, then free time
+      var items = [], cursor = wake, blocks = 0, placed = 0;
+      function fill(from, to) {
+        var t = from;
+        while (studyLeft >= 20 && to - t >= 30) {
+          var len = Math.min(50, studyLeft, to - t);
+          items.push({ s: t, e: t + len, label: "Focus block " + (++blocks) + " (phone in another room)", study: true });
+          t += len; studyLeft -= len; placed += len;
+          if (to - t >= 10 && studyLeft >= 20) { items.push({ s: t, e: t + 10, label: "Short break: water, stretch" }); t += 10; }
+        }
+        if (to - t >= 15) items.push({ s: t, e: to, label: "Free time (hobbies, gym, friends)" });
+      }
+      fixed.forEach(function (f) {
+        if (f.s > cursor) fill(cursor, f.s);
+        items.push(f); cursor = Math.max(cursor, f.e);
+      });
+      if (sleep > cursor) fill(cursor, sleep);
+      items.sort(function (a, b) { return a.s - b.s; });
+      items.forEach(function (it) { addLi(list, it.label, fmtMin(it.s) + " \u2013 " + fmtMin(it.e)); });
+      addLi(list, "Sleep", fmtMin(sleep) + " \u2013 " + fmtMin(wake));
+
+      var ph = (placed / 60);
+      big.textContent = ph.toFixed(1).replace(/\.0$/, "") + " h study \u00b7 " + sleepHrs.toFixed(1).replace(/\.0$/, "") + " h sleep";
+      var notes = [];
+      if (studyLeft >= 20) notes.push("Your day is full \u2014 " + (studyLeft / 60).toFixed(1) + " h of study didn't fit. Lower the goal or move it to the weekend.");
+      if (sleepHrs < 7) notes.push("Under 7 h of sleep hurts memory and focus \u2014 try an earlier bedtime.");
+      if (!notes.length) notes.push("Balanced day: " + blocks + " focus block" + (blocks === 1 ? "" : "s") + ", breaks, meals and free time included.");
+      sub.textContent = notes.join(" ");
+      res.dataset.state = (studyLeft >= 20 || sleepHrs < 7) ? "bad" : "good";
+    }
+    [wakeIn, sleepIn, csIn, ceIn, hoursIn].forEach(function (e) { e.addEventListener("input", calc); });
+    if (noClass) noClass.addEventListener("change", function () {
+      csIn.disabled = ceIn.disabled = noClass.checked; calc();
+    });
+    calc();
+  })();
+
+  /* ---------- 12. Exam study planner (weighted by difficulty & confidence) ---------- */
+  (function () {
+    var root = $("#examPlan");
+    if (!root) return;
+    var dateIn = $("#epDate", root), hpdIn = $("#epHours", root);
+    var rows = $("#epRows", root), addBtn = $("#epAdd", root);
+    var res = $("#epResult", root), list = $("#epList", root), phases = $("#epPhases", root);
+    var big = res.querySelector(".big"), sub = res.querySelector(".sub");
+    var DIFF = [["Easy", 1], ["Medium", 1.4], ["Hard", 1.8]];
+    var CONF = [["Weak", 1.5], ["Okay", 1], ["Strong", 0.6]];
+
+    function opts(arr, sel) {
+      return arr.map(function (o) { return '<option value="' + o[1] + '"' + (o[0] === sel ? " selected" : "") + ">" + o[0] + "</option>"; }).join("");
+    }
+    function addRow(name, d, c) {
+      var row = document.createElement("div");
+      row.className = "gpa-row";
+      row.innerHTML =
+        '<input type="text" class="gpa-name" placeholder="Subject" aria-label="Subject name" />' +
+        '<select class="gpa-grade" aria-label="Difficulty">' + opts(DIFF, d || "Medium") + "</select>" +
+        '<select class="gpa-credits" aria-label="How confident you feel">' + opts(CONF, c || "Okay") + "</select>" +
+        '<button type="button" class="gpa-del" aria-label="Remove subject">&times;</button>';
+      row.querySelector(".gpa-name").value = name || "";
+      rows.appendChild(row);
+      row.querySelector(".gpa-del").addEventListener("click", function () { row.remove(); calc(); });
+      $$("input, select", row).forEach(function (el) { el.addEventListener("input", calc); el.addEventListener("change", calc); });
+    }
+    function fmtDate(d) { return d.toLocaleDateString(undefined, { month: "short", day: "numeric" }); }
+    function addDays(d, n) { var x = new Date(d); x.setDate(x.getDate() + n); return x; }
+    function range(a, b) { return a === b ? fmtDate(addDays(today0(), a)) : fmtDate(addDays(today0(), a)) + " \u2013 " + fmtDate(addDays(today0(), b)); }
+    function today0() { var t = new Date(); t.setHours(0, 0, 0, 0); return t; }
+
+    function calc() {
+      list.innerHTML = ""; phases.innerHTML = "";
+      var hpd = clamp(num(hpdIn), 0, 14);
+      if (!dateIn.value) { big.textContent = "\u2014"; sub.textContent = "Pick your first exam date to build your plan."; res.dataset.state = ""; return; }
+      var today = new Date(); today.setHours(0, 0, 0, 0);
+      var exam = new Date(dateIn.value + "T00:00:00");
+      var days = Math.round((exam - today) / 86400000); // full days before the exam
+      if (days <= 0) { big.textContent = "\u2014"; sub.textContent = days === 0 ? "Your exam is today \u2014 skim your summary sheet and stay calm." : "That date has passed. Pick an upcoming exam."; res.dataset.state = "bad"; return; }
+      if (hpd <= 0) { big.textContent = "\u2014"; sub.textContent = "Enter how many hours you can study per day."; res.dataset.state = ""; return; }
+
+      var subs = [];
+      $$(".gpa-row", rows).forEach(function (r, i) {
+        var n = r.querySelector(".gpa-name").value.trim() || ("Subject " + (i + 1));
+        var w = parseFloat(r.querySelector(".gpa-grade").value) * parseFloat(r.querySelector(".gpa-credits").value);
+        subs.push({ name: n, w: isNaN(w) ? 1 : w });
+      });
+      if (!subs.length) { big.textContent = "\u2014"; sub.textContent = "Add at least one subject."; res.dataset.state = ""; return; }
+
+      var rest = days >= 7 ? Math.floor(days / 7) : 0; // one light/rest day per week
+      var studyDays = days - rest;
+      var total = studyDays * hpd;
+      var sumW = subs.reduce(function (a, s) { return a + s.w; }, 0);
+      subs.sort(function (a, b) { return b.w - a.w; });
+      subs.forEach(function (s) {
+        var h = total * s.w / sumW;
+        addLi(list, s.name, h.toFixed(1) + " h  (" + Math.max(1, Math.round(h * 60 / 50)) + " blocks)");
+      });
+
+      // Phases: learn -> practise -> final revision (shorter windows compress the first phase)
+      var p1 = days >= 10 ? Math.round(days * 0.5) : days >= 4 ? Math.round(days * 0.3) : 0;
+      var p2 = Math.round(days * 0.8); if (p2 <= p1) p2 = Math.min(days - 1, p1 + 1);
+      if (p1 > 0) addLi(phases, "1 \u00b7 Learn & fill gaps (hardest topics first)", range(0, p1 - 1));
+      if (p2 > p1) addLi(phases, (p1 > 0 ? "2" : "1") + " \u00b7 Practise: past papers & active recall", range(p1, p2 - 1));
+      addLi(phases, (p1 > 0 ? "3" : "2") + " \u00b7 Final revision: summaries & weak spots", range(p2, days - 1));
+
+      big.textContent = days + " day" + (days === 1 ? "" : "s") + " \u00b7 " + total.toFixed(0) + " study hours";
+      sub.textContent = (rest ? studyDays + " study days + " + rest + " lighter rest day" + (rest === 1 ? "" : "s") + ". " : "") +
+        "More hours go to subjects that are harder and where you feel weaker." +
+        (days < 7 ? " Short on time? Focus on past papers and high-weight topics." : "");
+      res.dataset.state = days < 7 ? "bad" : "good";
+    }
+
+    addBtn.addEventListener("click", function () { addRow(); calc(); });
+    [dateIn, hpdIn].forEach(function (e) { e.addEventListener("input", calc); });
+    // Default exam date: 21 days from today
+    var d0 = new Date(); d0.setDate(d0.getDate() + 21);
+    dateIn.value = d0.getFullYear() + "-" + ("0" + (d0.getMonth() + 1)).slice(-2) + "-" + ("0" + d0.getDate()).slice(-2);
+    addRow("Maths", "Hard", "Weak");
+    addRow("Physics", "Medium", "Okay");
+    addRow("English", "Easy", "Strong");
+    calc();
+  })();
+
+  /* ---------- 13. Study time cushion calculator (time you have vs time you need) ---------- */
+  (function () {
+    var root = $("#cushionCalc");
+    if (!root) return;
+    var weekly = $("#cuWeekly", root), rows = $("#cuRows", root), addBtn = $("#cuAdd", root);
+    var res = $("#cuResult", root), list = $("#cuList", root);
+    var big = res.querySelector(".big"), sub = res.querySelector(".sub");
+
+    function addRow(name, hrs, days) {
+      var row = document.createElement("div");
+      row.className = "gpa-row";
+      row.innerHTML =
+        '<input type="text" class="gpa-name" placeholder="Task (e.g. Essay)" aria-label="Task name" />' +
+        '<input type="number" class="gpa-grade" min="0" step="0.5" placeholder="Hours" inputmode="decimal" aria-label="Hours needed" />' +
+        '<input type="number" class="gpa-credits" min="1" step="1" placeholder="Days" inputmode="numeric" aria-label="Due in how many days" />' +
+        '<button type="button" class="gpa-del" aria-label="Remove task">&times;</button>';
+      row.querySelector(".gpa-name").value = name || "";
+      if (hrs != null) row.querySelector(".gpa-grade").value = hrs;
+      if (days != null) row.querySelector(".gpa-credits").value = days;
+      rows.appendChild(row);
+      row.querySelector(".gpa-del").addEventListener("click", function () { row.remove(); calc(); });
+      $$("input", row).forEach(function (el) { el.addEventListener("input", calc); });
+    }
+    function h(n) { return (Math.round(n * 10) / 10).toFixed(1).replace(/\.0$/, "") + " h"; }
+
+    function calc() {
+      list.innerHTML = "";
+      var perDay = Math.max(0, num(weekly)) / 7;
+      var tasks = [];
+      $$(".gpa-row", rows).forEach(function (r, i) {
+        var need = parseFloat(r.querySelector(".gpa-grade").value), d = parseInt(r.querySelector(".gpa-credits").value, 10);
+        if (!isNaN(need) && need > 0 && !isNaN(d) && d > 0) tasks.push({ name: r.querySelector(".gpa-name").value.trim() || ("Task " + (i + 1)), need: need, d: d });
+      });
+      if (perDay <= 0 || !tasks.length) { big.textContent = "\u2014"; sub.textContent = "Enter your weekly study hours and at least one task with hours and days until due."; res.dataset.state = ""; return; }
+      tasks.sort(function (a, b) { return a.d - b.d; });
+      var cum = 0, worst = Infinity, worstTask = null, first = null;
+      tasks.forEach(function (t) {
+        cum += t.need;
+        var cushion = perDay * t.d - cum; // hours left over if you work in due-date order
+        if (cushion < worst) { worst = cushion; worstTask = t; }
+        if (cushion < 0 && !first) first = { t: t, c: cushion };
+        addLi(list, t.name + " \u00b7 due in " + t.d + " day" + (t.d === 1 ? "" : "s"), (cushion >= 0 ? "+" : "\u2212") + h(Math.abs(cushion)) + (cushion >= 0 ? " spare" : " short"));
+      });
+      if (worst >= 0) {
+        big.textContent = "+" + h(worst) + " cushion";
+        sub.textContent = "You have enough time for everything if you work in due-date order. " + (worst < perDay * 2 ? "It's tight, though \u2014 start the first task today." : "Protect that spare time for surprises.");
+        res.dataset.state = "good";
+      } else {
+        big.textContent = h(-worst) + " short";
+        sub.textContent = "You first run out of time at \u201c" + first.t.name + "\u201d (due in " + first.t.d + " day" + (first.t.d === 1 ? "" : "s") + ", " + h(-first.c) + " short)" +
+          (worstTask !== first.t ? " and end up " + h(-worst) + " short by \u201c" + worstTask.name + "\u201d" : "") +
+          ". Add about " + h(-worst / worstTask.d) + " of study a day, cut scope, or ask for an extension now \u2014 not the night before.";
+        res.dataset.state = "bad";
+      }
+    }
+    addBtn.addEventListener("click", function () { addRow(); calc(); });
+    weekly.addEventListener("input", calc);
+    addRow("Lab report", 4, 3);
+    addRow("History essay", 8, 7);
+    addRow("Maths exam revision", 12, 14);
+    calc();
+  })();
+
 })();
