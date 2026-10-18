@@ -41,6 +41,7 @@ Android and iOS. Includes a home-screen widget.
 
 - Home: https://classtracks.app/
 - Perks & Opportunities (scholarships, internships, hackathons, grants & student discounts): https://classtracks.app/opportunities/
+- 10 Best Student Discounts in 2026 (free & verified, with official links, eligibility and cost; checked 18 October 2026): https://classtracks.app/discounts/
 - Support: https://classtracks.app/support/
 - Partner with us (brands, edtech, universities & employers — featured perks, student discounts, opportunities, sponsored guides): https://classtracks.app/partners/
 - Write for us (guest post guidelines for the student blog): https://classtracks.app/write-for-us/
@@ -101,6 +102,25 @@ Free, browser-based student calculators and guides (no sign-up required):
 - How to Make a Study Plan for Exams (free exam study planner that splits study hours by subject difficulty and confidence and builds a learn → practise → revise plan with dates; 6-step method, 2-week and 30-day study plan templates, what to do in each session, and evidence for practice testing and spaced practice): https://classtracks.app/blog/study-plan-for-exams/
 - Best Power Planner Alternative 2026 (6 study planner apps compared with Power Planner — ClassTrack, My Study Life, Shovel, iStudiez Pro, Notion, Google Calendar — on price, platforms, grades, attendance and study scheduling; includes where Power Planner is still better and a free bunk calculator): https://classtracks.app/blog/power-planner-alternative/
 - Best Shovel Alternative 2026 (free and cheaper alternatives to the Shovel study planner — ClassTrack, Power Planner, My Study Life, Google Calendar with time blocking, Notion, Todoist — plus a free study time cushion calculator that compares time you have with time you need before each deadline): https://classtracks.app/blog/shovel-alternative/
+- How to Use a Student Planner (and Actually Stick to It) (a one-time semester capture, a 10-minute Sunday setup, a 2-minute daily check-in, what to write in a planner, 7 habits and an example week; cites research on implementation intentions, plan-making and the planning fallacy): https://classtracks.app/blog/how-to-use-a-student-planner/
+- Digital vs Paper Planner: Which Is Better for Students? (research on handwriting and memory — Umejima et al. 2021 found paper schedule-writing ~25% faster with better simple recall, while the 2014 longhand note-taking result did not replicate consistently; pros and cons, comparison table, hybrid setup and a 1-minute quiz): https://classtracks.app/blog/digital-vs-paper-planner/
+
+## 10 best student discounts (checked 18 October 2026)
+
+Full page: https://classtracks.app/discounts/ — plain links to each official offer page (no affiliate links; ClassTrack is not affiliated with these brands). Prices and availability vary by country.
+
+- **GitHub Student Developer Pack** — free (Copilot, Codespaces, partner offers). Verify with school email or ID. Worldwide. https://education.github.com/pack
+- **Microsoft Office 365 Education** — free web Word, Excel, PowerPoint, OneNote, Teams with an eligible school email; limited-time 12 months of Microsoft 365 Premium free for college students. https://www.microsoft.com/en-us/education/products/office
+- **Notion Education Plan** — free for college/university students with a school email (re-verify yearly; not K-12). https://www.notion.com/product/notion-for-education
+- **Figma for Education** — free Professional tier for verified students 13+. https://www.figma.com/education/
+- **JetBrains educational licenses** — free IntelliJ IDEA, PyCharm, WebStorm etc.; renew yearly. https://www.jetbrains.com/community/education/#students
+- **Autodesk Education** — free one-year access to AutoCAD, Fusion, Revit, Maya and more; renewable. https://www.autodesk.com/education/edu-software/overview
+- **Adobe Creative Cloud Pro for students** — US$19.99/month first year (vs US$69.99), then US$39.99/month (US pricing). https://www.adobe.com/creativecloud/buy/students.html
+- **Apple education pricing** — reduced Mac and iPad prices, up to 10% off AppleCare+, Apple Music Student (currently with Apple TV). https://www.apple.com/education/college-students/
+- **Spotify Premium Student** — about half price for up to 4 years (US$6.99/month with Hulu (With Ads) in the US; ₹69/month in India); SheerID verification. https://www.spotify.com/student/
+- **YouTube Premium Student** — reduced YouTube Premium price for higher-education students in supported countries. https://www.youtube.com/premium/student
+
+More student discounts (software, tech, travel, food), filtered to the student's country, are listed inside the ClassTrack app's Perks & Opportunities feed.
 
 ## Study planner app comparisons (facts verified 16 October 2026)
 

@@ -7,6 +7,8 @@ Static (HTML/CSS/JS) — no build step, deploys anywhere.
 
 ```
 /                 → index.html (home)
+/opportunities/   → opportunities/index.html (perks & opportunities feed)
+/discounts/       → discounts/index.html (10 best student discounts + app download)
 /support/         → support/index.html (contact form)
 /contact/         → contact/index.html
 /partners/        → partners/index.html (brand partnerships, prince@classtracks.app)
