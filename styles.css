@@ -1133,6 +1133,18 @@ section[id] { scroll-margin-top: 88px; }
 .split-list li:last-child { border-bottom: 0; }
 .split-list b { font-family: 'Poppins'; color: var(--purple); }
 
+/* Textareas inside tools (Feynman checker, prompt builder) */
+.tool__field textarea { width: 100%; min-height: 150px; resize: vertical; padding: 12px 14px; border: 1.5px solid var(--border); border-radius: 12px; font: inherit; font-size: 15px; line-height: 1.55; color: var(--ink); background: #fff; transition: border-color .2s; }
+.tool__field textarea:focus { outline: none; border-color: var(--purple); box-shadow: 0 0 0 3px rgba(108,92,231,.14); }
+.tool__field textarea[readonly] { background: var(--lavender-soft); }
+
+/* Copy-paste prompt cards */
+.prompt-card { position: relative; background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--purple); border-radius: 14px; padding: 14px 16px 14px 18px; margin: 12px 0; box-shadow: var(--shadow-sm); }
+.prompt-card__label { display: block; font-family: 'Poppins'; font-weight: 600; font-size: 13px; color: var(--purple); margin-bottom: 6px; padding-right: 76px; }
+.prompt-card__text { margin: 0; font-size: 15px; color: var(--ink-soft); white-space: pre-wrap; }
+.prompt-card__copy { position: absolute; top: 10px; right: 10px; border: 1px solid var(--border); background: var(--lavender-soft); color: var(--ink); border-radius: 9px; padding: 5px 10px; font: inherit; font-size: 12.5px; font-weight: 600; cursor: pointer; }
+.prompt-card__copy:hover, .prompt-card__copy:focus-visible { border-color: var(--purple); color: var(--purple); }
+
 /* Blog / guides hub */
 .post-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; margin-top: 8px; }
 .post-card { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 24px; box-shadow: var(--shadow-sm); transition: transform .28s var(--ease), box-shadow .28s var(--ease); }
