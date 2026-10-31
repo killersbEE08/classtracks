@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Analytics (GTM + Meta Pixel) — loaded on the visitor's first scroll/tap/key/mouse move, or 10s
+       after page load, so they never slow down the first paint. Events fired before that are queued. -->
+  <script>
+  (function (w, d) {
+    w.dataLayer = w.dataLayer || [];
+    w.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+    var n = w.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+    if (!w._fbq) w._fbq = n; n.push = n; n.loaded = true; n.version = '2.0'; n.queue = [];
+    fbq('init', '1051868494559436');
+    fbq('track', 'PageView');
+    var done = false, evs = ['pointerdown', 'keydown', 'scroll', 'touchstart', 'mousemove'];
+    function add(src, attrs) {
+      var s = d.createElement('script'); s.async = true; s.src = src;
+      for (var k in attrs || {}) s.setAttribute(k, attrs[k]);
+      d.head.appendChild(s);
+    }
+    function go() {
+      if (done) return; done = true;
+      evs.forEach(function (e) { w.removeEventListener(e, go); });
+      add('https://www.googletagmanager.com/gtm.js?id=GTM-PCJFGFXG');
+      add('https://connect.facebook.net/en_US/fbevents.js');
+    }
+    evs.forEach(function (e) { w.addEventListener(e, go, { passive: true }); });
+    w.addEventListener('load', function () { setTimeout(go, 10000); });
+  })(window, document);
+  </script>
+  <noscript><img height="1" width="1" style="display:none" alt=""
+  src="https://www.facebook.com/tr?id=1051868494559436&ev=PageView&noscript=1"/></noscript>
+  <script>document.documentElement.classList.add('has-js');</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Does Attendance Affect Grades? What the Research Says (+ Free Calculator)</title>
+  <meta name="description" content="Yes. A meta-analysis of 21,195 college students found attendance predicts grades better than SAT scores or study habits. See the research, whether lecture recordings can replace class, and what each missed class costs you." />
+  <meta name="theme-color" content="#6C5CE7" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="author" content="Prince Kumar" />
+  <meta name="keywords" content="does attendance affect grades, does attendance matter in college, class attendance and academic performance, is it ok to skip class, lecture recordings vs attending, cost of skipping class, attendance research, attendance and GPA" />
+  <link rel="canonical" href="https://classtracks.app/blog/does-attendance-affect-grades/" />
+
+  <meta property="og:site_name" content="ClassTrack" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Does Attendance Affect Grades? What the Research Says" />
+  <meta property="og:description" content="Attendance predicts college grades better than SAT scores or study habits. The research, lecture recordings, and a free cost-per-class calculator." />
+  <meta property="og:url" content="https://classtracks.app/blog/does-attendance-affect-grades/" />
+  <meta property="og:image" content="https://classtracks.app/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-10-31" />
+  <meta property="article:modified_time" content="2026-10-31" />
+  <meta property="article:author" content="https://classtracks.app/blog/author/prince-kumar/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Does Attendance Affect Grades? — ClassTrack" />
+  <meta name="twitter:description" content="What the research says, whether recordings replace class, and what each missed class costs." />
+  <meta name="twitter:image" content="https://classtracks.app/og-image.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="../../fonts/material-symbols-rounded.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@500;600;700;800&amp;display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@500;600;700;800&amp;display=swap" /></noscript>
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+  <link rel="icon" type="image/png" href="../../logo-96.png" />
+  <link rel="apple-touch-icon" href="../../apple-touch-icon.png" />
+  <link rel="stylesheet" href="../../styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://classtracks.app/blog/does-attendance-affect-grades/#article",
+        "headline": "Does Attendance Affect Grades? What the Research Says",
+        "description": "An evidence review for students on whether class attendance affects grades: the Credé et al. (2010) meta-analysis, causal studies, whether lecture recordings can replace attending, why attendance helps, when missing class is the right call, and a free cost-per-class calculator.",
+        "author": { "@id": "https://classtracks.app/blog/author/prince-kumar/#person" },
+        "reviewedBy": { "@id": "https://classtracks.app/#organization" },
+        "publisher": { "@id": "https://classtracks.app/#organization" },
+        "datePublished": "2026-10-31",
+        "dateModified": "2026-10-31",
+        "mainEntityOfPage": { "@id": "https://classtracks.app/blog/does-attendance-affect-grades/#webpage" },
+        "image": ["https://classtracks.app/og-image.png"],
+        "inLanguage": "en",
+        "audience": { "@type": "EducationalAudience", "educationalRole": "student", "audienceType": "School, college and university students worldwide" },
+        "about": [{ "@type": "Thing", "name": "Class attendance" }, { "@type": "Thing", "name": "Academic performance" }, { "@type": "Thing", "name": "Lecture capture" }],
+        "citation": [
+          "Credé, M., Roch, S. G., & Kieszczynka, U. M. (2010). Class attendance in college: A meta-analytic review of the relationship of class attendance with grades and student characteristics. Review of Educational Research, 80(2), 272-295.",
+          "Dobkin, C., Gil, R., & Marion, J. (2010). Skipping class in college and exam performance: Evidence from a regression discontinuity classroom experiment. Economics of Education Review, 29(4), 566-575.",
+          "Stanca, L. (2006). The effects of attendance on academic performance: Panel data evidence for introductory microeconomics. Journal of Economic Education, 37(3), 251-266.",
+          "Marburger, D. R. (2001). Absenteeism and undergraduate exam performance. Journal of Economic Education, 32(2), 99-109.",
+          "Romer, D. (1993). Do students go to class? Should they? Journal of Economic Perspectives, 7(3), 167-174.",
+          "Dunlosky, J., Rawson, K. A., Marsh, E. J., Nathan, M. J., & Willingham, D. T. (2013). Improving students' learning with effective learning techniques. Psychological Science in the Public Interest, 14(1), 4-58.",
+          "Edwards, M. R., & Clinton, M. E. (2019). A study exploring the impact of lecture capture availability and lecture capture usage on student attendance and attainment. Higher Education, 77(3), 403-421.",
+          "Nordmann, E., Calder, C., Bishop, P., Irwin, A., & Comber, D. (2019). Turn up, tune in, don't drop out: the relationship between lecture attendance, use of lecture recordings, and achievement at different levels of study. Higher Education, 77(6), 1065-1084."
+        ],
+        "mentions": [{ "@id": "https://classtracks.app/#app" }]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://classtracks.app/blog/does-attendance-affect-grades/#webpage",
+        "url": "https://classtracks.app/blog/does-attendance-affect-grades/",
+        "name": "Does Attendance Affect Grades? What the Research Says (+ Free Calculator)",
+        "isPartOf": { "@type": "Blog", "@id": "https://classtracks.app/blog/", "name": "ClassTrack Guides" },
+        "datePublished": "2026-10-31",
+        "dateModified": "2026-10-31",
+        "lastReviewed": "2026-10-31",
+        "inLanguage": "en",
+        "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".tldr", ".keytakeaways", "#faq"] },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://classtracks.app/" },
+            { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://classtracks.app/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "Does Attendance Affect Grades?", "item": "https://classtracks.app/blog/does-attendance-affect-grades/" }
+          ]
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://classtracks.app/blog/author/prince-kumar/#person",
+        "name": "Prince Kumar",
+        "url": "https://classtracks.app/blog/author/prince-kumar/",
+        "image": "https://classtracks.app/blog/author-prince.svg",
+        "jobTitle": "Writer & data analyst",
+        "sameAs": ["https://princekumar.me/", "https://www.linkedin.com/in/princekumarr007/", "https://x.com/Princek26161487", "https://www.instagram.com/prince___0.1/"]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://classtracks.app/#organization",
+        "name": "ClassTrack",
+        "url": "https://classtracks.app/",
+        "logo": "https://classtracks.app/logo.png",
+        "email": "support@classtracks.app",
+        "areaServed": "Worldwide",
+        "publishingPrinciples": "https://classtracks.app/editorial-policy/"
+      },
+      {
+        "@type": "MobileApplication",
+        "@id": "https://classtracks.app/#app",
+        "name": "ClassTrack",
+        "identifier": "com.classtracks.app",
+        "operatingSystem": "Android",
+        "applicationCategory": "EducationApplication",
+        "url": "https://classtracks.app/",
+        "downloadUrl": "https://play.google.com/store/apps/details?id=com.classtracks.app",
+        "publisher": { "@id": "https://classtracks.app/#organization" },
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Does attendance affect grades in college?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. A meta-analysis of 69 studies with 21,195 college students (Credé et al., 2010) found that class attendance is strongly linked to class grades (correlation .44) and GPA (.41). Attendance predicted grades better than SAT scores, high-school GPA, study skills or time spent studying." } },
+          { "@type": "Question", "name": "Is the link between attendance and grades just because good students go to class?", "acceptedAnswer": { "@type": "Answer", "text": "Only partly. Studies that control for student ability and motivation still find an effect. In a regression discontinuity experiment, Dobkin, Gil and Marion (2010) found that a 10 percentage point rise in attendance caused a 0.17 standard deviation increase in final exam scores, without hurting grades in other classes." } },
+          { "@type": "Question", "name": "Can lecture recordings replace going to class?", "acceptedAnswer": { "@type": "Answer", "text": "Not reliably. Edwards and Clinton (2019) found that watching recordings did not make up for the effect of low attendance on grades. Nordmann et al. (2019) found that recordings helped first-year students as an extra, but only stronger students could use them to overcome low attendance. Use recordings to review, not to replace class." } },
+          { "@type": "Question", "name": "How much does skipping one class cost?", "acceptedAnswer": { "@type": "Answer", "text": "Divide your yearly tuition by the number of classes you have in a year. For example, fees of 10,000 a year with 15 classes a week over 30 teaching weeks is 450 classes, so each class costs about 22. Use the free calculator on this page with your own numbers." } },
+          { "@type": "Question", "name": "When is it okay to miss class?", "acceptedAnswer": { "@type": "Answer", "text": "When you are ill or contagious, during a family or mental health emergency, for a religious observance, or for an approved university activity. Check your course's attendance rule, tell your lecturer politely and early, and catch up on the material within a few days." } },
+          { "@type": "Question", "name": "What attendance percentage should I aim for?", "acceptedAnswer": { "@type": "Answer", "text": "At least your university's minimum, which is often between 75% and 90%, and higher if you can. The research shows grades keep improving as attendance rises, so treat the minimum as a floor, not a target." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PCJFGFXG"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="../../" class="brand" aria-label="ClassTrack home">
+        <span class="brand__logo">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+            <rect x="4" y="6" width="16" height="14" rx="2.6" fill="#fff"/><path d="M4 9a2.6 2.6 0 0 1 2.6-2.6h10.8A2.6 2.6 0 0 1 20 9v1.8H4Z" fill="#312C9D"/><rect x="8.3" y="3.4" width="1.9" height="4.8" rx="0.95" fill="#F5A623"/><rect x="13.8" y="3.4" width="1.9" height="4.8" rx="0.95" fill="#F5A623"/>
+            <path d="M8 13.4l2.7 2.7L16.4 10.2" stroke="#F5A623" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="brand__name">ClassTrack</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="../../#features">Features</a>
+        <a href="../../#bunk">Bunk calculator</a>
+        <a href="../../#pricing">Pricing</a>
+        <a href="../../support/">Support</a>
+      </nav>
+      <div class="nav__cta">
+        <a href="https://play.google.com/store/apps/details?id=com.classtracks.app" target="_blank" rel="noopener" class="btn btn--primary magnetic" data-magnetic>Get the app</a>
+      </div>
+      <button class="nav__burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="article">
+      <div class="container article__inner">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="../../">Home</a><span class="sep">/</span><a href="../">Guides</a><span class="sep">/</span><span>Does Attendance Affect Grades?</span>
+        </nav>
+        <span class="pill"><span class="ms">event_available</span> Attendance</span>
+        <h1>Does Attendance Affect Grades? What the Research Says</h1>
+        <div class="article__meta">
+          <span><span class="ms">schedule</span> 9 min read</span>
+          <span><span class="ms">update</span> Updated October 2026</span>
+          <span><span class="ms">verified</span> By <a href="../author/prince-kumar/">Prince Kumar</a></span>
+        </div>
+
+        <div class="article__body">
+          <div class="tldr">
+            <h2>Quick answer</h2>
+            <p><strong>Yes, attendance affects grades, and by more than most students expect.</strong> A meta-analysis of <strong>69 studies and 21,195 college students</strong> found attendance is strongly linked to class grades (correlation <strong>.44</strong>) and GPA (<strong>.41</strong>). It predicted grades better than SAT scores, high-school GPA, study skills or hours spent studying (Credé et al., 2010). Experiments show part of this is cause and effect: <strong>10 percentage points more attendance raised final exam scores by 0.17 standard deviations</strong> (Dobkin et al., 2010). Lecture recordings help you review, but they don't make up for missing class. Use the <a href="#calculator">free calculator</a> to see what each missed class costs you.</p>
+          </div>
+
+          <p>"I'll just watch the recording." "The slides are online anyway." "It's only one lecture." Most students have said one of these. Sometimes skipping is fine. But the research on attendance is some of the most consistent in education, and it points in one direction. This guide explains what the studies found, how big the effect really is, when missing class is the right call, and how to protect your grades when you do.</p>
+
+          <div class="guide-toc" aria-label="Table of contents">
+            <strong>On this page</strong>
+            <ol>
+              <li><a href="#research">What the research found</a></li>
+              <li><a href="#cause">Correlation or cause?</a></li>
+              <li><a href="#size">How big is the effect?</a></li>
+              <li><a href="#recordings">Can lecture recordings replace class?</a></li>
+              <li><a href="#why">Why going to class helps</a></li>
+              <li><a href="#calculator">Free cost-per-class calculator</a></li>
+              <li><a href="#skip">When missing class is the right call</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ol>
+          </div>
+
+          <h2 id="research">What the research found</h2>
+          <p><strong>The biggest study is a 2010 meta-analysis by Marcus Credé, Sylvia Roch and Urszula Kieszczynka</strong>, published in the <em>Review of Educational Research</em>. A meta-analysis pools many studies to get a more reliable answer than any single one. They combined data from 69 samples covering 21,195 college students.</p>
+          <ul>
+            <li><strong>Attendance and class grades:</strong> correlation of <strong>.44</strong>.</li>
+            <li><strong>Attendance and overall GPA:</strong> correlation of <strong>.41</strong> (33 samples, 9,243 students).</li>
+            <li><strong>Compared with other predictors:</strong> attendance was a better predictor of college grades than SAT scores, high-school GPA, study skills and the amount of time spent studying.</li>
+          </ul>
+          <p>The authors concluded the link is strong enough that raising attendance could noticeably improve average grades and reduce failure rates. Earlier research pointed the same way. In 1993, economist David Romer found that about a third of students were missing from economics lectures at three US universities on a typical day, and that attendance was clearly linked to exam performance.</p>
+
+          <div class="table-wrap">
+            <table class="compare">
+              <thead><tr><th scope="col">Study</th><th scope="col">What it looked at</th><th scope="col">Main finding</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Credé et al., 2010</th><td>Meta-analysis, 21,195 college students</td><td>Attendance had a strong link with class grades (.44) and GPA (.41), stronger than SAT scores or study habits.</td></tr>
+                <tr><th scope="row">Dobkin et al., 2010</th><td>Experiment with an attendance rule in large economics classes</td><td>10 percentage points more attendance raised final exam scores by 0.17 standard deviations. Grades in other classes didn't fall.</td></tr>
+                <tr><th scope="row">Stanca, 2006</th><td>Panel data that controls for each student's own traits</td><td>Attendance still had a significant effect on learning after accounting for ability and motivation.</td></tr>
+                <tr><th scope="row">Marburger, 2001</th><td>Which days each student missed, matched to exam questions</td><td>Students who missed a class were more likely to get that day's exam questions wrong.</td></tr>
+                <tr><th scope="row">Edwards &amp; Clinton, 2019</th><td>Lecture recordings at a UK university</td><td>Watching recordings did not make up for the effect of low attendance on grades.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2 id="cause">Correlation or cause?</h2>
+          <p>The obvious objection: maybe motivated students both go to class <em>and</em> get good grades, so attendance only looks important. Researchers have tested this in three ways.</p>
+          <ol>
+            <li><strong>Controlling for the student.</strong> Luca Stanca (2006) followed the same students across many exams. This removes fixed traits like ability and motivation. Attendance still had a significant effect on learning.</li>
+            <li><strong>Matching missed days to exam questions.</strong> David Marburger (2001) recorded which days each student missed. Students were more likely to answer questions wrong when the material was taught on a day they were absent. That points to the missed class itself, not just the type of student.</li>
+            <li><strong>A natural experiment.</strong> At a large US public university, Christopher Dobkin, Ricard Gil and Justin Marion (2010) made attendance compulsory for students who scored below the median on the midterm. Students just below and just above that line are very similar, so the comparison works like an experiment. The rule raised attendance, and <strong>each 10 percentage points of extra attendance raised final exam scores by 0.17 standard deviations</strong>.</li>
+          </ol>
+          <div class="callout callout--info">
+            <span class="ms" aria-hidden="true">fact_check</span>
+            <p><strong>Bottom line:</strong> some of the link comes from who chooses to attend. But three different research designs find a real effect of being in the room. Attendance isn't just a sign of a good student. It helps make one.</p>
+          </div>
+
+          <h2 id="size">How big is the effect, in plain numbers?</h2>
+          <p>Statistics like ".44" and "0.17 standard deviations" are hard to picture. Here's what they mean in practice.</p>
+          <ul>
+            <li><strong>A correlation of .44</strong> is large for education research. In the same review, attendance had a stronger link with grades than SAT scores, high-school GPA or study habits did.</li>
+            <li><strong>0.17 standard deviations</strong> depends on how spread out the marks are. If marks on a final exam usually spread about 15 points around the average, 0.17 standard deviations is about <strong>2.5 marks for every 10 percentage points of attendance</strong>. Going from 60% to 90% attendance would be roughly 7–8 marks. That's often the difference between two grade bands. (This is an illustration, not a promise. Courses differ.)</li>
+          </ul>
+          <p>If your university uses a credit-weighted CGPA, those marks add up across every course you take. See <a href="../how-to-improve-your-cgpa/">how to improve your CGPA</a> for the full calculation.</p>
+
+          <h2 id="recordings">Can lecture recordings replace going to class?</h2>
+          <p><strong>Usually not.</strong> Recordings are useful, but two large UK studies suggest they work best as an extra, not a replacement.</p>
+          <ul>
+            <li><strong>Edwards &amp; Clinton (2019)</strong> studied what happened when recordings were introduced on a UK university course. Attendance fell once recordings were available. Lower attendance was linked to lower marks. And watching the recordings <strong>did not make up for</strong> the effect of missing lectures.</li>
+            <li><strong>Nordmann et al. (2019)</strong> studied psychology students in every year of a Scottish undergraduate degree. For <strong>first-year students</strong>, both attending and using recordings predicted better results. Weaker students gained from using recordings as an extra. But <strong>only stronger students</strong> could use recordings to make up for low attendance.</li>
+          </ul>
+          <p>Why? A recording is easy to postpone. One week of "I'll watch it later" quickly becomes five hours of video the night before the exam. In the lecture you also hear questions from other students, the lecturer's hints about the exam, and the parts that aren't on the slides.</p>
+          <div class="callout callout--tip">
+            <span class="ms" aria-hidden="true">lightbulb</span>
+            <p><strong>Use recordings the smart way:</strong> attend live, then rewatch only the 5–10 minutes you didn't understand, at 1.25× speed. If you do miss a class, watch the recording within 48 hours and write three questions from it to test yourself later with <a href="../active-recall-spaced-repetition/">active recall</a>.</p>
+          </div>
+
+          <h2 id="why">Why going to class helps</h2>
+          <ul>
+            <li><strong>You learn what's on the exam.</strong> Lecturers stress what they think matters. Marburger's results show that the material from a missed day is the material you're most likely to get wrong.</li>
+            <li><strong>You get spaced practice for free.</strong> Going to class every week spreads your learning over the term. Spaced practice is one of the two study methods a major review rated "high utility" (Dunlosky et al., 2013).</li>
+            <li><strong>You can ask questions straight away.</strong> A 10-second question in class can save an hour of confusion later.</li>
+            <li><strong>It builds a routine.</strong> A fixed timetable makes it easier to plan study time around it. See <a href="../daily-schedule-for-students/">how to plan a daily schedule</a>.</li>
+            <li><strong>Lecturers get to know you.</strong> That helps when you need an extension, a reference letter or a research opportunity.</li>
+            <li><strong>Some marks depend on it.</strong> Many courses grade participation, in-class quizzes or labs that you can't make up later.</li>
+          </ul>
+
+          <h2 id="calculator">Free calculator: what does one missed class cost?</h2>
+          <div class="tool" id="classCost">
+            <div class="tool__head">
+              <span class="tool__badge"><span class="ms">calculate</span></span>
+              <div>
+                <h3>The real cost of skipping class</h3>
+                <p>Enter your own numbers. Everything runs in your browser. Nothing is sent or stored.</p>
+              </div>
+            </div>
+            <div class="tool__grid">
+              <div class="tool__field">
+                <label for="ccCur">Currency</label>
+                <select id="ccCur">
+                  <option value="$">$ Dollar</option>
+                  <option value="£">£ Pound</option>
+                  <option value="€">€ Euro</option>
+                  <option value="₹">₹ Rupee</option>
+                  <option value="₦">₦ Naira</option>
+                  <option value="¥">¥ Yen / Yuan</option>
+                  <option value="">Other</option>
+                </select>
+              </div>
+              <div class="tool__field">
+                <label for="ccFees">Tuition fees per year</label>
+                <input type="number" id="ccFees" min="0" step="100" value="10000" inputmode="decimal" />
+              </div>
+              <div class="tool__field">
+                <label for="ccWeek">Classes per week</label>
+                <input type="number" id="ccWeek" min="1" step="1" value="15" inputmode="numeric" />
+              </div>
+              <div class="tool__field">
+                <label for="ccWeeks">Teaching weeks per year</label>
+                <input type="number" id="ccWeeks" min="1" max="52" step="1" value="30" inputmode="numeric" />
+              </div>
+              <div class="tool__field">
+                <label for="ccLen">Minutes per class</label>
+                <input type="number" id="ccLen" min="10" step="5" value="60" inputmode="numeric" />
+              </div>
+              <div class="tool__field">
+                <label for="ccMissed">Classes missed so far</label>
+                <input type="number" id="ccMissed" min="0" step="1" value="8" inputmode="numeric" />
+              </div>
+            </div>
+            <div class="tool__result" id="ccResult" role="status" aria-live="polite">
+              <span class="big">—</span>
+              <span class="sub">Enter your numbers above.</span>
+              <ul class="split-list" id="ccList"></ul>
+            </div>
+          </div>
+          <script>
+          (function () {
+            var ids = ['ccCur', 'ccFees', 'ccWeek', 'ccWeeks', 'ccLen', 'ccMissed'];
+            var el = {}; ids.forEach(function (id) { el[id] = document.getElementById(id); });
+            var out = document.getElementById('ccResult'), big = out.querySelector('.big'), sub = out.querySelector('.sub'), list = document.getElementById('ccList');
+            function num(id) { var v = parseFloat(el[id].value); return isFinite(v) && v >= 0 ? v : 0; }
+            function money(v) {
+              var digits = v >= 100 ? 0 : 2;
+              return el.ccCur.value + v.toLocaleString(undefined, { minimumFractionDigits: digits, maximumFractionDigits: digits });
+            }
+            function hours(mins) {
+              var h = Math.floor(mins / 60), m = Math.round(mins % 60);
+              return (h ? h + ' h' : '') + (h && m ? ' ' : '') + (m || !h ? m + ' min' : '');
+            }
+            function li(label, value) {
+              var e = document.createElement('li'), a = document.createElement('span'), b = document.createElement('b');
+              a.textContent = label; b.textContent = value; e.appendChild(a); e.appendChild(b); list.appendChild(e);
+            }
+            function update() {
+              list.innerHTML = '';
+              var fees = num('ccFees'), perWeek = num('ccWeek'), weeks = Math.min(52, num('ccWeeks')), len = num('ccLen'), missed = Math.floor(num('ccMissed'));
+              var perYear = perWeek * weeks;
+              if (perYear < 1) {
+                out.removeAttribute('data-state'); big.textContent = '—'; sub.textContent = 'Enter classes per week and teaching weeks.'; return;
+              }
+              var perClass = fees / perYear;
+              var taught = missed * len;
+              if (fees > 0) {
+                big.textContent = 'Each class costs about ' + money(perClass);
+                sub.textContent = missed > 0
+                  ? 'The ' + missed + (missed === 1 ? ' class' : ' classes') + ' you missed are worth ' + money(perClass * missed) + ' of your fees and ' + hours(taught) + ' of teaching.'
+                  : 'You haven\u2019t missed any classes. Keep it that way.';
+              } else {
+                big.textContent = 'Each class is ' + hours(len) + ' of teaching';
+                sub.textContent = 'Your fees are covered, but the ' + missed + (missed === 1 ? ' class' : ' classes') + ' you missed still add up to ' + hours(taught) + ' of teaching to catch up on.';
+              }
+              if (missed > 0 && missed / perYear >= 0.1) out.setAttribute('data-state', 'bad');
+              else if (missed === 0) out.setAttribute('data-state', 'good');
+              else out.removeAttribute('data-state');
+              li('Classes in a year', Math.round(perYear).toLocaleString());
+              if (fees > 0) li('Fees per class', money(perClass));
+              if (fees > 0) li('Fees per hour of teaching', money(perClass / (len / 60 || 1)));
+              li('Teaching time missed', hours(taught));
+              li('Share of the year missed', (missed / perYear * 100).toFixed(1) + '%');
+            }
+            ids.forEach(function (id) { el[id].addEventListener('input', update); });
+            update();
+          })();
+          </script>
+          <p><strong>How it's calculated:</strong> cost per class = yearly fees ÷ (classes per week × teaching weeks). Fees aren't the only cost. Living costs, a scholarship you need to keep, or a visa that depends on attendance all make each class worth more. To see how many classes you can miss and still stay above your minimum, use the <a href="../bunk-calculator/">bunk calculator</a>.</p>
+
+          <h2 id="skip">When missing class is the right call</h2>
+          <p>Going to every class isn't always the right choice. Stay home or step away when:</p>
+          <ul>
+            <li><strong>You're ill or contagious.</strong> You won't learn much, and you may make others ill.</li>
+            <li><strong>You're dealing with a family or mental health emergency.</strong> Contact your university's student support or counselling service. Most have formal processes for this.</li>
+            <li><strong>You have a religious observance</strong> or an approved university activity, such as a sports fixture or a conference.</li>
+            <li><strong>You're burned out.</strong> One planned rest day is better than three weeks of half-attending. See <a href="../how-to-beat-study-burnout/">how to beat study burnout</a>.</li>
+          </ul>
+          <p><strong>Do this whenever you miss a class:</strong></p>
+          <ol>
+            <li><strong>Check the attendance rule.</strong> Many universities set a minimum, often 75% to 90%. Some courses have stricter rules for labs, seminars or tutorials. International students: your visa may also depend on attendance. See the <a href="../international-student-guide/">international student guide</a>.</li>
+            <li><strong>Tell your lecturer early and politely,</strong> ideally before the class. Our guide on <a href="../how-to-email-a-professor/">how to email a professor</a> has copy-paste templates for this.</li>
+            <li><strong>Get the material within 48 hours:</strong> slides, a classmate's notes and the recording if there is one.</li>
+            <li><strong>Log it.</strong> Record the absence the same day so your attendance percentage is always correct. If your attendance has already dropped, follow the <a href="../attendance-below-75/">recovery plan for attendance below 75%</a>.</li>
+          </ol>
+          <div class="callout callout--warn">
+            <span class="ms" aria-hidden="true">warning</span>
+            <p><strong>Watch out for "cheap" skips.</strong> A 9 am lecture on a Friday feels like the easiest one to skip. It's also often the one where the lecturer explains what's on the exam. If you skip, choose the class you can catch up on most easily, not the one that's least convenient to attend.</p>
+          </div>
+
+          <h2 id="how-we-checked">How we checked this guide</h2>
+          <p>We read the original papers listed in the sources section, not summaries of them, and took every figure from the published versions. Most attendance research comes from college and university courses, often in economics and psychology, so results may differ in other subjects and in schools. This guide gives general study advice. Your university's own attendance rules always apply. Read our <a href="../../editorial-policy/">editorial policy</a> to see how we research and update guides.</p>
+
+          <div class="keytakeaways">
+            <h2>Key takeaways</h2>
+            <ul>
+              <li>Attendance is one of the strongest known predictors of college grades: correlation .44 with class grades and .41 with GPA across 21,195 students.</li>
+              <li>The effect is partly causal: 10 percentage points more attendance raised exam scores by 0.17 standard deviations in an experiment.</li>
+              <li>Lecture recordings help you review, but on average they don't make up for missing class.</li>
+              <li>Each class has a real price: your yearly fees divided by the classes in a year.</li>
+              <li>When you have to miss class, tell your lecturer, catch up within 48 hours and keep your attendance record accurate.</li>
+            </ul>
+          </div>
+
+          <div class="article-cta reveal">
+            <h2>Know your attendance at a glance</h2>
+            <p><strong>ClassTrack</strong> is a free student app for students around the world. Mark each class present, absent or cancelled, see your live attendance percentage for every subject, and let the bunk calculator tell you how many classes you can miss before you drop below your target.</p>
+            <a href="https://play.google.com/store/apps/details?id=com.classtracks.app" target="_blank" rel="noopener" class="btn btn--primary btn--lg magnetic" data-magnetic>Get ClassTrack free</a>
+          </div>
+
+          <section id="faq">
+            <h2>Frequently asked questions</h2>
+            <div class="faq">
+              <details class="faq__item reveal" open>
+                <summary>Does attendance affect grades in college?<span class="faq__ic"></span></summary>
+                <div class="faq__a">Yes. A meta-analysis of 69 studies with 21,195 college students found attendance is strongly linked to class grades (.44) and GPA (.41). It predicted grades better than SAT scores, high-school GPA, study skills or time spent studying (Credé et al., 2010).</div>
+              </details>
+              <details class="faq__item reveal">
+                <summary>Is it just that good students go to class?<span class="faq__ic"></span></summary>
+                <div class="faq__a">Only partly. Studies that control for ability and motivation still find an effect. In an experiment at a large US university, 10 percentage points more attendance raised final exam scores by 0.17 standard deviations without lowering grades in other classes (Dobkin et al., 2010).</div>
+              </details>
+              <details class="faq__item reveal">
+                <summary>Can lecture recordings replace going to class?<span class="faq__ic"></span></summary>
+                <div class="faq__a">Not reliably. Watching recordings did not make up for low attendance in Edwards &amp; Clinton (2019). In Nordmann et al. (2019), only stronger students could use recordings to make up for missed lectures. Use them to review, not to replace class.</div>
+              </details>
+              <details class="faq__item reveal">
+                <summary>How much does skipping one class cost?<span class="faq__ic"></span></summary>
+                <div class="faq__a">Divide your yearly fees by the number of classes in a year. Fees of 10,000 with 15 classes a week over 30 weeks is 450 classes, or about 22 per class. Try the <a href="#calculator">calculator</a> with your own numbers.</div>
+              </details>
+              <details class="faq__item reveal">
+                <summary>When is it okay to miss class?<span class="faq__ic"></span></summary>
+                <div class="faq__a">When you're ill or contagious, during a family or mental health emergency, for a religious observance or an approved university activity. Check the attendance rule, tell your lecturer early and catch up within a few days.</div>
+              </details>
+              <details class="faq__item reveal">
+                <summary>What attendance percentage should I aim for?<span class="faq__ic"></span></summary>
+                <div class="faq__a">At least your university's minimum, often 75% to 90%, and higher if you can. Grades keep improving as attendance rises, so treat the minimum as a floor, not a target.</div>
+              </details>
+            </div>
+          </section>
+
+          <h2 id="sources">Sources</h2>
+          <ul>
+            <li>Credé, M., Roch, S. G., &amp; Kieszczynka, U. M. (2010). Class attendance in college: A meta-analytic review of the relationship of class attendance with grades and student characteristics. <em>Review of Educational Research, 80</em>(2), 272–295.</li>
+            <li>Dobkin, C., Gil, R., &amp; Marion, J. (2010). Skipping class in college and exam performance: Evidence from a regression discontinuity classroom experiment. <em>Economics of Education Review, 29</em>(4), 566–575.</li>
+            <li>Stanca, L. (2006). The effects of attendance on academic performance: Panel data evidence for introductory microeconomics. <em>Journal of Economic Education, 37</em>(3), 251–266.</li>
+            <li>Marburger, D. R. (2001). Absenteeism and undergraduate exam performance. <em>Journal of Economic Education, 32</em>(2), 99–109.</li>
+            <li>Romer, D. (1993). Do students go to class? Should they? <em>Journal of Economic Perspectives, 7</em>(3), 167–174.</li>
+            <li>Dunlosky, J., Rawson, K. A., Marsh, E. J., Nathan, M. J., &amp; Willingham, D. T. (2013). Improving students' learning with effective learning techniques. <em>Psychological Science in the Public Interest, 14</em>(1), 4–58.</li>
+            <li>Edwards, M. R., &amp; Clinton, M. E. (2019). A study exploring the impact of lecture capture availability and lecture capture usage on student attendance and attainment. <em>Higher Education, 77</em>(3), 403–421.</li>
+            <li>Nordmann, E., Calder, C., Bishop, P., Irwin, A., &amp; Comber, D. (2019). Turn up, tune in, don't drop out: the relationship between lecture attendance, use of lecture recordings, and achievement at different levels of study. <em>Higher Education, 77</em>(6), 1065–1084.</li>
+          </ul>
+
+          <div class="author-box">
+            <img class="author-box__avatar" src="../author-prince.svg" width="58" height="58" loading="lazy" alt="Illustration of Prince Kumar" />
+            <div class="author-box__body">
+              <div class="author-box__name"><a href="../author/prince-kumar/">Prince Kumar</a></div>
+              <div class="author-box__role">Writer · MBA student &amp; data analyst</div>
+              <p class="author-box__bio">Prince Kumar is an MBA student at Dr. B.R. Ambedkar University Delhi and a Google-certified data analyst. He writes ClassTrack's guides for students around the world and checks every fact against primary sources. <strong>Disclosure:</strong> ClassTrack makes a student app with an attendance tracker. <a href="../../editorial-policy/">Editorial policy</a>.</p>
+              <div class="author-box__links">
+                <a href="https://www.linkedin.com/in/princekumarr007/" target="_blank" rel="noopener nofollow me"><span class="ms">link</span> LinkedIn</a>
+                <a href="https://x.com/Princek26161487" target="_blank" rel="noopener nofollow me"><span class="ms">link</span> X (Twitter)</a>
+                <a href="https://princekumar.me/" target="_blank" rel="noopener nofollow me"><span class="ms">link</span> Website</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="related">
+            <h2>Related guides</h2>
+            <div class="related__grid">
+              <a href="../bunk-calculator/"><span class="ms">celebration</span> Bunk Calculator</a>
+              <a href="../how-to-improve-attendance/"><span class="ms">trending_up</span> Improve Your Attendance</a>
+              <a href="../attendance-below-75/"><span class="ms">warning</span> Attendance Below 75%?</a>
+              <a href="../how-to-email-a-professor/"><span class="ms">mail</span> How to Email a Professor</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="../../" class="brand">
+          <span class="brand__logo">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+              <rect x="4" y="6" width="16" height="14" rx="2.6" fill="#fff"/><path d="M4 9a2.6 2.6 0 0 1 2.6-2.6h10.8A2.6 2.6 0 0 1 20 9v1.8H4Z" fill="#312C9D"/><rect x="8.3" y="3.4" width="1.9" height="4.8" rx="0.95" fill="#F5A623"/><rect x="13.8" y="3.4" width="1.9" height="4.8" rx="0.95" fill="#F5A623"/>
+              <path d="M8 13.4l2.7 2.7L16.4 10.2" stroke="#F5A623" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="brand__name">ClassTrack</span>
+        </a>
+        <p>Your entire student life, on track.</p>
+      </div>
+      <nav class="footer__col" aria-label="Product">
+        <h3>Product</h3>
+        <a href="../../#features">Features</a>
+        <a href="../../#bunk">Bunk calculator</a>
+        <a href="../../discounts/">Student discounts</a>
+        <a href="../../#pricing">Pricing</a>
+      </nav>
+      <nav class="footer__col" aria-label="Guides">
+        <h3>Guides</h3>
+        <a href="../attendance-calculator/">Attendance calculator</a>
+        <a href="../how-to-improve-attendance/">Improve your attendance</a>
+        <a href="../how-to-email-a-professor/">Email a professor</a>
+        <a href="../">All guides</a>
+      </nav>
+      <nav class="footer__col" aria-label="Company">
+        <h3>Company</h3>
+        <a href="../../#hero">About</a>
+        <a href="../../editorial-policy/">Editorial policy</a>
+        <a href="../../privacy/">Privacy</a>
+        <a href="../../terms/">Terms</a>
+        <a href="../../support/">Support</a>
+        <a href="../../partners/">Partner with us</a>
+      </nav>
+      <nav class="footer__col" aria-label="Get the app">
+        <h3>Get the app</h3>
+        <a href="../../#get" data-ios-waitlist>App Store (coming soon)</a>
+        <a href="https://play.google.com/store/apps/details?id=com.classtracks.app" target="_blank" rel="noopener">Google Play</a>
+      </nav>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year"></span> ClassTrack. Made for students.</span>
+      <span class="footer__made">Crafted with <span class="ms ms--fill">favorite</span> for students</span>
+    </div>
+  </footer>
+
+  <script src="../../script.js" defer></script>
+  <script src="../tools.js" defer></script>
+</body>
+</html>
